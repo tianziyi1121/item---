@@ -1,0 +1,20 @@
+<view class="content">
+  <view class="possword-line"></view>
+  <view class="view-possword f14">
+    <view>支付密码</view>
+    <view class="fl">
+      <image src="../../../../../static/lock.png"></image>
+      <input placeholder="请填写支付密码" type="password" bindinput='bindPossword' data-number="bindPossword1" auto-focus maxlength='6'></input>
+    </view>
+  </view>
+  <view class="possword-line4"></view>
+  <view class="view-possword f14">
+    <view>确认支付密码</view>
+    <view class="fl">
+      <image src="../../../../../static/lock.png"></image>
+      <input placeholder="请填写支付密码" type="password" bindinput='bindPossword' data-number="bindPossword2" maxlength='6'></input>
+    </view>
+  </view>
+  <view class="possword-line4"></view>
+  <button bindtap="bindAffirm" disabled="{{ btnFlag }}" class="view-btn">确认</button>
+</view>

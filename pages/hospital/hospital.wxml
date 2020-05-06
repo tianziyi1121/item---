@@ -1,0 +1,13 @@
+<!--pages/hospital/hospital.wxml-->
+<view class="content">
+  <view wx:for="{{list}}" for-item="item" wx:key='index' data-index='{{item.id}}' bindtap="hospitalList">
+    <view class="hospital-list pad30 flj">
+      <view class="fl">
+        <image src="../../static/icon_hospitalchoose_list_hospital@2x.png"></image>
+        <view>{{item.name}}</view>
+      </view>
+      <image src="../../static/youjiantou.png"></image>
+    </view>
+    <view class="user-line"></view>
+  </view>
+</view>

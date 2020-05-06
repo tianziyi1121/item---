@@ -1,0 +1,20 @@
+<!--pages/indent/apply/apply.wxml-->
+<view class="content">
+  <view class="apply-refund pad30 f16 fb">退款原因</view>
+  <view class="pad30" wx:for="{{list}}" wx:key="index" for-item="item">
+    <view class="apply-check flj f14">
+      <view>{{item.name}}</view>
+      <radio-group class="radio-group" bindchange="checkboxChange">
+        <label class="radio">
+          <radio value="{{item.val}}" checked="{{item.checked}}"/>
+        </label>
+      </radio-group>
+    </view>
+    <view wx:if="{{index != list.length - 1 }}" class="apply-line"></view>
+  </view>
+  <view class="apply-line"></view>
+  <view class="describe pad30">
+    <textarea bindinput="bindtext" placeholder="描述" maxlength="-1"/>
+  </view>
+  <view class="apply-btn tac f16" bindtap="bindRefund">提交</view>
+</view>

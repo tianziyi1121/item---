@@ -1,0 +1,162 @@
+<view class="content">
+  <view class="detailsImage">
+    <swiper wx:if="{{currentData.pro_allpic.length > 1}}" indicator-dots="false"  duration="{{duration}}" circular="true" indicator-active-color="#FFA600" indicator-color="#D8D8D8">
+      <block wx:for="{{currentData.pro_allpic}}" wx:key="index">
+        <swiper-item>
+          <image bindtap="imageListData" data-index="{{index}}" src="{{item != '' ?  item : '../../../../static/placeholder_figure.png'}}" mode="aspectFit"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <image bindtap="imageListData" data-index="0" wx:if="{{currentData.pro_allpic.length <= 1}}" mode="aspectFit" src="{{currentData.pro_allpic.length == 0 ? '../../../../static/placeholder_figure.png' : currentData.pro_allpic[0]}}"></image>
+  </view>
+  <view class="detailsTitle flj">
+    <view class="leftTile">
+      <view class="title f16 fb">{{currentData.pro_name}}</view>
+      <view class="titleContent f14">{{currentData.pro_description}}</view>
+    </view>
+    <view class="rightTitle tac f12" bindtap="bindCollect">
+      <image src="{{ currentData.is_collection == 0 ? collect : collectBlock}}"  mode="aspectFit"></image>
+      <view>收藏</view>
+    </view>
+  </view>
+  <view class="detailsMoney fl">
+    <view class="fl">￥{{currentData.pro_price}}<text wx:if="{{currentData.pro_is_rent ==1}}">/天</text></view>
+    <view class="f12" wx:if="{{currentData.pro_is_rent ==1}}"><text class="f12">押金：</text> ￥{{currentData.pro_rent_price}}</view>
+  </view>
+  <!-- 商品详情 -->
+  <view class="shoppingTile flj" wx:if="{{currentData.pro_content != ''}}">
+    <view></view>
+    <view class="fb f14">商品详情</view>
+    <view></view>
+  </view>
+  <view class="box">
+    <rich-text class="shopptingDetails f14" nodes="{{currentData.pro_content}}"></rich-text>
+  </view>
+  <!-- 商品评价 -->
+  <view class="shoppingTile flj">
+    <view></view>
+    <view class="fb f14">商品评价</view>
+    <view></view>
+  </view>
+  <view class="box" wx:for="{{currentReview}}" wx:for-item="item" wx:key="index">
+    <view class="evaluateList" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">
+      <view class="evaluateName flj">
+        <view class="fl">
+          <image src="{{items.member_list_headpic == '' ? '../../../../static/head.png' : items.member_list_headpic}}" mode="aspectFit"></image>
+          <view>{{items.tel}}</view>
+          <view class="evaluateImage">
+            <image wx:for="{{status}}" wx:for-item="data" wx:key="index" src="{{items.c_star_rank > 0 ? (items.c_star_rank - data >= 1 ? collectBlack : (items.c_star_rank - data > 0 && items.c_star_rank - data < 1 ? collectHalf : collect )) : collect}}" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view>{{items.create_time}}</view>
+      </view>
+      <view class="evaluateContent f12">
+        <!-- <rich-text nodes="{{evaluateContent}}"></rich-text> -->
+        {{items.c_content}}
+      </view>
+    </view>
+  </view>
+  <!-- loading -->
+  <view style="display:{{loadingFlag ? 'none' : 'block'}};">
+    <view-loading id="load"></view-loading>
+  </view>
+  <view class="order-blank"></view>
+  <!-- 底部按钮 -->
+  <view class="detailsBtn pf flj" wx:if="{{is_rent == 0}}">
+    <!-- <button open-type="contact" bindcontact="handleContact" class="service">
+      <image src="../../../../static/62249e4afd61fc526ed04ca226cf87e.png"></image>
+      <view class="f12">客服</view>
+    </button> -->
+
+    <button open-type="contact" send-message-title="{{currentData.pro_name}}" send-message-img="{{currentData.pro_allpic.length == 0 ? '../../../../static/placeholder_figure.png' : currentData.pro_allpic[0]}}" show-message-card="true" send-message-path="/pages/product/view/view/view?type=2&articleId={{articleId}}&is_rent={{is_rent}}" class="service">
+      <image src="../../../../static/62249e4afd61fc526ed04ca226cf87e.png"></image>
+      <view class="f12">客服</view>
+    </button>
+
+    <view class="smbth fl" catchtap="bindShoppingCart">
+      <view class="tac dataShopping">
+        <image src="../../../../static/20190805115625.png"></image>
+        <view class="f12">购物车</view>
+        <!--<view class="pa nav-hint tac" wx:if="{{ currentData.carts_count != '' && currentData.carts_count != 0 }}">{{currentData.carts_count}}</view>-->
+      </view>
+    </view>
+    <view class="btn fl f16 tac">
+      <view catchtap="bindShopping">加入购物车</view>
+      <view catchtap="bindOnce" data-type="1">立即购买</view>
+    </view>
+  </view>
+  <view class="detailsBtn pf flj" wx:if="{{is_rent == 1}}">
+    <!-- <view class="contactMe fl" catchtap="bindContact">
+      <image src="../../../../static/62249e4afd61fc526ed04ca226cf87e.png"></image>
+      <view class="f16">客服</view>
+    </view> -->
+    <button open-type="contact" send-message-title="{{currentData.pro_name}}" send-message-img="{{currentData.pro_allpic.length == 0 ? '../../../../static/placeholder_figure.png' : currentData.pro_allpic[0]}}" show-message-card="true" send-message-path="/pages/product/view/view/view?type=2&articleId={{articleId}}&is_rent={{is_rent}}" class="service">
+      <image src="../../../../static/62249e4afd61fc526ed04ca226cf87e.png"></image>
+      <view class="f12">客服</view>
+    </button>
+
+    <!-- <button open-type="contact"  bindcontact="handleContact" class="service">
+      <image src="../../../../static/62249e4afd61fc526ed04ca226cf87e.png"></image>
+      <view class="f12">客服</view>
+    </button> -->
+    <view class="leaseButton tac f16" catchtap="bindOnce" catchtap="bindOnce" data-type="2">立即租赁</view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="lshPop">
+    <view class="lshPopShadow pf {{imageFlag ? 'lshPopShadow' : 'hiddenShadow'}}" style="height:{{heightFlag ? height : ''}}rpx"></view>
+    <view class="popUpWindows pf" style="display: {{heightFlag ? 'block' : 'none'}}" catchtouchmove="preventTouchMove"></view>
+    <view class="pf {{imageFlag ? 'travelType' : 'hiddenType'}}" bindtap="bindBox">
+
+      <image wx:for="{{imageList}}" wx:key="index" bindload="bindImage" data-name="height{{index+1}}" style="height:{{index+1 == 1 ? height1 : index+1 == 2 ? height2 : index + 1 == 3 ? height3 : index + 1 == 4 ? height4 : ''}}rpx; top: {{index+1 == 1 ? 0 : index+1 == 2 ? height1 : index + 1 == 3 ? height1+height2 - 2 : index + 1 == 4 ? height1+height2+height3 -4 : ''}}rpx;" class="{{imageFlag ? 'page5-tu'+(index+1) : ''}}" src="{{item}}"/>
+    </view>
+  </view>
+  <!-- contact me -->
+  <view-show id="show" title="{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+</view>
+<!-- Specifications of pop-ups -->
+<view>
+  <view wx:if="{{specificationFlag}}" class="pf specification" catchtouchmove="preventTouchMove"></view>
+  <view class="specification-content pf {{upWard === null ? '' : (upWard == true ? 'upWard' : 'downward')}}">
+    <view class="specificationcontent pr">
+      <view class="specification-box pad30">
+        <view class="specification-image flj">
+          <view class="fl">
+            <image mode="aspectFit" src="{{currentData.pro_allpic[0]}}"></image>
+            <view class="f16 fb">￥{{total}}</view>
+          </view>
+          <view catchtap="bindPopUp">
+            <image mode="aspectFit" src="../../../../static/product_close.png"></image>
+          </view>
+        </view>
+        <view class="specificationClassifyBox">
+          <view class="specification-classify" wx:for="{{productAttributes}}" wx:key="index">
+            <view class="fb f16">{{item.name}}</view>
+            <view class="flw f16 fb">
+              <view class="{{!items.assembly ? 'putTheAsh' : (items.checked ? 'active' : '')}}" catchtap="bindCategory" data-indexs="{{indexs}}" data-index="{{index}}" data-checked="{{items.checked}}" data-assembly="{{items.assembly}}" data-id="{{items.id}}" wx:for="{{item.values}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">{{items.value}}</view>
+            </view>
+          </view>
+          <view class="flj specification-number f16">
+            <view class="fb">数量</view>
+            <view class="fl">
+              <view catchtap="bindmin">
+                <image src="../../../../static/icon_subtraction@2x.png"></image>
+              </view>
+              <view>{{number}}</view>
+              <view catchtap="bindAdd">
+                <image src="../../../../static/icon_lfadd@2x.png"></image>
+              </view>
+            </view>
+          </view>
+          <view class="order-blank"></view>
+        </view>
+      </view>
+      <view class="specificationBtn pa">
+        <view catchtap="catchBtn" class="specification-btn tac fb {{statusBtnFlag ? 'active' : ''}}">确认</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- login -->
+<view style="display: {{loginFlag ? 'block' : 'none'}}">
+  <login-view bind:bindLogin="onBindLogin" id='loginView'></login-view>
+</view>

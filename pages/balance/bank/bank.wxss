@@ -1,0 +1,7 @@
+.bank-list { height: 88rpx; line-height: 88rpx;}
+.bank-list view:nth-child(2) { color: #aaa; font-size: 28rpx; margin-top: 4rpx;}
+.lsh_bank_line { height: 2rpx; background: #EEE;}
+.bankBtn { width: 690rpx; margin: 0 auto; margin-top: 200rpx; background: #37CF6B; color: #fff;}
+button::after { border: none;}
+.bank-addition  image { width: 32rpx; height: 32rpx; vertical-align: middle}
+.bank-addition { height: 88rpx; line-height: 88rpx;}

@@ -1,0 +1,4 @@
+.pay-line { height: 20rpx; background: #F5F5F5;}
+.pay_list { height: 88rpx; line-height: 88rpx;background: #fff; border-bottom: 4rpx solid #F5F5F5;}
+.pay_list  image { width: 48rpx; height: 48rpx; margin-top: 20rpx;}
+.pay-filament {width: 100%; height: 2rpx; background: #EEE;}

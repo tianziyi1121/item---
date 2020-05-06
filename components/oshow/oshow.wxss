@@ -1,0 +1,41 @@
+/* 弹窗 */
+@import "../../common/common.wxss";
+.view-pop {
+  width: 100%;
+}
+.view-content {
+  background: #fff;
+  border-radius: 16rpx;
+  top: 40%;
+  left:30rpx;
+  right: 30rpx;
+  z-index: 1001;
+}
+.view-character {
+  margin-top:30rpx;
+  color: #333;
+}
+.view-btn {
+  margin-top: 30rpx;
+  border-top: 2rpx solid #ccc;
+}
+.view-btn > view {
+  width: 100%;
+  padding: 30rpx 0;
+  color: #333;
+}
+.view-title {
+  color: #ccc;
+  margin-top: 20rpx;
+}
+.view-btn > view:nth-child(1) {
+ border-right: 2rpx solid #ccc;
+}
+.viewContent { -webkit-animation: scaleDraw 0.5s ease-in-out 1;}
+@keyframes scaleDraw { 
+  0%{ transform: scale(0.95); } 
+  25%{ transform: scale(1.05); } 
+  50%{ transform: scale(0.95); } 
+  75%{ transform: scale(1.05); }
+  100%{ transform: scale(1); }
+}

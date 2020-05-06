@@ -1,0 +1,34 @@
+.receiptList,.receiptImage .title { height: 88rpx; line-height: 88rpx;}
+.receiptList image { width: 20rpx; height: 20rpx;}
+.receiptList > view:nth-child(2) { color: #37cf6b;}
+.receiptImage { width: 690rpx; min-height: 370rpx; background: #f6f6f6; margin: 0 30rpx; padding-bottom: 30rpx;}
+.receiptImage .title { margin-left: 28rpx;}
+.receiptImage image { width: 200rpx; height: 200rpx; margin-left: 30rpx;}
+.present { width: 690rpx; height: 88rpx; line-height: 88rpx; color: #fff; background: #37cf6b; border-radius: 10rpx; margin: 140rpx 30rpx 0;}
+/* delete */
+.deleteShow .delete { height: 88rpx; width: 572rpx; top: 40%; left: 75rpx; background: #fff; line-height: 88rpx; padding-left: 28rpx; color: #000;}
+.hintBj { background: rgba(0,0,0,0.5); left: 0; top: 0; bottom: 0; right: 0; z-index: 1000;}
+.deleteShow .deletePopUp { animation: deletePopUp 0.5s linear forwards;}
+@keyframes deletePopUp { 
+  0% { opacity: 1;}
+  50% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+.deleteShow.onDeletePopUp {animation: onDeletePopUp 0.2s 0.5s linear forwards; }
+@keyframes onDeletePopUp { 
+  0% { opacity: 0;}
+  50% { opacity: 0.5;}
+  100% { opacity: 1;}
+}
+.hintBj.hintPopUp {animation: hintPopUp 0.2s linear forwards; }
+@keyframes hintPopUp { 
+  0% { opacity: 1;}
+  50% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+.hintBj.onHintPopUp {animation: onHintPopUp 0.2s 0.5s linear forwards; }
+@keyframes hintPopUp { 
+  0% { opacity: 0;}
+  50% { opacity: 0.5;}
+  100% { opacity: 1;}
+}

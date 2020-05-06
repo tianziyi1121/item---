@@ -1,0 +1,39 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view class="ls_view-name flj pad30 f14 fc">
+    <view>病人姓名</view>
+    <input placeholder="请输入病人姓名" bindinput="bindView" data-name="pat_name" placeholder-style="color: #999;"></input>
+  </view>
+  <view class="ls_view-line"></view>
+  <view class="ls_view-name flj pad30 f14">
+    <view>病人性别</view>
+    <view class="right-view flj tac f12">
+      <view bindtap="bindSex" data-num="1" class="{{form.pat_sex == 1 ? 'active' : ''}}">男</view>
+      <view bindtap="bindSex" data-num="2" class="{{form.pat_sex == 2 ? 'active' : ''}}">女</view>
+    </view>
+  </view>
+  <view class="ls_view-line"></view>
+  <view class="ls_view-name flj pad30 f14">
+    <view>病人年龄</view>
+    <input placeholder="请输入病人年龄" bindinput="bindView" data-name="pat_age" placeholder-style="color: #999;"></input>
+  </view>
+  <view class="ls_view-line"></view>
+  <view class="ls_view-name flj pad30 f14">
+    <view>所在医院</view>
+    <view bindtap="bindHosptail" style="width:{{width}}rpx;" class="right-size f14 overn" > {{hospitalName == '' ? '请选择所在医院' : hospitalName}}</view>
+  </view>
+  <view class="ls_view-line"></view>
+  <view class="ls_view-name pad30 f14" wx:if="{{currentList.length > 0}}">病人病情</view>
+  <view class="view-patient f12">
+    <view class="{{item.flag ? 'active' : ''}}" wx:for="{{currentList}}" wx:key="index" bindtap="bindType" data-index="{{index}}" wx:if="{{item.name != ''}}">{{item.name}}</view>
+  </view>
+  <button class="ls_view_btn" bindtap="bnindSave">提交</button>
+
+  <!-- 科室弹窗 -->
+  <view class="view-box" style="display: {{positionType ? 'none' : 'block'}};" catchtouchmove="preventTouchMove">
+    <view class="view-beijing pf" catchtap="unshade"></view>
+    <view class="view-position pf transformDome" animation="{{animationData}}">
+      <view-position typeNumber="3" dataType="1" id="position" bind:calendarchange="onCalendarChange" bind:showTab="unshade"></view-position>
+    </view>
+  </view>
+</view>

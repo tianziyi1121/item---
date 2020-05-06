@@ -1,0 +1,9 @@
+.apply-refund { height: 88rpx; line-height: 88rpx; border-bottom: 2rpx solid #ccc; color: #333;}
+.apply-check { height: 88rpx; line-height: 88rpx; color: #333;}
+.apply-line { height: 2rpx; background: #ccc; width: 100%;}
+.apply-check radio { width: 48rrpx; height: 48rpx; border-radius: 50%;}
+.apply-check checkbox .wx-checkbox-input { width: 48rpx; height: 48rpx; border-radius: 50%;}
+.apply-check checkbox .wx-checkbox-input.wx-checkbox-input-checked { background: #37CF6B; border: 2rpx solie #fff;}
+.apply-check checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { line-height: 28rpx; text-align: center; font-size: 22rpx; color: #37CF6B; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1);}
+.describe textarea{ width: 92.5%; height: 320rpx; background: #F5F5F5; padding: 26rpx; font-size: 24rpx; color: #333;}
+.describe { margin-top: 20rpx;}

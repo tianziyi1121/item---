@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "病人信息",
+  "usingComponents": {
+    "view-position": "/components/position/position"
+  }
+}

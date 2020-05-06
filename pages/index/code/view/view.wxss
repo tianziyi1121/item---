@@ -1,0 +1,5 @@
+.passwword  { height: 100rpx; line-height: 100rpx; border-bottom: 2rpx solid #ccc; width: 650rpx; margin: 0 auto;}
+.passwword image { width: 40rpx; height: 40rpx; margin: 30rpx 0 0 40rpx;}
+.passwword input { width: 530rpx; font-size: 28rpx; color: #666; height: 100%;}
+.bindBtn { width: 650rpx; margin: 160rpx 0 0 50rpx; background: #37cf6b; color: #fff;}
+.bindBtn::after { border: none;}

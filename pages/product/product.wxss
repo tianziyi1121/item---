@@ -1,0 +1,22 @@
+/* 轮播图 */
+.banner-swiper { height: 360rpx;}
+.banner-img { width: 750rpx;}
+/* 菜单栏 */
+.product-menu {margin-top: 69rpx; font-size: 24rpx; color: #111; }
+.product-menu.margin { margin-top: 37rpx;}
+.product-menu > view {  text-align: center; margin-bottom: 37rpx;}
+.product-menu > view > view { display: inline-block;}
+.product-menu > view > view > view { margin-top: 20rpx;}
+.product-menu image { width: 80rpx; height: 80rpx;}
+/* 新闻资讯 */
+.product-new { margin: 40rpx 0 0 30rpx; color: #000;}
+.product-new > view { width: 4rpx; height: 30rpx; background: #37cf6b; margin: 10rpx 10rpx 0 0; }
+.product-list { width: 690rpx; margin: 0 auto; }
+.product-list > view { margin: 40rpx 0;}
+.product-list image { width: 249rpx; height: 200rpx;}
+.product-list .list-right{ width: 420rpx; border-bottom: 2rpx solid #ccc; padding:0 0 40rpx 20rpx; height: 200rpx;}
+.product-list .list-right > view:nth-child(2) { color: #666; font-size: 22rpx; margin-top: 10rpx; text-indent: 2em;}
+.product-list .right-time { font-size: 22rpx; color: #666; margin-top: 10rpx;}
+/* .list-right > view:nth-child(2) { color: #666; height: 90rpx; } */
+.right-time > view:nth-child(1) { width: 190rpx; margin-right: 10rpx;}
+.right-time > view:nth-child(2) { width: 238rpx;}

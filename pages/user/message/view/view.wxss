@@ -1,0 +1,9 @@
+.content .message-view {border-bottom: none;}
+.message-middle {margin: 10rpx 0 28rpx;color: #6B6B6B;}
+.message-idcode {border-bottom: 2rpx solid #eee; line-height: 76rpx;}
+.message-idcode view{color: #333;}
+.message-idcode text {color: #6B6B6B;}
+.message-sponsor view {line-height: 76rpx;font-weight: 600;}
+.message-sponsor text{display: inline-block;text-indent: 2rem;line-height: 40rpx;color: #6B6B6B}
+.message-btn {margin: 50rpx 30rpx;color: #fff;background: #37CF6B;border: none;}
+.messaage-pad {margin-bottom: 20rpx;}

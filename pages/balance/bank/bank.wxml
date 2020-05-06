@@ -1,0 +1,32 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view wx:if="{{bankFlag}}">
+    <view class="bank-list pad30 flj f16 fc">
+      <view>持卡人姓名</view>
+      <view>{{currentList.bank_username}}</view>
+    </view>
+    <view class="lsh_bank_line"></view>
+    <view class="bank-list pad30 flj f16 fc">
+      <view>开卡银行</view>
+      <view>{{currentList.bank_name}}</view>
+    </view>
+    <view class="lsh_bank_line"></view>
+    <view class="bank-list pad30 flj f16 fc">
+      <view>银行卡号</view>
+      <view>{{currentList.bank_no}}</view>
+    </view>
+    <view class="lsh_bank_line"></view>
+    <view class="bank-list pad30 flj f16 fc">
+      <view>开卡地区</view>
+      <view>{{currentList.bank_area}}</view>
+    </view>
+    <view class="lsh_bank_line"></view>
+    <button class="bankBtn f14" bindtap="bindBack">{{currentList == '' ? '添加' : '修改'}}</button>
+  </view>
+  <view wx:if="{{!bankFlag}}">
+     <view class="bank-addition f14 fc pad30" bindtap="bindBack">
+      <image src="../../../static/加号.png"></image> 添加银行卡
+    </view>
+    <view class="lsh_bank_line"></view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "产品详情",
+  "usingComponents": {
+    "view-show": "/components/oshow/oshow",
+    "view-loading": "/components/loading/loading",
+    "login-view": "/components/login/login",
+    "view-no": "/components/noData/noData"
+  }
+}

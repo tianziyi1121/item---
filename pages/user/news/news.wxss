@@ -1,0 +1,2 @@
+.newsList image { width: 80rpx; height: 80rpx; margin: 36rpx 0;}
+.newsRight .title { color: #000; width: 590rpx;}

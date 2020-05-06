@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "服务点详情",
+  "usingComponents": {
+    "view-show": "/components/oshow/oshow",
+    "view-loading": "/components/loading/loading",
+    "view-no": "/components/noData/noData"
+  }
+}

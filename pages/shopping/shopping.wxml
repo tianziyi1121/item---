@@ -1,0 +1,60 @@
+<view class="content">
+  <view class="wx-shopping-btn fc f14 tac pf" data-id="{{compile}}" catchtap="bindCompile">{{compile == 1 ? "编辑" : "取消编辑"}}</view>
+  <view class="pad30 ma0" wx:for="{{currentList}}" wx:for-item="item" wx:for-index='index' wx:key="index">
+    <view class="shopping-list pr" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">
+      <view class="flj">
+        <view class="shopping-radius">
+          <view catchtap="shoppingList" data-number="{{indexs}}" data-indexs="{{index}}" data-item="{{items}}">
+            <checkbox value="{{items.name}}" checked="{{items.checked}}" />
+          </view>
+        </view>
+        <view class="shopping-right flj"  bindtap="bindList" data-id="{{items.carts_product_id}}">
+          <image catchtap="bindList" data-id="{{items.carts_product_id}}" mode="aspectFit" src="{{items.pro_pic == '' ? '../../static/placeholder_figure.png' : items.pro_pic}}"></image>
+          <view class="fljc shopping-view">
+            <view class="right-title overn f14 fb">{{items.pro_name}}</view>
+            <view class="right-content f12 over3">{{items.pro_description}}</view>
+            <view class="right-money f14">{{items.attr_sku_text}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="flj shoppingFooter">
+        <view></view>
+        <view class="flj">
+          <view class="right-money f14 fb">￥{{items.carts_product_price}}</view>
+          <view class="fl right-num">
+            <view class="right-img" catchtap="shoppMin" data-number="{{indexs}}" data-indexs="{{index}}" data-item="{{items}}">
+              <image lazy-load='true' class="right-min" src="../../static/icon_subs_marketcar@2x.png"></image>
+            </view>
+            <view class="tac f14">{{items.carts_num}}</view>
+            <view class="right-img" catchtap="shoppAdd" data-number="{{indexs}}" data-indexs="{{index}}" data-item="{{items}}">
+              <image lazy-load='true' class="right-add" src="../../static/icon_add_marketcar@2x.png"></image>
+            </view>
+          </view>
+        </view>
+        
+      </view>
+      <view class="shopping-line pa"></view>
+    </view>
+  </view>
+  
+  <!-- 刷新 -->
+  <view style="display: {{loadingFlag ? 'none' : 'block'}};">
+    <view-loading id="load"></view-loading>
+  </view>
+  <!-- 弹窗 -->
+  <view-show id="show" title="{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+  <!-- 暂无数据 -->
+  <view-no id="noData"></view-no>
+  <view class="order-blank"></view>
+  <view class="shopping-btn pf">
+    <view class="fl btn-content f16">
+      <view class="wx-shooping-check" >
+        <checkbox-group bindchange="checkboxChange">
+          <checkbox value="1" checked="{{orderChecked}}"  /> 全选
+        </checkbox-group>
+      </view>
+      <view>合计:￥<text class="fb">{{total}}</text></view>
+      <view bindtap="closeAccount" class="tac">{{ compile == 1 ? "去结算" : "删除"}}</view>
+    </view>
+  </view>
+</view>

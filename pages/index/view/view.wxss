@@ -1,0 +1,32 @@
+.register-line { width: 100%; height: 2rpx; background: #ccc;}
+.register-view { height: 100rpx; border-bottom: 2rpx solid #ccc;width: 690rpx; margin: 0 auto; }
+.register-view image, .register-content image  { width: 40rpx; height: 40rpx; margin-top: 30rpx;}
+.register-select { line-height: 100rpx; width: 634rpx; color: #666;}
+.register-select .radio { width: 23%;display: inline-block; text-align: center;}
+.register-select .radio.radioWidth { width: 31%;}
+.register-select .radio radio { transform:scale(0.6); }
+/* 内容 */
+.register-content { width: 690rpx; margin: 0 auto; color: #666;}
+.register-content > view { width: 100%; height: 100rpx; line-height: 100rpx; border-bottom: 2rpx solid #ccc;}
+.register-content > view > input,.register-content > view > view { width:634rpx; height: 100%;}
+.register-content > view > view input { width:480rpx; height: 100rpx;}
+.register-content > view > view image { margin-right: 40rpx;}
+.register-content > view > view.code input { width: 372rpx;}
+.register-content > view > view view { color: #999; font-size: 22rpx; border: 2rpx solid #ccc; height: 30rpx; line-height: 30rpx; border-radius: 12rpx; padding: 2rpx 10rpx; margin-top: 36rpx;}
+/* 上传 */
+.uploading {  color: #777;}
+.register-content .uploading image { width: 20rpx; height: 20rpx; margin: 6rpx 6rpx 0 0; }
+.register-content .uploading > view { color: #37cf6b; border: none; }
+/* 电话 */
+.register-content view .input {width: 210rpx;}
+.register-content view .means { width:260rpx;}
+/* 注册 */
+.login { font-size: 22rpx; margin: 0 auto; width: 200rpx; }
+.register-login { margin-top:60rpx;}
+.login { color: #666;}
+.register-login .loginBtn { color: #37cf6b;}
+.registerBtn { width: 690rpx; margin: 36rpx 0 60rpx 30rpx;background:#37cf6b; color:#fff; font-size: 36rpx;}
+.registerBtn::after { border: none;}
+
+
+

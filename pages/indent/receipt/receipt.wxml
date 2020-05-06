@@ -1,0 +1,34 @@
+<view class="content">
+  <view class="rechange-line"></view>
+  <view class="pad30 receiptList flj">
+    <view class="f16 fc">回单模板</view>
+    <view class="f12" bindtap="bindCheck">查看</view>
+  </view>
+  <view class="rechange-line"></view>
+  <view class="pad30 receiptList flj">
+    <view class="f16 fc">回单原件</view>
+    <view class="f12" bindtap="downlpoad">
+      <image src="../../../static/lsfujian.png"></image> 下载附件
+    </view>
+  </view>
+  <view class="rechange-line"></view>
+  <view class="pad30 receiptList flj">
+    <view class="f16 fc">上传回单</view>
+    <view class="f12"></view>
+  </view>
+  <view class="rechange-line"></view>
+  <view class="receiptImage">
+    <view class="title f14 f9">将您的回单拍照传给我们吧</view>
+    <view class="rechangeContent">
+      <image wx:if="{{srcListData.length != 0}}" wx:for="{{srcListData}}" wx:key="index" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindlongpress="bindDelecct" bindtap="imgYu" data-index="{{index}}" src="{{item}}" mode="aspectFit"></image>
+      <image wx:if="{{srcListData.length < 5}}" src="../../../static/20191126100324.jpg" bindtap="bindUpload"></image>
+    </view>
+  </view>
+  <view class="present tac f16" bindtap="bindSave">提交</view>
+  <!-- delete -->
+<view class="deleteShow" wx:if="{{deleteFlage}}">
+  <view catchtap="cancel" class="hintBj pf {{deleteShow === null ? '' : (deleteShow === 1 ? 'deletePopUp' : 'onDeletePopUp')}}">
+    <view class="delete pf f16" catchtap="deleteData">删除</view>
+  </view>
+</view>
+</view>

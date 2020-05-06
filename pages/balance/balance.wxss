@@ -1,0 +1,9 @@
+.balance-top { background: #37CF6B; color: #FFFFFF;}
+.balance-title { padding: 70rpx 30rpx 40rpx;}
+.balance-money { font-size: 60rpx; padding-bottom: 70rpx;}
+.balance-money > text { font-size: 32rpx; margin-left: 10rpx;}
+.balance-list { height: 88rpx; color: #333;}
+.balance-list > view { margin-top: 6rpx;}
+.balance-list > view > image { width: 44rpx; height: 44rpx; vertical-align: middle; margin:14rpx 10rpx 0 0;}
+.balance-list > view > text{ margin-top: 13rpx;}
+.balance-list > image { width: 40rpx; height: 40rpx; margin-top: 24rpx;}

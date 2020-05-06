@@ -1,0 +1,12 @@
+.headPortrait { height: 144rpx; line-height: 144rpx;}
+.headPortrait  image { height: 120rpx; width: 120rpx; margin-top: 10rpx; border-radius: 50%;}
+/* message */
+.message { height: 88rpx; line-height: 88rpx;}
+.title { color: #000;}
+/* sex */
+.message image {width: 30rpx; height: 30rpx; margin: 29rpx 10rpx 0 0;}
+.message .boxSex { margin: 19rpx 60rpx; width: 2rpx; height: 50rpx; background: #EEE;}
+.messageContent { font-size: 28rpx;}
+.message > view:nth-child(2), .message input { width: 550rpx; color: #333; font-size: 28rpx; height: 88rpx;}
+/* save */
+.buttonBtn { margin: 60rpx auto;  width: 600rpx; height: 88rpx; background: #37cf6b; color: #fff; border-radius: 44rpx;}

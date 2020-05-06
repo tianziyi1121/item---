@@ -1,0 +1,56 @@
+<view class="contnent">
+  <view class="rechange-line"></view>
+  <view class="flj headPortrait f16 fb pad30">
+    <view class="title">头像</view>
+    <image bindtap="bindImage" src="{{currentData.member_list_headpic == '' ||  currentData.member_list_headpic == null ? '../../../static/head.png' : currentData.member_list_headpic}}"></image>
+  </view>
+  <view class="user-line"></view>
+  <view class="flj message pad30">
+    <view class="f16 fb title ">昵称：</view>
+    <input bindinput="userDara" value="{{currentData.member_list_nickname}}" data-user="member_list_nickname" placeholder-class="messageContent" placeholder="请填写您的昵称"></input>
+    <!-- <view>{{currentData.member_list_nickname == "" ? currentData.member_list_username : currentData.member_list_nickname}}</view> -->
+  </view>
+  <view class="user-line"></view>
+  <view class="flj message pad30">
+    <view class="f16 fb title">姓名：</view>
+    <input bindinput="userDara" value="{{currentData.name}}" data-user="name" placeholder-class="messageContent" placeholder="请填写您的姓名"></input>
+  </view>
+  <view class="user-line"></view>
+  <view class="flj message pad30">
+    <view class="f16 fb title">性别：</view>
+    <view class="fl">
+      <view bindtap="bindSex" data-type="2" class="bindSex fl">
+        <image src="{{currentData.member_list_sex == 2 ? '../../../static/manSex.png' : '../../../static/weman.png'}}"></image><view>女</view> 
+      </view>
+      <view class="boxSex"></view>
+      <view bindtap="bindSex" data-type="1" class="bindSex fl">
+        <image src="{{currentData.member_list_sex == 1 ? '../../../static/manSex.png' : '../../../static/weman.png'}}"></image><view>男</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="user-line"></view>
+  <view class="flj message pad30">
+    <view class="f16 fb title">生日：</view>
+    <view>
+      <picker mode="date" value="{{currentData.birthday}}" bindchange="bindDateChange" data-name="birthday">
+        <view class="picker">{{currentData.birthday == '' || currentData.birthday == null ? "请选择您的生日" : currentData.birthday}}</view>
+      </picker>
+    </view>
+    
+  </view> -->
+
+  <!-- <input bindinput="userDara" value="{{currentData.birthday}}" data-user="birthday" placeholder-class="messageContent" placeholder="请填写您的生日（如：1994-2-11）" type="number"></input> -->
+
+  <view class="user-line"></view>
+  <view class="flj message pad30">
+    <view class="f16 fb title">手机号：</view>
+    <view>{{currentData.member_list_username}}</view>
+  </view>
+  <view class="user-line"></view>
+  <!-- <view class="flj message pad30">
+    <view class="f16 fb title">爱好：</view>
+    <input bindinput="userDara" value="{{currentData.signature}}" data-user="signature" placeholder-class="messageContent" placeholder="请填写您的爱好"></input>
+  </view> -->
+  <view class="user-line"></view>
+  <button class="buttonBtn" bindtap="bindSave">保存</button>
+</view>

@@ -1,0 +1,39 @@
+.order-title { width: 690rpx; height: 88rpx; line-height: 88rpx; background: #fff; top:0; left:0;}
+.order-title > view:nth-child(2) { color: #CCC;}
+.order-title .fl > view { font-size: 24rpx; height: 32rpx; width: 70rpx; background: #37CF6B; border-radius: 16rpx; color: #fff; line-height: 32rpx; text-align: center; margin: 30rpx 0 0 8rpx;}
+.order-list .order-data { padding-top:48rpx;}
+.order-data image { width: 220rpx; height: 220rpx; }
+.order-data .orde-right { width: 450rpx; margin: 14rpx 0 0 20rpx;}
+.order-list .right-money { color: #EE2B2B;}
+.order-list .right-money text { color: #333; font-weight: 500; font-size: 28rpx;}
+.order-list .right-num image{ width: 20rpx; height: 20rpx;}
+.order-list .right-num { height: 88rpx; line-height: 88rpx;}
+.right-num .order-footer { margin-top: 18rpx;}
+.right-num .order-footer view { width: 80rpx; height: 44rpx; line-height: 44rpx; margin: 0 6rpx;}
+.right-num .order-footer .viewBj { background: #F5F5F5;}
+
+.order-footer .order-img { width: 52rpx; height: 44rpx; line-height: 44rpx; text-align: center;}
+.order-refer { width: 100%; height: 100rpx; line-height: 100rpx; left: 0; bottom: 0; border-top: 2rpx solid #f0f0f0; background: #fff;}
+.order-refer .box { width: 50%; line-height: 100rpx;}
+.order-refer .box .order-totle { margin-left: 30rpx; line-height: 100rpx;}
+.order-refer .box .order-btn { width: 100%; line-height: 100rpx; background: #EE2B2B; color: #fff; border-top: 2rpx solid #EE2B2B;}
+.order-refer .box .order-totle .red { line-height: 100rpx; width: 300rpx; color: #EE2B2B;}
+/* choice time */
+.viewTimeTitle { height: 88rpx; line-height: 88rpx; font-size: 32rpx; margin-left: 30rpx; color: #333; }
+.viewTime { height: 88rpx; line-height: 88rpx; width: 690rpx; margin: 0 auto; font-size: 28rpx;}
+.viewTime picker { color: #333; font-size: 28rpx; width: 100%;}
+.viewTime picker view text {color: #666;}
+/* service point */
+.servicePoint { width: 690rpx; margin: 0 auto;}
+.servicePoint > view { line-height: 88rpx; width: 100%;}
+.servicePoint > view > view:nth-child(2) { width: 120rpx; height: 50rpx; background: #37CF6B; color: #fff; line-height: 50rpx; border-radius: 30rpx; margin-top: 19rpx;}
+.servicePoint > view:nth-child(2),.servicePoint > view:nth-child(3) { font-size: 28rpx; color: #666; word-wrap:break-word;}
+/* day */
+.viewDay > view { width: 48%;}
+.viewDay > view  view, .viewDay > view  text { color: #666;}
+/* 备注 */
+.order-remark view { height: 66rpx; line-height: 66rpx;}
+.order-remark textarea { width: 670rpx; height: 228rpx; background: #F5F5F5; border-radius: 10rpx; font-size: 28rpx; padding: 10rpx; color: #666;}
+.order-refer-juli { height: 60rpx;}
+/* specification */
+.specification text{ color: #999; font-size: 24rpx;}

@@ -1,0 +1,21 @@
+.user-img{ padding-left: 30rpx;}
+.user-img > image { width: 144rpx; height: 144rpx; border-radius: 50%; overflow: hidden;}
+.user-name { margin: 20rpx 0 0 20rpx; width: 370rpx;}
+.user-name > text { font-size: 44rpx; font-weight: bold;}
+.user-details { margin-bottom: 70rpx;}
+.user-details .user-approve image { width: 28rpx; height: 28rpx; vertical-align: middle; margin: 8rpx 4rpx 0 12rpx;}
+.user-details .user-approve { margin-top: 16rpx; height: 44rpx; line-height: 44rpx; color: #000; border-radius: 22rpx;}
+.user-details .user-account { margin-top:50rpx; color: #fff; width: 208rpx; height: 64rpx; background:linear-gradient(270deg,rgba(255,170,16,1) 0%,rgba(247,107,28,1) 100%); border-radius:32rpx 0px 0px 32rpx;}
+.user-account > image { width: 36rpx; height: 36rpx; margin:15rpx 20rpx 0 18rpx;}
+.user-account view{ line-height: 64rpx;}
+.user-enroll { height: 88rpx; line-height: 88rpx; color: #333333;}
+.user-enroll image { width: 40rpx; height: 40rpx; margin-top: 24rpx;}
+/* pop-up */
+.view-content { background: #fff; border-radius: 16rpx; top: 40%; left:30rpx; right: 30rpx; z-index: 1001;}
+.view-character { margin-top:30rpx; color: #333;}
+.view-btn { margin-top: 30rpx; border-top: 2rpx solid #ccc;}
+.view-btn > view { width: 100%; padding: 30rpx 0; color: #333;}
+.view-title { color: #ccc; margin-top: 20rpx;}
+.view-btn > view:nth-child(1) { border-right: 2rpx solid #ccc;}
+/* login */
+.user-name .login{ margin-top: 30rpx;}

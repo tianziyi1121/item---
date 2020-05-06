@@ -1,0 +1,9 @@
+
+var foucus = function (e, ins) {
+  if (e.detail.height == 0) return
+  
+}
+module.exports = { 
+  foucus: foucus
+}
+

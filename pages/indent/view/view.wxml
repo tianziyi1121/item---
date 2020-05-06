@@ -1,0 +1,58 @@
+<!--pages/indent/view/view.wxml-->
+<view class="content">
+ <view wx:if="{{type == 2 || type == 1}}">
+    <view class="view-name f14 fc fb pad30">
+      <image mode="aspectFit" src="{{header != '' ? header : '../../../static/placeholder_figure.png'}}"></image>
+      <text>产品评价</text>
+    </view>
+    <view class="view-btn pad30 f12 tac">
+      <view wx:for="{{currentList}}" for-item="item" wx:key="index" bindtap="bindstate" data-type="2" data-index="{{index}}" class="{{item.tags_sort == 1 ? 'active' : ''}}">{{item.tags_name}}</view> 
+    </view>
+
+    <view class="view-appraise f14 fc fl pad30 fb">
+      <text>综合评价</text>
+      <view class="view-img">
+      <image wx:for="{{state}}" wx:key="index" src="{{form.c_star_rank_product > item ? (form.c_star_rank_product == 0.5 ? halfUrl : starUrl) : greyUrl}}">
+        <view class="item-view1" bindtap="bindRight" data-name="c_star_rank_product" data-index="{{item+1}}"></view>
+      </image>
+      </view>
+    </view>
+    <view class="view-textarea pad30">
+      <textarea bindinput="bindTextarea" data-name="c_content_product" maxlength="360" placeholder="说说你的体验，分享给同样想体验该服务的朋友们吧"></textarea>
+    </view>
+  </view>
+
+  <view class="comment-view" wx:if="{{type == 3 || type == 1}}">
+    <view class="view-name f14 fc fb pad30">
+      <image mode="aspectFit" src="{{service_logo != '' ? service_logo : '../../../static/placeholder_figure.png'}}"></image>
+      <text>服务点评价</text>
+    </view>
+    <view class="view-btn pad30 f12 tac">
+      <view wx:for="{{currentData}}" for-item="item" wx:key="index" bindtap="bindstate" data-type="1" data-index="{{index}}" class="{{item.tags_sort == 1 ? 'active' : ''}}">{{item.tags_name}}</view>
+    </view>
+
+    <view class="view-appraise f14 fc fl pad30 fb">
+      <text>综合评价</text>
+      <view class="view-img">
+      <image wx:for="{{state}}" wx:key="index" src="{{form.c_star_rank_service > item ? (form.c_star_rank_service == 0.5 ? halfUrl : starUrl) : greyUrl}}">
+        <view class="item-view1" bindtap="bindRight" data-index="{{item+1}}" data-name="c_star_rank_service"></view>
+      </image>
+      </view>
+    </view>
+    <view class="view-textarea pad30">
+      <textarea bindinput="bindTextarea" data-name="c_content_service" maxlength="360" placeholder="说说你的体验，分享给同样想体验该服务的朋友们吧"></textarea>
+    </view>
+  </view>
+
+  <view class="view-anonymity flj pad30">
+    <view>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox f14 fc" >
+          <checkbox value="1"checked="true" /> 匿名
+        </label>
+      </checkbox-group>
+    </view>
+    <text>你分享的评价将以匿名形式展示</text>
+  </view>
+  <view class="apply-btn tac f16" bindtap="bindsubmint">提交</view>
+</view>

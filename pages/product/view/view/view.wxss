@@ -1,0 +1,114 @@
+/* 大图 */
+.detailsImage { width: 671rpx; height: 624rpx; margin: 0 auto;}
+.detailsImage swiper,.detailsImage > image, .detailsImage swiper image { height: 624rpx; width: 671rpx;}
+/* 内容 */
+.detailsTitle { width: 671rpx; margin: 0 auto; margin-top: 78rpx;}
+.leftTile { width: 588rpx;}
+.leftTile title { color: #030303; line-height: 38rpx;}
+.leftTile .titleContent { color: #666666; line-height: 38rpx; text-indent: 2em; margin-top: 28rpx;}
+.rightTitle image { width: 30rpx; height: 30rpx;}
+.rightTitle { color: #999;}
+.detailsMoney { width: 671rpx; margin: 0 auto; margin-top: 32rpx;}
+.detailsMoney view { color:#ff0000; line-height: 36rpx; font-size: 32rpx; font-weight: bold;}
+.detailsMoney view:nth-child(2) { font-size: 24rpx; margin-left: 20rpx;}
+.detailsMoney view > text { color: #666; font-weight: 400;}
+/* 商品详情 */
+.shoppingTile { width: 671rpx; margin: 0 auto; margin-top: 14rpx; height: 88rpx; line-height: 88rpx;}
+.shoppingTile view:nth-child(1),.shoppingTile view:nth-child(3) { height: 2rpx; width: 275rpx; background: #999; margin-top: 44rpx;}
+.shoppingTile view:nth-child(2) { color: #999;}
+.box { width: 671rpx; margin: 0 auto;}
+.shopptingDetails { color: #666; line-height: 43rpx;}
+/* 评论详情 */
+.evaluateImage image { width: 30rpx; height: 30rpx; margin: 13rpx 0 0 20rpx;}
+.evaluateName { line-height: 56rpx;}
+.evaluateName > view > image { width: 56rpx; height: 56rpx; border-radius: 50%; margin-right: 20rpx;}
+.evaluateName > view { color: #666; font-size: 24rpx; }
+.evaluateContent { line-height: 36rpx; color: #666; margin-top: 30rpx;}
+.evaluateList {margin-bottom: 54rpx;}
+/* 底部按钮 */
+.detailsBtn { width: 100%; height: 100rpx; bottom: 0; left: 0; background: #fff;}
+.smbth { width: 100%;}
+.smbth image { width: 39rpx; height: 39rpx; margin: 23rpx 0 -6rpx;}
+.smbth > view { color: #999; }
+.dataShopping { width: 100%;}
+.btn { width: 480rpx;}
+.btn > view { width: 240rpx; line-height: 100rpx; color: #fff;}
+.btn > view:nth-child(1) { background: #ff9000;}
+.btn > view:nth-child(2) { background: #da1414;}
+.detailsBtn .leaseButton { width: 100%; background: #da1414; color: #fff; line-height: 100rpx;}
+.contactMe image { width: 60rpx; height: 60rpx; margin: 20rpx 0 0 30rpx;}
+.contactMe view { line-height: 100rpx; margin-left: 16rpx;}
+/* 弹窗 */
+.lshPop .popUpWindows {  left: 0; top: 0; right: 0; bottom: 0; z-index: 2000;}
+.lshPop .lshPopShadow { left: 0; top: 0;  background: rgba(0,0,0,0.5); z-index: 1000; animation: lshPopShadow 0.2s 4.4s linear forwards; width: 100%;}
+.lshPop .hiddenShadow { left: 0; top: 0; background: rgba(0,0,0,0.5); z-index: 1000; animation: hiddenShadow 0.2s linear forwards; width: 100%;}
+@keyframes hiddenShadow {
+  0%{ opacity: 0;}
+  50%{ opacity: 0.5;}
+  100%{ opacity: 1;}
+}
+.lshPop .travelType { animation: travelType 1s 3.6s linear forwards; left: 225rpx; top: 50rpx; z-index: 1001; width: 300rpx; opacity: 1;}
+.lshPop .hiddenType { opacity: 0;}
+@keyframes lshPopShadow { 
+  0%{ opacity: 1;}
+  50%{ opacity: 0.5;}
+  100%{ opacity: 0;}
+}
+@keyframes travelType {
+  0%{ transform: scale(1); left: 225rpx; top: 50rpx;}
+  50%{ transform: scale(0.55); left: 392rpx; top: 25rpx;}
+  100%{ transform: scale(0.1); left: 560rpx; top: 4rpx;}
+}
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}
+  0% {opacity: 0;transform: translate3d(3000px, 0, 0);opacity: 1;}
+  60% {opacity: 1;transform: translate3d(-25px, 0, 0);}
+  100% {opacity: 1;transform: none;}
+}
+.lshPop .travelType image{  width: 300rpx; opacity: 0;}
+.page5-tu1, .page5-tu2, .page5-tu3, .page5-tu4 { position: absolute; left: 50%; margin-left: -150rpx;}
+.lshPop .travelType .page5-tu1 { top: 0rpx; animation: bounceInRight 0.5s 0.25s linear forwards;}
+.lshPop .travelType .page5-tu2 { top: 200rpx; animation: bounceInRight 0.8s 0.45s linear forwards;}
+.lshPop .travelType .page5-tu3 { top: 400rpx; animation: bounceInRight 1.1s 0.65s linear forwards;}
+.lshPop .travelType .page5-tu4 { top: 600rpx; animation: bounceInRight 1.4s 0.85s linear forwards;}
+/* Specifications of pop-ups */
+.specification { left: 0; top: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index:1002;}
+.specification-content { width: 100%; background: #fff; height: 900rpx; left: 0; bottom: -900rpx; z-index:1003; border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;}
+.specification-content.upWard { animation: upWard 0.5s  linear forwards;}
+@keyframes upWard {
+  0% { bottom: -900rpx; opacity: 0;}
+  50% { bottom: -450rpx; opacity: 0.5;}
+  100% { bottom: 0; opacity: 1;}
+}
+.specification-content.downward { animation: downward 0.5s  linear forwards;}
+@keyframes downward {
+  0% { bottom: 0; opacity: 1;}
+  50% { bottom: -450rpx; opacity: 0.5;}
+  100% { bottom: -900rpx; opacity: 0;}
+}
+.specificationcontent { height: 850rpx; margin-top: 50rpx; }
+.specification-image { margin-bottom: 20rpx;}
+.specification-image view image { width: 123rpx; height:123rpx; border-radius: 12rpx;}
+.specification-image view view { color: #ff0000; margin: 91rpx 0 0 40rpx;}
+.specification-image > view:nth-child(2) { width: 70rpx; height: 70rpx;}
+.specification-image > view:nth-child(2) > image { width: 40rpx; height: 40rpx; margin: 15rpx;}
+.specificationClassifyBox { height: 637rpx; overflow-y: auto;}
+.specification-classify { margin-top: 30rpx;}
+
+.specification-classify > view:nth-child(1) { color: #000;}
+.specification-classify > view:nth-child(2) view { padding: 8rpx 48rpx; background: #eee; margin: 60rpx 40rpx 0 0 ; border-radius: 38rpx; color: #000;}
+.specification-classify > view:nth-child(2) view.active { border: 2rpx solid #37cf6b; background: #a3e9bb; padding: 6rpx 46rpx;}
+.specification-classify > view:nth-child(2) view.putTheAsh { border: 2rpx solid #eee; background: #fff; color: #eee; padding: 6rpx 46rpx;}
+.specification-number { margin-top: 60rpx; color: #000;}
+.specification-number > view:nth-child(2) image { width: 30rpx; height: 30rpx; margin: 4rpx 0 0;}
+.specification-number > view:nth-child(2) > view:nth-child(2) { margin-top: 10rpx;}
+.specification-number > view:nth-child(2) > view:nth-child(1), .specification-number > view:nth-child(2) > view:nth-child(3) { padding: 10rpx 20rpx;}
+.specification-btn { background: #CCC; height: 80rpx; border-radius: 40rpx; line-height: 80rpx; color: #fff; font-size: 36rpx;width: 92%;  margin: 10rpx 0 0 30rpx;}
+.specification-btn.active { background: #37cf6b;}
+.specificationBtn { height: 100rpx; width: 100%; background: #fff; left: 0; bottom: 0rpx; }
+.order-blank { height: 80rpx;}
+/* 客服 */
+.service image { width: 39rpx; height: 39rpx; margin-top: 23rpx;}
+.service view { color: #999; margin-top: 20rpx;}
+button.service { padding: 0; line-height: 0; border-radius: 0; height: 100rpx; background: #fff; width: 100%;}
+button::after { border: none;}

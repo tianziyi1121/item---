@@ -1,0 +1,16 @@
+.scroll-view { width:100%; border-bottom: 2rpx solid #ccc; height: 80rpx; top: 0; left: 0; background: #fff; z-index: 99;}
+.swiperLine { height: 88rpx;}
+.sm-scroll scroll-view { white-space: nowrap;}
+.sm-scroll .scroll-item { line-height: 76rpx; width: 25%; display: inline-block; height: 80rpx;}
+.sm-scroll .scroll-item.active { color: #37CF6B;}
+.scroll-item.active view{ height: 4rpx; background: #37CF6B; transition: .2s; margin: 0 auto;}
+.swiperContent { width: 750rpx; height: 600rpx;} 
+.cttItem { width: 690rpx; margin: 0 auto;}
+/* 列表 */
+.homeList { padding: 20rpx 30rpx 0; margin-bottom:20rpx;}
+.homeList .homeListItem > image { width: 208rpx; height: 156rpx; border-radius: 10rpx;}
+.homeList .homeItem { margin: 8rpx 0 0 30rpx; color: #333;}
+.homeList .homeListTimer { color: #969696;}
+.homeList .homeLine { width: 100%; height: 2rpx; background: #f0f0f0; left:0; bottom:-20rpx;}
+::-webkit-scrollbar { width: 0; height: 0; color: transparent;}
+.homeListTimer .homeSource { width: 280rpx;}

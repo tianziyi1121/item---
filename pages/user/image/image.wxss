@@ -1,0 +1,52 @@
+.layout { width: 690rpx; min-height: 500rpx; margin: 0 auto; margin-top: 50rpx; border: 2rpx solid #e5e5e5; padding-bottom: 30rpx;}
+.subset { width: 200rpx; height: 200rpx; margin: 30rpx 0 0 30rpx;}
+.subset image { width: 200rpx; height: 200rpx;}
+/* pop-up */
+.hintBj { background: rgba(0,0,0,0.5); left: 0; top: 0; bottom: 0; right: 0; z-index: 1000;}
+.popUpHit { width: 750rpx; height: 290rpx; bottom: -290rpx; left: 0; z-index: 1001;}
+.popUpHit > view { height: 88rpx; line-height: 88rpx;}
+.popUpHit > view:nth-child(1), .popUpHit > view:nth-child(2), .popUpHit > view:nth-child(4) { background: #fff;}
+.popUpHit > view:nth-child(1) { border-bottom: 2rpx solid #e5e5e5;}
+.popUpHit > view:nth-child(3) { height: 30rpx;}
+/* animation */
+.popUpHit.popUpFlag { animation: popUpFlag 0.5s 0.2s linear forwards;} 
+@keyframes popUpFlag {
+  0% { bottom: -290rpx;}
+  50% { bottom: -145rpx;}
+  100% { bottom: 0;}
+}
+.popUpHit.onPopUpFlag { animation: onPopUpFlag 0.5s linear forwards;} 
+@keyframes onPopUpFlag {
+  0% { bottom: 0;}
+  50% { bottom: -145rpx;}
+  100% { bottom: -290rpx;}
+}
+.hintBj.hintPopUp {animation: hintPopUp 0.2s linear forwards; }
+@keyframes hintPopUp { 
+  0% { opacity: 1;}
+  50% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+.hintBj.onHintPopUp {animation: onHintPopUp 0.2s 0.5s linear forwards; }
+@keyframes hintPopUp { 
+  0% { opacity: 0;}
+  50% { opacity: 0.5;}
+  100% { opacity: 1;}
+}
+/* delete */
+.deleteShow .delete { height: 88rpx; width: 572rpx; top: 40%; left: 75rpx; background: #fff; line-height: 88rpx; padding-left: 28rpx; color: #000;}
+.deleteShow .deletePopUp { animation: deletePopUp 0.5s linear forwards;}
+@keyframes deletePopUp { 
+  0% { opacity: 1;}
+  50% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+.deleteShow.onDeletePopUp {animation: onDeletePopUp 0.2s 0.5s linear forwards; }
+@keyframes onDeletePopUp { 
+  0% { opacity: 0;}
+  50% { opacity: 0.5;}
+  100% { opacity: 1;}
+}
+/* server */
+.preserve { width: 690rpx; margin: 100rpx auto; background: #37cf6b; color: #fff;}
+preserve::after { border: none;}

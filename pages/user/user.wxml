@@ -1,0 +1,85 @@
+<!--user.wxml-->
+<view class="content">
+  <view class="user-details flj">
+    <view class="user-img fl">
+      <image bindtap="bindUser" data-url="user/user" data-type="2" mode="aspectFit" src="{{currentList.member_list_headpic == null ? '../../static/head.png' : currentList.member_list_headpic}}"></image>
+      <view  class="user-name overn f16" wx:if="{{loginDataFlag == 2}}">
+        <view class="login" bindtap="bindUser" data-type="1" data-url="../index/index">请登录</view>
+      </view>
+      <view class="user-name overn" wx:if="{{loginDataFlag == 1}}">
+        <text>{{currentList.member_list_nickname == '' ? currentList.member_list_username : currentList.member_list_nickname}}</text>
+        <view class="user-approve fl f14"> {{currentList.member_list_tel}}
+        <!-- <image mode="aspectFit" src="{{user.approve == 1 ? urlApp : srcApp}}"></image>{{user.approve == 1 ? certified : unverified}} -->
+      </view>
+    </view>
+    </view>
+    <!-- <view class="user-account f12 fl" bindtap="commonality" data-url="../balance/balance" data-id="1">
+      <image src="../../static/icon_moneylast_me@2x.png"></image> <view>账户余额</view> 
+    </view> -->
+  </view>
+  <!-- <view wx:if="{{lsh_type == 1}}">
+    <view class="order-line"></view>
+    <view class="user-enroll flj pad30 f16" bindtap="commonality" data-url="../register/register" data-id="1">
+      <view>护工注册</view>
+      <image src="../../static/youjiantou.png"></image>
+    </view>
+    <view class="user-line"></view>
+    <view class="user-enroll flj pad30 f16" bindtap="commonality" data-url="message/message" data-id="1">
+      <view>注册信息</view>
+      <image src="../../static/youjiantou.png"></image>
+    </view>
+    <view class="order-line"></view>
+    <view class="user-enroll flj pad30 f16" bindtap="commonality" data-url="order/order" data-id="1">
+      <view>预约信息</view>
+      <image src="../../static/youjiantou.png"></image>
+    </view>
+  </view> -->
+  <!-- <view class="order-line"></view>
+  <view class="user-enroll flj pad3 f16" bindtap="commonality" data-url="news/news" data-id="1" data-type="1">
+    <view>消息</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view> -->
+  <view class="order-line"></view>
+  <view class="user-enroll flj pad3 f16" bindtap="commonality" data-url="../shopping/shopping" data-id="1" data-type="1">
+    <view>购物车</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="user-line"></view>
+  <view class="user-enroll flj pad3 f16" bindtap="commonality" data-url="../indent/indent" data-id="2" data-type="1">
+    <view>我的订单</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="user-line"></view>
+  <view class="user-enroll flj pad3 f16" bindtap="commonality" data-url="view/view" data-id="1" data-type="1">
+    <view>我的收藏</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="order-line"></view>
+  <view class="user-enroll flj pad3 f16" bindtap="relation">
+    <view>联系我们</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="user-line"></view>
+  <view class="user-enroll flj pad3 f16" bindtap="commonality" data-url="about/about" data-id="1" data-type="1">
+    <view>关于我们</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="order-line"></view>
+  <!-- <view class="user-enroll flj pad30 f16" bindtap="commonality" data-url="pay/pay?member_list_paypwd={{currentList.member_list_paypwd}}"  data-id="1"  data-type="2">
+    <view>支付设置</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="order-line"></view> -->
+  <view class="user-enroll flj pad3 f16" bindtap="commonality" data-url="image/image" data-id="1"   data-type="2">
+    <view>上传截肢部位</view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="user-line"></view>
+  <!-- 弹窗 -->
+  <view-show id="show" title="{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+  <!-- login -->
+  <view style="display: {{loginFlag ? 'block' : 'none'}}">
+    <login-view bind:bindLogin="onBindLogin" id='loginView'></login-view>
+  </view>
+  <!-- <button class="zuo" bindcontact='contactCallback' open-type='contact'>卡片</button> -->
+</view>

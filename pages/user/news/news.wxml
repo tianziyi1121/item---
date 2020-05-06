@@ -1,0 +1,11 @@
+<view class="content">
+  <view class="rechange-line"></view>
+  <view class=" newsList pad3 flj">
+    <image src="../../../static/expression.jpg" mode="aspectFit"></image>
+    <view class="newsRight">
+      <view class="flj">
+        <view class="title f16">交易物流通知</view>
+      </view>
+    </view>
+  </view>
+</view>

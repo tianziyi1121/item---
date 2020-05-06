@@ -1,0 +1,19 @@
+.view-name image { width: 64rpx; height: 64rpx; border-radius: 50%; margin-right: 24rpx; vertical-align: middle;}
+.view-btn { margin-top: 20rpx; display: flex; flex-wrap: wrap; color: #6B6B6B;}
+.view-btn view { background: #F8F8F8; padding: 18rpx 26rpx; border-radius:30rpx; margin:0 20rpx 20rpx 0;}
+.view-btn view:nth-child(4n) { margin-right: 0;}
+.view-btn .active { background: #37CF6B; color: #fff;}
+.view-img image { width: 48rpx; height: 48rpx; position: relative; margin-left: 20rpx; src: '../../../static/collect.png'}
+.view-appraise text { margin: 6rpx 20rpx 20rpx 0;}
+.view-img .item-view, .view-img .item-view1  { width: 48rpx; height: 48rpx; position: absolute; top: 0; left: 0;}
+.view-textarea { border-top: 2rpx solid #ccc; border-bottom: 2rpx solid #ccc; border-left: none; border-right: none;}
+.view-textarea textarea { width: 100%; color: #AAAAAA; font-size: 28rpx; height: 320rpx; padding-top: 20rpx; line-height: 36rpx;}
+.view-anonymity { height: 88rpx;border-bottom: 2rpx solid #ccc;}
+checkbox { width: 48rrpx; height: 48rpx; border-radius: 50%;}
+checkbox .wx-checkbox-input { width: 48rpx; height: 48rpx; border-radius: 50%;}
+ checkbox .wx-checkbox-input.wx-checkbox-input-checked { background: #37CF6B; border: 2rpx solie #fff;}
+ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { line-height: 28rpx; text-align: center; font-size: 22rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1);}
+.view-anonymity view { margin-top: 14rpx;}
+.view-anonymity text { font-size: 24rpx; color: #AAAAAA; line-height: 88rpx;}
+/* Service point review */
+.comment-view { margin-top: 52rpx;}

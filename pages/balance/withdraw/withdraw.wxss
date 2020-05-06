@@ -1,0 +1,6 @@
+.rechange-money { padding: 20rpx 30rpx 20rpx; }
+.rechange-money .rechange-view{ width: 240rpx;}
+.rechange-money  .rechange-input { margin: -6rpx  0 0 40rpx; width: 100%;}
+.rechange-btn { height: 88rpx; line-height: 88rpx; background: #37CF6B; color: #fff; margin: 50rpx 30rpx; border-radius: 8rpx;}
+.withdraw-rechange { color:#AAA; padding-top: 20rpx;}
+.monney_text {color: #ccc;margin-top: 6rpx;}

@@ -1,0 +1,48 @@
+<!--pages/lookCare/view/details/details.wxml-->
+<view class="content">
+  <view class="details-btn fl pad30">
+    <view class="{{ list.type == 'good' ? 'active' : '' }}" bindtap="bindReview" data-review="good">好评({{goodsCount}})</view>
+    <view class="{{ list.type == 'middle' ? 'active' : '' }}" bindtap="bindReview" data-review="middle">中评({{middleCount}})</view>
+    <view class="{{ list.type == 'comment' ? 'active' : '' }}" bindtap="bindReview" data-review="comment">差评({{negativeCount}})</view>
+  </view>
+  <!-- 循环 -->
+  <view  wx:for="{{currentList}}" wx:key="index" wx:for-item="item">
+    <view wx:for="{{item}}" wx:key="indexs" wx:for-item="items">
+      <view class="view-appraise flj pad30">
+        <view class="fl">
+          <image mode="aspectFit" src="{{items.headpic == '' ? '../../../../static/head.png' : items.headpic}}"></image>
+          <text>{{items.tel}}</text>
+          <view>
+            <image mode="aspectFit" wx:for="{{state}}" wx:for-item="itemData" wx:key="index" src="{{items.c_star_rank > 0 ? ( items.c_star_rank - itemData > 0 ? (items.c_star_rank - itemData < 1 ? halfUrl : starUrl) : greyUrl) : greyUrl }}"></image>
+          </view>
+        </view>
+        <view>{{items.create_time}}</view>
+      </view>
+      <view class="view-btn  pad30">
+        <view wx:for="{{items.tags_arr}}" wx:key="index" wx:for-item="itemIndex" wx:if="{{itemIndex != null}}">{{itemIndex}}</view>
+      </view>
+      <view class="view-text">{{items.c_content}}</view>
+      <view class="view-text-line"></view>
+    </view>
+  </view>
+  
+  <!-- 暂无数据 -->
+  <view-no id="noData"></view-no>
+  <!-- 下拉加载 -->
+   <view style="display: {{loadingFlag ? 'none' : 'block'}};">
+    <view-loading id="load"></view-loading>
+  </view>
+
+  <view class="{{loadingFlag ? '' : 'viewLine'}}"></view>
+  <view class="view-footer tac pf flj">
+    <view class="flj">
+      <text>￥{{money}}元/天</text>
+      <view class="view-view" bindtap="bindCollect" data-collect='{{collect}}'>
+        <image src="{{collection == 1 ? starUrl : greyUrl}}"></image>
+        <view class="{{collection == 1 ? 'view-orange' : '' }}">收藏</view>
+      </view>
+    </view>
+    <view bindtap="subscribe" class="{{ status == 1 ? '' : 'gray'}}">
+       {{ status == 1 ? '我要预约' : '暂停预约'}}</view>
+  </view>
+</view>

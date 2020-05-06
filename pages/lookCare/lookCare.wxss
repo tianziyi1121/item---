@@ -1,0 +1,69 @@
+/* title */
+.titleBox { width: 100%; border: 2rpx solid #eee; border-left: none; border-right: none; background: #fff;}
+
+.titleBox .title { width: 690rpx; margin: 0 auto;}
+.bindTitle { width:172rpx; height: 80rpx; line-height: 80rpx; color: #6b6b6b;}
+.bindTitle image { width: 20rpx; height: 20rpx; position: absolute; top: 36rpx; right: 16rpx; }
+.bindTitle.active { color: #37cf6b;}
+.imageActive image { animation: imageRotate 0.2s linear forwards;}
+@keyframes imageRotate {
+   0%{ transform: rotate(0deg);} 
+  100%{ transform: rotate(180deg);}
+}
+.vanish image { animation: imageRotate1 0.2s linear forwards;}
+@keyframes imageRotate1 {
+   0%{ transform: rotate(180deg);} 
+  100%{ transform: rotate(0deg);}
+}
+.titleBoxPosition { position: fixed; top: 0; left:0;}
+/* 数据列表 */
+.view-list { width: 690rpx; margin: 0 auto;}
+.currentList { margin: 48rpx 0;}
+.currentList image { width: 220rpx; height: 220rpx;}
+.list-right > view { width: 400rpx; height: 100%;}
+.list-right > view > view:nth-child(1) { color: #000;}
+.list-right > view > view:nth-child(2) { color: #666;}
+.list-right > view > view:nth-child(3) { color: #ff0101;}
+/* pop-up windows */
+.popUpSearch .popUpShadow { right: 0; bottom: 0; left: 0; z-index: 1000; background: rgba(0,0,0,0.5); opacity: 1;}
+.popUpSearch .popUpContent { top: 360rpx; right: 0; left: 0; z-index:1001; background: #fff; opacity: 0;}
+.popUpSearch .popUpSelect { width: 690rpx; margin: 0 auto; margin-bottom: 40rpx;}
+.popUpSelect view { width: 33.3%;}
+.popUpSelect view.active { color: #37cf6b;}
+/* animation */ 
+/* 出现 */
+.popUpSearch .popUpShadow.appear { animation: appear 0.2s linear forwards;}
+@keyframes appear {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+.popUpSearch .popUpShadow.vanish { animation: vanish 0.2s 0.2s linear forwards;}
+@keyframes vanish {
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+}
+.popUpSearch .popUpContent.appearContnet1 { animation: appearContnet1 0.3s 0.2s linear forwards;}
+@keyframes appearContnet1 {
+  0% { top: 360rpx; opacity: 0;}
+  50% { top: 262rpx;opacity: 1;}
+  100% { top: 164rpx; opacity: 1;}
+}
+.popUpSearch .popUpContent.vanishContent1 { animation: vanishContent1 0.3s linear forwards;}
+@keyframes vanishContent1 {
+  0% { top: 164rpx; opacity: 1;}
+  50% { top: 268rpx; opacity: 1;}
+  100% { top: 360rpx; opacity: 0;}
+}
+.popUpSearch .popUpContent.appearContnet2 { animation: appearContnet2 0.3s 0.2s linear forwards;}
+@keyframes appearContnet2 {
+  0% { top: 360rpx; opacity: 0;}
+  50% { top: 222rpx; opacity: 1;}
+  100% { top: 84rpx; opacity: 1;}
+}
+.popUpSearch .popUpContent.vanishContent2 { animation: vanishContent2 0.3s linear forwards;}
+@keyframes vanishContent2 {
+  0% { top: 84rpx; opacity: 1;}
+  50% { top: 222rpx; opacity: 1;}
+  100% { top: 480rpx; opacity: 0;}
+}
+.onPullDown { overflow:auto; margin:auto; position:absolute; top:0; bottom:0; left:0; right:0;}

@@ -1,0 +1,47 @@
+.lookCare-view { background: #37CF6B; padding:32rpx 0;}
+.lookCare-view image { width: 160rpx; height: 160rpx; border-radius: 50%; margin:0 32rpx 0 112rpx;}
+.lookCare-view .look-view { margin-top: 16rpx;}
+.lookCare-view .view-name { margin-bottom: 10rpx;}
+.lookCare-view .view-name > text{ font-size: 40rpx; font-weight: 700; color: #fff;}
+.lookCare-view .view-name > view { font-size: 28rpx; font-weight: none; padding: 0 16rpx; background: #FFBC00; border-radius: 18rpx; color: #fff; height: 36rpx; line-height: 36rpx; margin: 10rpx 0 0 10rpx ;}
+.lookCare-view .view-sex { margin-bottom: 6rpx;}
+.lookCare-view .view-sex > text { color: #fff; margin: 20rpx 12rpx 0 0;}
+.look-view > view:nth-child(3) { font-size: 32rpx; color: #fff; width: 430rpx;}
+.view-favorable { padding-bottom: 38rpx; background: #37CF6B;}
+.view-favorable > view { width: 100%; color: #fff;}
+.view-favorable > view > view >text, { font-size: 24rpx;}
+.view-favorable > view > view:nth-child(1) { font-size: 36rpx;}
+.view-favorable > view > view:nth-child(2) { font-size: 26rpx; margin-top: 8rpx;}
+.view-favorable > view:nth-child(1) { border-right: 2rpx solid #fff;}
+.view-star { height: 88rpx; line-height: 88rpx; border-bottom: 2rpx solid #EEE; margin:0 30rpx; font-size: 28rpx; color: #333; font-weight: 700;}
+.view-star image { width: 36rpx; height: 36rpx;}
+.view-star text:nth-child(1) { margin-right: 16rpx;}
+.view-star view { margin: 6rpx 16rpx 0 0;}
+.view-synopsis { margin: 30rpx 30rpx 0; font-size: 28rpx; border-bottom: 2rpx solid #EEE;}
+.view-synopsis view { font-weight: 700; color: #333; margin-bottom: 18rpx;}
+.view-synopsis text { color: #6B6B6B; padding-bottom: 28rpx; display: inline-block;}
+.view-borde {border: none;}
+.view-evaluate { margin:48rpx 0 28rpx;}
+.view-evaluate > view:nth-child(1) { font-size: 36rpx; font-weight: 700; color: #333;}
+.view-evaluate > view:nth-child(2) { font-size: 28rpx; color: #37CF6B; margin-top: 4rpx;}
+.view-stare { font-size: 24rpx; color: #6B6B6B; width:168rpx; height:60rpx; background:#F7F7F7; border-radius:30px; margin-left: 30rpx; line-height: 60rpx;}
+.view-appraise { margin-top: 42rpx;}
+.view-appraise > view > image { width: 56rpx; height: 56rpx; border-radius: 50%; margin-right: 10rpx;}
+.view-appraise > view > view > image { width: 32rpx; height: 32rpx;}
+.view-appraise > view > text { font-size: 24rpx; color: #333; margin: 10rpx 8rpx 0 0;}
+.view-appraise > view:nth-child(2) { color: #CCC; font-size: 24rpx; margin-top: 10rpx;}
+.view-btn { margin-top: 16rpx; display: flex; flex-wrap: wrap;}
+.view-btn view { background: #F0F2F6; font-size: 24rpx; color: #929BA5;  padding: 8rpx 10rpx; margin: 0 16rpx 16rpx 0;}
+.view-text { margin: 20rpx 30rpx; color: #6B6B6B; font-size: 24rpx;}
+.viewLine { height: 120rpx; width: 100%; background: #fff;}
+.view-footer { border-top: 2rpx solid #ccc; height: 100rpx; width: 100%; left: 0; bottom: 0; background: #fff;}
+.view-footer image { width: 44rpx; height: 44rpx;}
+.view-footer text { margin-left: 30rpx; line-height: 100rpx; color: #333333; font-size: 32rpx;}
+.view-footer .view-view { margin-top: 10rpx;}
+.view-footer > view { width: 100%;}
+.view-footer .view-view view { color: #AAAAAA; font-size: 24rpx; margin: 0 30rpx;}
+.view-footer > view:nth-child(2){ background: #37CF6B; line-height: 100rpx; font-size: 32rpx; color: #fff;}
+.view-footer .view-orange view {color: #FFA600}
+.view-footer view.gray {background: #CCCCCC;}
+/* 暂无评价 */
+.view-evaluation {height: 88rpx; line-height: 88rpx; color: #6B6B6B;}

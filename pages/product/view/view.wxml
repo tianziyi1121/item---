@@ -1,0 +1,62 @@
+<wxs module="test" src="../../../utils/test.wxs"></wxs>
+<!-- bindscrolltoupper="scrollList" -->
+<view>
+<view class="titleBox" style="height: {{titleList.length + 2 > 4 ? '160' : '80'}}rpx"> 
+  <view class="title flw">
+  <!-- {{activeTitle == item.cat_id ? imageActive : ''}} -->
+    <view wx:for="{{titleList}}" wx:key="index" class="bindTitle f14 pr {{activeIndex == item.cat_id ? 'active' : ''}}" bindtap="bindTitle" data-id="{{item.cat_id}}">
+      {{item.cat_name}}<image mode="aspectFit" src="../../../static/{{activeIndex == item.cat_id ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+    </view>
+    <!-- {{activeTitle == 'a1' ? 'imageActive' : 'vanish'}} -->
+    <view wx:if="{{type != 3 && type != 2}}" class="bindTitle f14 pr {{activeIndex == 'a1' ? 'active' : ''}}" bindtap="bindTitle" data-id="a1">
+      重 量<image mode="aspectFit" src="../../../static/{{activeIndex == 'a1' ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+    </view>
+    <!-- {{activeTitle == 'a2' ? 'imageActive' : 'vanish'}} -->
+    <view wx:if="{{type == 3}}" class="bindTitle f14 pr {{activeIndex == 'a3' ? 'active' : ''}}" bindtap="bindTitle" data-id="a3">
+      品 牌<image mode="aspectFit" src="../../../static/{{activeIndex == 'a3' ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+    </view>
+    <view class="bindTitle f14 pr {{activeIndex == 'a2' ? 'active' : ''}}" bindtap="bindTitle" data-id="a2">
+      价 格<image mode="aspectFit" src="../../../static/{{activeIndex == 'a2' ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+    </view>
+    <view class="bindTitle f14 pr {{activeIndex == 'a3' ? 'active' : ''}}" bindtap="bindRecommend" data-id="a3" wx:if="{{type == 1}}">
+      推 荐<image mode="aspectFit" src="../../../static/{{activeIndex == 'a3' ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+    </view>
+  </view>
+</view>
+<scroll-view bindscroll="{{test.funcA}}" style="height:{{currentlist.length != 0 ? height - 160 : ''}}rpx;" bindscrolltoupper="scrolltoupper" bindscrolltolower="bindBottom" scroll-y>
+  <!-- <view class="blankTitle"></view> -->
+  <view class="view-list" wx:for="{{currentlist}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view class="currentList flj" bindtap="bindList" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs" bindtap="bindList" data-id="{{items.pro_id}}">
+      <image src="{{items.pro_pic == '' ? '../../../static/placeholder_figure.png' : items.pro_pic}}" mode="aspectFit"></image>
+      <view class="list-right">
+        <view class="fljc">
+          <view class="f14 fb overn">{{items.pro_name}}</view>
+          <view class="f12 over3 contentList">{{items.pro_description}}</view>
+          <view class="f16 fb">￥{{items.pro_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- no data -->
+  <view-no dataType="2" id="noData"></view-no>
+  <!-- pull on loading -->
+  <view style="display:{{currentlist.length == 0 ? 'none' : (loadingFlag ? 'none' : 'block')}};">
+    <view-loading id="load"></view-loading>
+  </view>
+</scroll-view>
+</view>
+<!-- pop-up windows -->
+<view class="popUpSearch" wx:if="{{popUpSearch}}">
+  <view class="popUpShadow pf {{popUpShadow ? 'appear' : 'vanish'}}" style="top: {{topHeight}}rpx;" catchtap="bindVanish"></view>
+  <view class="popUpContent pf {{topHeight > 120 ? (popUpContent ? 'appearContnet1' : 'vanishContent1') : (popUpContent ?  'appearContnet2' : 'vanishContent2')}}">
+    <view class="popUpSelect flw f14 tac" wx:if="{{selectIndex == 1}}">
+      <view wx:for="{{selectList}}" wx:key="index" data-id="{{item.cat_id}}" data-index="{{index}}" class="pad40 {{item.checked ? 'active' : ''}}" catchtap="bindSelect" data-name="{{item.cat_name}}">{{item.cat_name}}</view>
+    </view>
+    <view class="popUpSelect flw f14 tac" wx:if="{{selectIndex == 2}}">
+      <view wx:for="{{selectMoney}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}" data-indexs="{{id}}" class="pad40 {{item.checked ? 'active' : ''}}" catchtap="bindSelect">{{item.value}}</view>
+    </view>
+    <view class="popUpSelect flw f14 tac" wx:if="{{selectIndex == 3}}">
+      <view wx:for="{{selectMoney}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}" data-indexs="{{id}}" class="pad40 {{item.checked ? 'active' : ''}}" catchtap="bindSelect">{{item.name}}</view>
+    </view>
+  </view>
+</view>

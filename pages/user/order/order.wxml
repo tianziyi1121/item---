@@ -1,0 +1,30 @@
+<view class="content" style="min-height:{{height}}rpx;">
+  <view class="order-line"></view>
+  <view wx:for="{{currentList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view class="view-order" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">
+      <view class="order-title f16 fc">{{items.member_list_nickname}}</view>
+      <view class="order-phone f14">电话：{{items.member_list_tel}}</view>
+      <view class="order-phone f14">下单时间：{{items.create_time}}</view>
+      <view class="order-phone f14">订单编号：{{items.orderNo}}</view>
+      <view class="order-phone f14">预约时间：共{{items.service_show_time}}</view>
+      <view class="order-phone f14">已服务天数：已服务{{items.service_show_time_having}}天</view>
+       <view class="order-phone f14">订单状态：{{items.orderStatus == 0 ? '待付款' : (items.orderStatus == 1 ? '待服务' : (items.orderStatus == 2 ? '服务中' : (items.orderStatus == 3 ? '待评价' : (items.orderStatus == 4 ? '已完成' : (items.orderStatus == 5 ? '申请退款' : (items.orderStatus == 6 ? '已退款' : (items.orderStatus == 7 ? '拒绝退款' : (items.orderStatus == 8 ? '已作废' : '')))))))) }}</view>
+       <view class="flj">
+        <view></view>
+        <view class="fl">
+          <view class="order-tim order-timer order_distance f14" wx:if="{{items.orderStatus == 1 && items.isPay == 1}}"><view bindtap="bindSign" data-index="{{index}}" data-number="{{indexs}}" data-id="{{items.orderId}}">签到</view></view>
+          <view class="order-tim order-timer f14"> <text class="perfect" wx:if="{{items.is_patient == '已完善'}}">{{items.is_patient}}</text><view wx:if="{{items.is_patient != '已完善'}}" bindtap="bindSave" data-id="{{items.orderId}}">完善病人信息</view></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 暂无数据 -->
+  <view-no id="noData"></view-no>
+  <!-- 刷新 -->
+  <view style="display: {{loadingFlag ? 'none' : 'block'}};" class="view-loading productLoading">
+    <view-loading id="load"></view-loading>
+  </view>
+  <!-- 弹窗 -->
+  <view-show id="show" title="{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+</view>
+ 

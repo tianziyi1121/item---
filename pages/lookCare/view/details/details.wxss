@@ -1,0 +1,22 @@
+.details-btn view { padding: 18rpx 30rpx; background: #F8F8F8; border-radius: 30rpx; font-size: 24rpx; margin-right: 20rpx;}
+.details-btn .active { color: #fff; background: #37CF6B;}
+.view-appraise { margin-top: 42rpx;}
+.view-appraise > view > image { width: 56rpx; height: 56rpx; border-radius: 50%; margin-right: 10rpx;}
+.view-appraise > view > view > image { width: 32rpx; height: 32rpx;}
+.view-appraise > view > text { font-size: 24rpx; color: #333; margin: 10rpx 8rpx 0 0;}
+.view-appraise > view:nth-child(2) { color: #CCC; font-size: 24rpx; margin-top: 10rpx;}
+.view-btn { margin-top: 16rpx; display: flex; flex-wrap: wrap;}
+.view-btn view { background: #F0F2F6; font-size: 24rpx; color: #929BA5;  padding: 8rpx 10rpx; margin: 0 16rpx 16rpx 0;}
+.view-text { margin:20rpx 30rpx 30rpx; color: #6B6B6B; font-size: 24rpx;}
+.view-text-line { height: 2rpx; background: #ccc; margin: 10rpx 30rpx;}
+.viewLine { height: 90rpx; width: 100%; background: #fff;}
+.view-footer { border-top: 2rpx solid #ccc; height: 100rpx; width: 100%; left: 0; bottom: 0; background: #fff;}
+.view-footer image { width: 44rpx; height: 44rpx;}
+.view-footer text { margin-left: 30rpx; line-height: 100rpx; color: #333333; font-size: 32rpx;}
+.view-footer .view-view { margin-top: 10rpx;}
+.view-footer > view {width: 100%;}
+.view-footer .view-view view { color: #AAAAAA; font-size: 24rpx; margin: 0 30rpx;}
+.view-footer > view:nth-child(2){ background: #37CF6B; line-height: 100rpx; font-size: 32rpx; color: #fff;}
+.noData { height: 88rpx; line-height: 88rpx;}
+.view-footer view.gray {background: #CCCCCC;}
+.view-footer view.view-orange {color: #FFA600}

@@ -1,0 +1,116 @@
+<!--pages/register/user/user.wxml-->
+
+<view class="content">
+  <view class="reuser-img tac f12">
+    <image bindtap="bindGet" src="{{state == 1 ? url : 'https://www.rqxfj.com'+form.nursing_workers_headpic}}"></image> 
+    <view class="{{state == 1 ? 'title-title' : 'reuserTitle'}}">添加头像</view>
+  </view>
+  <view class="order-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">姓名</view>
+    <input class="reuser-input" bindinput='userName' data-model='nursing_workers_name' value="{{form.nursing_workers_name}}" placeholder="请填写真实姓名" auto-focus/>
+  </view> 
+  <view class="review-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">手机号码</view>
+    <input class="reuser-input" bindinput='userName' data-model='nursing_workers_mobile' value="{{form.nursing_workers_mobile}}" placeholder="请填写手机号码"/>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">身份证号</view>
+    <input class="reuserInput" style="width: {{196+num}}rpx;" bindinput='userName'maxlength="18" data-model='nursing_workers_idcard' value="{{form.nursing_workers_idcard}}" placeholder="请填写身份证号" />
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-sex">
+    <view class="reuser-list flj f14">
+      <view class="reuser-title">性别</view>
+      <view class="reuser-input reuser-view flj tac">
+        <view bindtap="userMon" data-item="nursing_workers_sex" data-index="1"  class="{{form.nursing_workers_sex == 1 ? reuserWoman : 'gray'}}">男士</view>
+        <view  bindtap="userMon" data-item="nursing_workers_sex" data-index="2" class="{{form.nursing_workers_sex == 2 ? reuserWoman : 'gray'}}">女士</view>
+      </view>
+    </view>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">年龄</view>
+    <input class="reuser-input" type="number" bindinput='userName' maxlength="3" data-model='nursing_workers_age' value="{{form.nursing_workers_age}}" placeholder="请填写真实年龄" />
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">工作年限</view>
+    <input class="reuser-input" type="number" bindinput='userName' maxlength="3" data-model='nursing_workers_experience' value="{{form.nursing_workers_experience}}" placeholder="请填写工作年限" />
+  </view>
+  <view class="order-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">所在地区</view>
+    <view class="reuserInput" style="width: {{196+position}}rpx;" data-index="5" bindtap="bindPosition">{{regIndex == '1a0' ? '请选择所在地区' : area}}</view>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-list flj f14">
+    <view class="reuser-title">所在医院科室</view>
+    <view class="reuserInput" style="width: {{196+hospitalAll}}rpx;"  data-index="3" bindtap="bindPosition">{{hosIndex == '1a0' ? '请选择所在科室' : office}}</view>
+  </view>
+  <view class="order-line"></view>
+  <view class="review-textarea f14">
+    <view class="fc fb">个人简介</view>
+    <textarea style="display: {{positionType == true ? 'none' : 'block'}};color: #999;" bindinput="bindTextarea" data-model="nursing_workers_description" maxlength="360" value="{{form.nursing_workers_description}}" placeholder="请输入你的简介"></textarea>
+    <view style="display: {{positionType == true ? 'block' : 'none'}};color: #999;" class="textWidth">{{ form.nursing_workers_description == '' ? '请输入你的简介' : form.nursing_workers_description }}</view>
+  </view>
+  <view class="review-line"></view>
+  <view class="review-textarea f14">
+    <view class="fc fb">特长</view>
+    <textarea style="display: {{positionType == true ? 'none' : 'block'}};color: #999;" bindinput="bindTextarea" data-model="nursing_workers_speciality" maxlength="360"  value="{{form.nursing_workers_speciality}}" placeholder="请输入你的特长"></textarea>
+    <view style="display: {{positionType == true ? 'block' : 'none'}};color: #999;" class="textWidth">{{form.nursing_workers_speciality == '' ? '请输入你的特长' : form.nursing_workers_speciality }}</view>
+  </view>
+  <view class="order-line mag20"></view>
+  <view class="reuser-sex">
+    <view class="reuser-list flj f14">
+      <view class="reuser-title">是否有居住证</view>
+      <view class="reuser-input reuser-view flj tac">
+        <view bindtap="userMon" data-item="nursing_workers_live" data-index="1"  class="{{form.nursing_workers_live == '1' ? reuserMan : 'gray'}}">是</view>
+        <view bindtap="userMon" data-item="nursing_workers_live" data-index="2"  class="{{form.nursing_workers_live == '2' ? reuserMan : 'gray'}}">否</view>
+      </view>
+    </view>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-sex">
+    <view class="reuser-list flj f14">
+      <view class="reuser-title">是否有担保人</view>
+      <view class="reuser-input reuser-view flj tac">
+        <view bindtap="userMon" data-item="nursing_workers_danbao" data-index="1"  class="{{form.nursing_workers_danbao == '1' ? reuserMan : 'gray'}}">是</view>
+        <view bindtap="userMon" data-item="nursing_workers_danbao" data-index="2"  class="{{form.nursing_workers_danbao == '2' ? reuserMan : 'gray'}}">否</view>
+      </view>
+    </view>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-sex">
+    <view class="reuser-list flj f14">
+      <view class="reuser-title">是否有健康证</view>
+      <view class="reuser-input reuser-view flj tac">
+        <view bindtap="userMon" data-item="nursing_workers_healthy" data-index="1"  class="{{form.nursing_workers_healthy == '1' ? reuserMan : 'gray'}}">是</view>
+        <view bindtap="userMon" data-item="nursing_workers_healthy" data-index="2"  class="{{form.nursing_workers_healthy == '2' ? reuserMan : 'gray'}}">否</view>
+      </view>
+    </view>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-sex">
+    <view class="reuser-list flj f14">
+      <view class="reuser-title">是否有违纪证明</view>
+      <view class="reuser-input reuser-view flj tac">
+        <view bindtap="userMon" data-item="nursing_workers_violation" data-index="1"  class="{{form.nursing_workers_violation == '1' ? reuserMan : 'gray'}}">是</view>
+        <view bindtap="userMon" data-item="nursing_workers_violation" data-index="2"  class="{{form.nursing_workers_violation == '2' ? reuserMan : 'gray'}}">否</view>
+      </view>
+    </view>
+  </view>
+  <view class="review-line"></view>
+  <view class="reuser-btn tac f14" bindtap='bindMessage'>提交</view>
+
+  <!-- 地区弹窗 -->
+    <view class="review-position" style="display: {{positionFlag ? 'none' : 'block'}};" catchtouchmove="preventTouchMove">
+      <view class="review-bj" bindtap="unshade"></view>
+      <view class="position transformDome" animation="{{animationData}}">
+        <view-position wx:if="{{dataType == 5}}" dataType="1" typeNumber="{{dataType}}" id="position" catch:calendarchange="onCalendarChange" catch:showTab="unshade"></view-position>
+        <view-position wx:if="{{dataType == 3}}" dataType="1" typeNumber="{{dataType}}" id="position" catch:calendarchange="onCalendarChange" catch:showTab="unshade"></view-position>
+      </view>
+    </view>
+</view>

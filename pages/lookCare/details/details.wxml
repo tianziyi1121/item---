@@ -1,0 +1,140 @@
+<view class="content">
+  <image class="details-img" src ="{{nursing_workers_bannerpic}}"></image>
+  <view class="details-title pr">
+    <view class="pa details-name">
+      <view class="title-name">{{nursing_workers_title}}</view>
+      <view class="title-money">{{nursing_workers_money}}/天</view>
+      <view class="title-line"></view>
+      <view class="title-list flj">
+        <view>
+          <image src="../../../static/20190620164054.png"></image>
+          <text>规范服务</text>
+        </view>
+         <view>
+          <image src="../../../static/20190620164054.png"></image>
+          <text>34小时维权</text>
+        </view>
+         <view>
+          <image src="../../../static/20190620164054.png"></image>
+          <text>不满意随时换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <rich-text class="richText" nodes="{{nursing_workers_content}}"></rich-text>
+  <!-- <view class="details-smtitle">为什么选择<text>随身健康</text></view>
+  <view class="details-list pad30">
+    <view class="flj">
+      <view class="list-img tac">
+        <image src="../../../static/20190620184055.png"></image>
+      </view>
+      <view class="list-text">
+        <view class="list-title">医疗服务</view>
+        <view class="list-content f12">建立健康档案、医务查房（1次\周）</view>
+        <view class="list-content f12">针灸、推拿、红外线治疗、微波治疗测血糖、测血脂、乙肝五项、注射胰岛素、分药、输液、心理咨询等</view>
+      </view>
+    </view>
+    <view class="flj list-top">
+      <view class="list-img tac">
+        <image src="../../../static/20190620184041.png"></image>
+      </view>
+      <view class="list-text">
+        <view class="list-title">个人卫生</view>
+        <view class="list-content f12">为老人洗脚（1天/次）、剪指甲（1周\次）、理发（1月\次）协助洗澡（夏季2次\周、冬季1次\周）、换洗大小件衣物</view>
+      </view>
+    </view>
+    <view class="flj list-top">
+      <view class="list-img tac">
+        <image src="../../../static/20190620184104.png"></image>
+      </view>
+      <view class="list-text">
+        <view class="list-title">膳食服务</view>
+        <view class="list-content f12">早餐：牛奶、鸡蛋、花样小吃；午餐：三菜一汤；晚餐：两菜一汤；病号餐：荷包蛋 、面条；（另有生日餐、小炒、送餐至居室）</view>
+      </view>
+    </view>
+  </view>
+  <view class="details-norm">
+    <view class="pad30 flj">
+      <view class="norm-left">
+        <text class="norm-title fb">随身护工标准</text>
+        <view class="norm-content">满足于</view>
+        <view class="norm-content">99%患者</view>
+        <view class="norm-content">生活需求</view>
+      </view>
+      <image src=""></image>
+    </view>
+  </view>
+  <view class="details-serve">
+    <view class="server-title tac"><text>随身</text>为您提供 <text>[优质]</text><text>[放心]</text>的服务</view>
+    <view class="serve-content flj pad30">
+      <view>
+        <image src="../../../static/下载 (2).jpg"></image>
+        <view class="tac fb">01生活不需卧床</view>
+      </view>
+      <view>
+        <image src="../../../static/u=446046265,3105446673&fm=26&gp=0.jpg"></image>
+        <view class="tac fb">02术后康复</view>
+      </view>
+    </view>
+    <view class="serve-content flj pad30 serve-top">
+      <view>
+        <image src="../../../static/下载 (1).jpg"></image>
+        <view class="tac fb">03生活需要卧床</view>
+      </view>
+      <view>
+        <image src="../../../static/u=446046265,3105446673&fm=26&gp=0.jpg"></image>
+        <view class="tac fb">04病情稳定</view>
+      </view>
+    </view>
+    <view class="serve-content flj pad30 serve-top">
+      <view>
+        <image src="../../../static/下载 (1).jpg"></image>
+        <view class="tac fb">05生活不需卧床</view>
+      </view>
+      <view>
+        <image src="../../../static/u=446046265,3105446673&fm=26&gp=0.jpg"></image>
+        <view class="tac fb">06术后康复</view>
+      </view>
+    </view>
+    <view class="serve-content flj pad30 serve-top">
+      <view>
+        <image src="../../../static/下载 (1).jpg"></image>
+        <view class="tac fb">07生活需要卧床</view>
+      </view>
+      <view>
+        <image src="../../../static/u=446046265,3105446673&fm=26&gp=0.jpg"></image>
+        <view class="tac fb">08病情稳定</view>
+      </view>
+    </view>
+  </view>
+  <view class="details-hint">
+    <view class="pad30">
+      <view class="hint-title tac fb">温馨提示</view>
+      <view class="title-conspan"> <text>01</text>服务过程中，为了给您提供优质的服务，请允许护理员适当休息。</view>
+      <view class="title-conspan"> <text>02</text>护理员每月休息4天，每月按自然日30天计算，休息时间可根据您的要求来安排。如您不希望护理员休息，请与护理员协商。</view>
+      <view class="title-conspan"> <text>03</text>护理员24小时贴身服务。外出就餐是影响全天候护理的一个因素，如果您能为护理员提供简单的餐食（或与护理员协商解决），会更有利于护理员贴身服务，也避免紧急事情发生。</view>
+      <view class="title-conspan"> <text>04</text>目前我们正常服务范围：北京市9城区（东城区、西城区、朝阳区、海淀区、丰台区、石景山区、门头沟区、昌平区、大兴区）。如超出该服务区域，我们会适当收取远程费用。</view>
+      <view class="title-conspan"> <text>05</text>服务内容中的饮食照料和居家清洁主要针对被护理人的简单饮食照料和卫生清洁。</view>
+      <view class="title-conspan"> <text>06</text>随身健康为成长中的服务平台，还有很多不完善的地方，如果您有任何建议和想法，请拨打010-60606095告诉我们。</view>
+    </view>
+  </view> -->
+  <view class="lsdetails-line"></view>
+  <view class="details-btn fl pf">
+    <view class="fl">
+      <view bindtap="consent"><checkbox bind value="1" /></view><text bindtap="termSheet" class="f14">《预约条款》</text>
+    </view>
+    <view class="tac f14 {{checked ? 'footerRight' : 'footer-right'}}" bindtap="bindSubscribe">我要预约</view>
+  </view>
+   <!-- 弹窗
+  <view class="view-product" hidden="{{domeMode}}">
+    <view class="view-bag" bindtap="bindCancel"></view>
+    <view class="view-content transformDome pf" animation="{{animationData}}">
+      <view>
+        <view class="view-hour f16 fc tac">是否联系客服？</view>
+        <view class="view-affirm f16 fc tac" bindtap="bindAffirm">确认</view>
+      </view>
+      <view class="view-cancel f16 fc tac" bindtap="bindCancel">取消</view>
+    </view>
+  </view> -->
+</view>

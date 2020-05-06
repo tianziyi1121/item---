@@ -1,0 +1,11 @@
+<view class="content" >
+  <view class="pay-line"></view>
+  <view wx:if="{{flag}}" class="pay_list flj pad30 f16 fc"  bindtap="bindList" data-url="view/view/view?type=1">
+    <view>设置密码</view>
+    <image src="../../../static/youjiantou.png"></image>
+  </view>
+  <view wx:if="{{!flag}}" class="pay_list flj pad30 f16 fc" bindtap="bindList" data-url="view/view?type=2">
+    <view>重置密码</view>
+    <image src="../../../static/youjiantou.png"></image>
+  </view>
+</view>

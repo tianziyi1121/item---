@@ -1,0 +1,11 @@
+<view>
+  <view class="loginBox" catchtap="bindLogin" data-type="1"> </view>
+  <view class="loginContent">
+    <view class="loginTip tac f16">提示</view>
+    <view class=" f14 tac loginTitle">{{title}}</view>
+    <view class="loginBtn fl">
+      <button catchtap="bindLogin" data-type="1" class="f14">{{cancel}}</button>
+      <button catchtap="bindLogin" data-type="2" class="f14">{{affirm}}</button>
+    </view>
+  </view> 
+</view>

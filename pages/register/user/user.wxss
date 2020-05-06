@@ -1,0 +1,25 @@
+.reuser-img{ margin-top: 20rpx; color: #CCC; }
+.reuser-img image { width: 160rpx; height: 160rpx;}
+.reuserTitle { color: #FFF; }
+.reuser-img view { height: 30rpx; line-height: 30rpx; margin:10rpx 0 30rpx ;}
+.reuser-list { padding: 20rpx 30rpx;}
+.title-title{ color: #ccc;}
+.reuser-title { color: #333; font-weight: 700;}
+.review-line { height:2rpx; background: #EEE; margin: 0 30rpx;}
+.reuser-input { width: 196rpx; color: #777;}
+.reuserInput {color: #777;display:block;word-break: break-all;word-wrap: break-word;}
+.reuser-view view { width:80rpx; height:40rpx; line-height: 40rpx; border-radius:4px; border:2px solid rgba(204,204,204,1); color: #CCC;}
+.reuser-view .gray { border:2px solid rgba(204,204,204,1); color: #CCC;}
+.reuser-view .reuser-woman { border:2px solid #FF7E7E; color: #FF7E7E;}
+.reuser-view .reuser-man { border:2px solid #37CF6B; color: #37CF6B;}
+ .reovern { display: -webkit-box; -webkit-line-clamp: 1;     -webkit-box-orient: vertical; overflow: hidden;}
+ .reuser-btn { height: 88rpx; line-height: 88rpx; background: #37CF6B; color:#fff; margin-top: 30rpx;}
+ /* 地址弹窗 */
+.review-position .position { position: fixed; z-index: 1000; left: 0; bottom: 0;}
+.review-position .review-bj { width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5); z-index: 999;}
+/* text-area */
+.review-textarea { margin: 0 30rpx;}
+.review-textarea > view:nth-child(1) { height: 88rpx; line-height: 88rpx;}
+.review-textarea textarea { background: #F5F5F5; width: 670rpx; padding: 10rpx; text-indent: 20rpx;}
+.mag20 {margin-top: 40rpx;}
+.textWidth {width: 690rpx; height: 314rpx;background: #F5F5F5;display:inline-block;text-indent: 20rpx;padding: 6rpx 0 0 10rpx;color: #999;}

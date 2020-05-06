@@ -1,0 +1,5 @@
+.bank-list { height: 88rpx; line-height: 88rpx; }
+.bank-list input{ color: #aaa; font-size: 28rpx;height: 88rpx; width: 320rpx; }
+.lsh_bank_line { height: 2rpx; background: #EEE; }
+.bankBtn { width: 690rpx; margin: 0 auto; margin-top: 200rpx; background: #37CF6B; color: #fff; }
+button::after { border: none; }

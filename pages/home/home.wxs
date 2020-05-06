@@ -1,0 +1,25 @@
+var home = function (e, ins) {
+  // console.log('source is', JSON.stringify(e))
+  var scrollTop = e.detail.scrollTop
+  if (scrollTop > 24) {
+    ins.selectComponent('.searchKeywords').addClass('pf').setStyle({
+      "left": 0,
+      "z-index": 1001,
+      "padding-top": '0'
+    })
+    ins.selectComponent('.HomeHeight').setStyle({
+      'height': '122rpx'
+    })
+  } else {
+    ins.selectComponent('.searchKeywords').removeClass('pf').setStyle({
+      "background-color": '#f9f9f9',
+      "padding-top": '24rpx'
+    })
+    ins.selectComponent('.HomeHeight').setStyle({
+      'height': '0rpx'
+    })
+  }
+}
+module.exports = {
+  homeFunction: home
+}

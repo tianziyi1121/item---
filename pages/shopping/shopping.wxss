@@ -1,0 +1,36 @@
+.wx-shopping-btn { padding: 8rpx 20rpx; background: #F8F8F8; color: #6B6B6B; right: 30rpx; top: 10rpx; border-radius: 10rpx; z-index: 999;}
+.shopping-list { padding:34rpx 0 38rpx;}
+.shopping-list .shopping-line { width: 630rpx; height: 2rpx; background: #f0f0f0; right: 0; bottom: 0;}
+.shopping-list .shopping-radius{ margin: 80rpx 20rpx 0 0; height:100%;}
+checkbox { width: 48rrpx; height: 48rpx; border-radius: 50%;}
+ checkbox .wx-checkbox-input { width: 48rpx; height: 48rpx; border-radius: 50%;}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked { background: #ee2b2b; border: 2rpx solie #fff;}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {/* width: 28rpx; height: 28rpx; */ line-height: 28rpx; text-align: center; font-size: 22rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1);}
+.shopping-right image { width: 20rpx; height: 20rpx; }
+.shopping-right > image { width: 220rpx; height: 220rpx; margin-right: 30rpx;}
+.shopping-list .shopping-right { width: 618rpx;}
+.shopping-right .right-title{ color: #333; height: 40rpx; line-height: 40rpx;}
+.shopping-right .right-content { color: #898989; margin-top: 20rpx;}
+.shopping-right .right-footer { margin-top:32rpx;}
+.right-num .right-min, .right-num .right-add { margin-top: 12rpx;}
+
+.shoppingFooter { width: 100%; margin-top: 28rpx;}
+.shoppingFooter > view:nth-child(2) { width: 53%;}
+.shoppingFooter > view { line-height: 32rpx;}
+.shoppingFooter image { width: 20rpx; height: 20rpx;}
+.shoppingFooter .right-img { width: 50rpx; line-height: 22rpx; text-align: center; }
+.shoppingFooter .right-num view:nth-child(2) { width: 60rpx; height: 44rpx; background: #F5F5F5; line-height: 44rpx; color: #333; margin: 0 6rpx;}
+
+
+.shoppingFooter .right-money { color: #EE2B2B; line-height: 44rpx;}
+
+
+
+.shopping-btn { left: 0; bottom: 0; height: 100rpx; line-height: 100rpx;  width: 100%; border-top: 2rpx solid #f0f0f0; background: #fff;}
+.btn-content view { width: 100%;}
+.btn-content view:nth-child(3){ width: 50%;}
+.btn-content view:nth-child(1) { padding-left: 30rpx;}
+.btn-content view:nth-child(3) { background: #EE2B2B; color: #fff;}
+.btn-content .wx-shooping-check { width: 300rpx;}
+.btn-content text { color: #EE2B2B;}
+.view-loading.view-top {margin-top: 100rpx;}

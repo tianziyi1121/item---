@@ -1,0 +1,86 @@
+/* common */
+.serveTitle view.active,.serverContent > view > view.active { color: #37cf6b;}
+/* title */
+.serveTitle { width: 690rpx; height: 80rpx; line-height: 80rpx; margin: 0 auto; color: #010101;}
+.serveTitle view { width: 25%; text-align: center;}
+.serveTitle image { width: 19rpx; height: 19rpx; margin-left: 17rpx;}
+.serveTitle .mapImage { width: 26rpx; height: 26rpx;}
+.serveTitle view:nth-child(4) image { width: 19rpx; height: 28rpx;}
+/* list */
+.box { width: 690rpx; margin: 0 auto;}
+.serverList { margin: 36rpx 0;}
+.serverList image { width: 220rpx; height: 220rpx; margin-right: 20rpx;}
+.listRight { width: 420rpx;}
+.listRight > view:nth-child(1) { color: #030303;}
+.listRight > view:nth-child(2),.listRight > view:nth-child(3) { color: #666; line-height: 30rpx; margin-top: 22rpx;}
+.listImage image { width: 26rpx; height: 26rpx; margin-right: 26rpx;}
+.listRight > view:nth-child(4) { color: #666;}
+.listRight > view:nth-child(5) { color: #37cf6b; margin-top: 16rpx;}
+.listRight > view:nth-child(5) view { border: 2rpx solid #37cf6b; height: 34rpx; padding: 0 5rpx; border-radius: 16rpx;}
+checkbox .wx-checkbox-input{ height: 34rpx; width: 34rpx; margin-top: -4rpx; border: 1rpx solid #ccc; border-radius: 50%;}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { width: 34rpx; height: 34rpx; line-height: 34rpx; text-align: center; font-size: 22rpx; color: #fff; background: transparent; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); background-color: #37cf6b; border: 1rpx solid #37cf6b; border-radius: 50%;}
+.rechangeLocation { width: 100%; color: #999; line-height: 88rpx; }
+.rechangeLocation text{ color: #37cf6b; display: inline-height;}
+/* map */
+.mapBox { width: 100%;}
+.mapBox map { width: 100%; height: 100%;}
+.mapContent { width: 630rpx; border-radius: 20rpx; background: #fff; left: 30rpx; top: 98rpx; padding: 30rpx;}
+.serviceImage { width: 220rpx; height: 220rpx; margin-right: 20rpx;}
+.mapImage { width: 220rpx; max-height: 220rpx; overflow: hidden; vertical-align: middle; }
+.serviceRight { width: 390rpx;}
+.serviceRight cover-image { width: 26rpx; height: 34rpx; margin-right: 26rpx;}
+.serviceRight .mapRighr { color: #030303;}
+.serviceRight .mapPosition { color: #666; margin-top: 20rpx;}
+.serviceRight .mapEvaluate { margin: 16rpx 0 24rpx; color: #666;}
+.serviceRight .mapEvaluate .f12 { margin-top: 6rpx;}
+.serviceRight .mapBtn { border: 2rpx solid #37cf6b; color: #37cf6b; width: 84rpx; padding-bottom: 3rpx; border-radius: 10rpx;}
+.servicePosition { max-width: 280rpx;}
+/* submit order */
+.serverOrder { width: 100%; height: 100rpx; left: 0; bottom: 0; background: #fff;}
+.serverBtn { height: 80rpx; line-height: 80rpx; background: #37cf6b; color: #fff; font-size: 36rpx; border-radius: 40rpx; width: 690rpx; margin-top: 12rpx;}
+.serverBtn::after{ border: none;}
+/* pop-up */
+.serverPopup .pleaseChoose { width: 100%; height: 100rpx; background: #e7e7e7; color: #000; line-height: 100rpx; padding-left: 30rpx;}
+.pleaseChoose text { display: inline-block; margin-right: 50rpx; min-width: 119rpx;}
+.pleaseChoose .active { color: #37cf6b;}
+.serverPopup { width: 100%; background: #fff;}
+.serverShadow { background: rgba(0,0,0,.5); left: 0; bottom: 0; right: 0; top: 80rpx; opacity: 0; z-index: 1000;}
+.serverContent { left: 0; top: 80rpx; z-index: 1001; width: 100%; background: #fff; opacity: 0;}
+.serverContent > view { width: 690rpx; margin: 0 auto;}
+.serverContent > view > view { width: 100%; height: 80rpx; line-height: 80rpx; color: #000;}
+.serverSort image { width: 36rpx; height: 36rpx; margin-top: 22rpx;}
+.serverSort > view:nth-child(1) > view > view { display: inline-block; max-width: 456rpx;}
+.positionDistance > view { width: 180rpx; height: 60rpx; background: #e7e7e7; border-radius: 30rpx; color: #000; line-height: 60rpx;}
+.serverSort .serverPosition { height: 320rpx; overflow-y: auto;}
+.serverSort .serverPosition > view { height: 80rpx; line-height: 80rpx;}
+.serverContent .serverSort .active { color: #37cf6b;}
+/* animation  shadow*/
+.serverShadow.showShadow { animation: showShadow 0.3s linear forwards;}
+@keyframes showShadow {
+  0% { opacity: 0;}
+  25% { opacity: 0.25;}
+  50% { opacity: 0.5;}
+  75% { opacity: 0.75;}
+  100% { opacity: 1;}
+}
+.serverShadow.hiddenShadow { animation: hiddenShadow 0.3s linear forwards ;}
+@keyframes hiddenShadow {
+  0% { opacity: 1;}
+  25% { opacity: 0.75;}
+  50% { opacity: 0.5;}
+  75% { opacity: 0.25;}
+  100% { opacity: 0;}
+}
+/* animation  content*/
+.serverContent.showContent { animation: showContent 0.6s linear forwards;}
+@keyframes showContent {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+.serverContent.hiddenContent { animation: hiddenContent 0.6s linear forwards;}
+@keyframes hiddenContent {
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+}
+.bindCheckbox { height: 70rpx; width: 70rpx;}
+.bindCheckbox checkbox  { margin: 15rpx;}

@@ -1,0 +1,39 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view class="LSHmessage message-view pad30 fl f14" bindtap="bindmessage">
+    <image src="{{currentList.nursing_workers_headpic}}"></image>
+    <view class="LSHmessage-view messaage-pad">
+      <view><text class="fb f16 fc">{{currentList.nursing_workers_name}}</text>|<text>{{currentList.nursing_workers_sex == 1 ? '男' : '女'}}</text>|<text>{{currentList.nursing_workers_age}}岁</text>|<text>177******42</text></view>
+      <view><text>{{currentList.nursing_workers_idcard}}</text>|<text>工作经验{{currentList.nursing_workers_experience}}年</text></view>
+      <view>{{currentList.nursing_workers_departmentid}}{{currentList.nursing_workers_hospital}}</view>
+      <view>{{currentList.nursing_workers_province}}{{currentList.nursing_workers_city}}{{currentList.nursing_workers_town}}</view>
+    </view>
+  </view>
+  <view class="order-line"></view>
+  <view class="message-idcode flj f14 pad30">
+    <view>是否有居住证</view>
+    <text>{{currentList.nursing_workers_live == 1 ? '有' : '无'}}</text>
+  </view>
+  <view class="message-idcode flj f14 pad30">
+    <view>是否有担保人</view>
+    <text>{{currentList.nursing_workers_danbao == 1 ? '有' : '无'}}</text>
+  </view>
+  <view class="message-idcode flj f14 pad30">
+    <view>是否有健康证</view>
+    <text>{{currentList.nursing_workers_healthy == 1 ? '有' : '无'}}</text>
+  </view>
+  <view class="message-idcode message-view m flj f14 pad30">
+    <view>是否有无违纪证明</view>
+    <text>{{currentList.nursing_workers_violation == 1 ? '有' : '无'}}</text>
+  </view>
+  <view class="order-line"></view>
+  <view class="message-sponsor pad30 f14 fc">
+    <view>个人简介</view>
+    <text>{{currentList.nursing_workers_description}}</text>
+  </view>
+  <view class="message-sponsor pad30 f14 fc">
+    <view>个人特长</view>
+    <text>{{currentList.nursing_workers_speciality}}</text>
+  </view>
+  <button class="message-btn f14" bindtap="bindmessage">查看审核状态</button>
+</view>

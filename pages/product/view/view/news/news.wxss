@@ -1,0 +1,17 @@
+.content { background: #f2f2f2; }
+.message > view > image{ width: 100rpx; height: 100rpx; }
+.timer { color: #666; margin-top: 22rpx; }
+.message { margin-top: 50rpx; }
+.messageContent { border-radius: 10rpx; padding: 25rpx; max-width: 440rpx; }
+.messageContent.left { margin-left: 18rpx; }
+.messageContent.right { margin-right: 18rpx; }
+.contentLeft { background: #fff; }
+.contentRight { background: #37cf6b; }
+.trigon { width: 30rpx; height: 30rpx; top: 37rpx;}
+.leftImage { left: -20rpx; }
+.rightImage { right: -14rpx; }
+.messageData { color: #000; }
+.footer { border-top: 2rpx solid #ccc; height: 98rpx; left: 0;  width: 100%; background: #fff; }
+.footer image { width: 50rpx; height: 50rpx; margin-top: 24rpx; left: 0; }
+.footer .expression { margin-right: 20rpx; }
+.footerInput { width: 488rpx; height: 66rpx; margin: 16rpx 20rpx 0 20rpx; background: #f2f2f2; border-radius: 10rpx; }

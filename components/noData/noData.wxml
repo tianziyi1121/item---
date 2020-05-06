@@ -1,0 +1,8 @@
+<view class="noData-view tac" wx:if="{{flag}}">
+  <image mode="aspectFit" src="../../static/noData.png"></image>
+  <view class="fc f16" wx:if="{{type != 2}}">暂无数据</view>
+  <view class="tac" wx:if="{{type == 2}}">
+    <view class="f14 fc">登录后可同步数据</view>
+    <view class="indentLogin f12" bindtap="bindLogin">登录</view>
+  </view>
+</view>

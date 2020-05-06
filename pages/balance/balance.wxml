@@ -1,0 +1,34 @@
+<view class="content">
+  <view class="balance-top">
+    <view class="balance-title flj f14">
+      <text>账户余额</text>
+      <text class="fb f16" bindtap="bindDetail">余额明细 >></text>
+    </view>
+    <view class="balance-money pad30 fb">{{balance}}<text>元</text></view> 
+  </view>
+  <view class="order-line"></view>
+  <view class="balance-list flj pad30 f16" bindtap="withdraw" data-url="withdraw/withdraw">
+    <view class="fl">
+      <image src="../../static/icon_chongzhi@2x.png"></image>
+      <text>充值</text>  
+    </view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="user-line"></view>
+  <view class="balance-list flj pad30 f16" bindtap="withdraw" data-url="deposit/deposit?money={{balance}}&type={{bankType}}">
+    <view class="fl">
+      <image src="../../static/icon_tixian@2x.png"></image>
+      <text>提现</text>  
+    </view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+  <view class="user-line"></view>
+  <view class="balance-list flj pad30 f16" bindtap="withdraw" data-url="bank/bank?type={{bankType}}">
+    <view class="fl">
+      <image src="../../static/bankimg.png"></image>
+      <text>银行卡</text>  
+    </view>
+    <image src="../../static/youjiantou.png"></image>
+  </view>
+   <view class="user-line"></view>
+</view>

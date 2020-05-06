@@ -1,0 +1,13 @@
+.margin { height: 236rpx;}
+
+.register-view { width: 650rpx; margin: 0 auto; border-bottom: 2rpx solid #ccc; height: 100rpx; line-height: 100rpx;}
+.register-view image { width: 40rpx; height: 40rpx; margin: 30rpx 0 0 40rpx;}
+.verification { width: 550rpx; color: #666;}
+.verification input { height: 100%; max-width: 100%;}
+.verification > view { border: 2rpx solid #666; height: 30rpx; font-size: 22rpx;line-height: 30rpx; padding: 0 11rpx; margin-top: 40rpx; border-radius: 9rpx;}
+
+/* 忘记密码 */
+.register-view > input{ width: 550rpx; height: 100%; color: #666;}
+
+.nextStep { margin:100rpx 0 0 30rpx; width: 650rpx; background: #37CF6B; color: #fff;}
+.nextStep::after { border: none;}

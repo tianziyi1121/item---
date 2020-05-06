@@ -1,0 +1,11 @@
+.lookCareNav { padding:18rpx 0; display: fixed; top:0; left:0;}
+.lookCareNav .lookCare{ width:690rpx; margin:0 auto;}
+.lookCareNav .lookCare > view{ width: 80%; position: relative;}
+.lookCareNav .lookCare > view:nth-child(3) { width: 100%;}
+/* 弹窗 */
+.lookCareDialog { width: 100%; height: 100%; position: fixed; background:rgba(0,0,0,.2); z-index: 9999; left: 0; top: 78rpx;}
+.lookCareDialog .NoData { padding: 40rpx 0 60rpx; background: #fff; text-align: center; color: #37cf6b;}
+.dialogContent{ padding: 40rpx 0 0; width: 100%; background: #fff; flex-direction: row; flex-wrap: wrap;}
+.dialogContent > view{ width: 33.33%; color: #333333; padding-bottom: 74rpx;}
+.dialogContent .sex { width: 50%;}
+.dialogContent view.active { color: #37cf6b;}

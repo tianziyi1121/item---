@@ -1,0 +1,13 @@
+<view class="content">
+  <view class="view tac">
+    <image mode="aspectFit" src="../../../../static/icon_success_tixian@2x.png"></image>
+    <view class="view-title f16">发起{{title}}成功</view>
+    <view class="view-predict f12">预计24小时到账</view>
+  </view>
+  <view class="view-line"></view>
+  <view class="view-money flj f14 pad30" >
+    <view>{{title}}金额</view>
+    <view>￥{{money}}</view>
+  </view>
+  <view class="rechange-btn f16 tac" bindtap="complete">完成</view>
+</view>

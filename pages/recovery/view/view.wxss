@@ -1,0 +1,10 @@
+.view-title { font-size: 36rpx; padding: 20rpx 30rpx 40rpx;}
+.view-title .view{ color: #333;}
+.view-name { color: #888; margin-top: 40rpx;}
+.view-name text:nth-child(1) { margin-right: 40rpx;}
+.viewline { height: 2rpx; background: #EEE;}
+.viewList { margin-top: 40rpx;}
+.viewList image { width:690rpx; max-height: 300rpx; padding: 40rpx 0;}
+.viewList view { color: #333333; margin: 0 auto;}
+.homeContent { margin: 38rpx 0; width: 690rpx; overflow-x: hidden;}
+.homeContent rich-text { width: 690rpx; overflow: hidden}

@@ -1,0 +1,62 @@
+<view class="content">
+  <view class="rechange-line"></view>
+  <view class="detailPages flj">
+    <image mode="aspectFit" src="{{currentData.logo == '' ? '../../../../../../static/placeholder_figure.png' : currentData.logo}}"></image>
+    <view class="detailRight">
+      <view class="f16 fb rightTitle">{{currentData.name}}</view>
+      <view class="f12 rightTime">营业时间： {{currentData.worktime}}</view>
+      <view class="evaluate">
+        <image mode="aspectFit" wx:for="{{status}}" wx:key="index" src="{{currentData.comment_avg > 0 ? (currentData.comment_avg - item >= 1  ? collectBlack : (currentData.comment_avg - item > 0 && currentData.comment_avg - item < 1 ? collectHalf : collect )) : collect}}"></image>
+        <text class="f12">{{currentData.comment_avg}}分</text>
+      </view>
+    </view>
+  </view>
+  <view class="distance flj">
+    <view class="f12">
+      <view>{{currentData.address}}</view>
+      <view>距您{{currentData.distance}}</view> 
+    </view>
+    <view bindtap="bindPhone">
+      <image mode="aspectFit" src="../../../../../../static/dianhua(1).png"></image>
+    </view>
+  </view>
+  <!-- The selected service -->
+  <!-- <view class="rechange-line"></view>
+  <view class="service">
+    <view class="serviceTitle f16 fb ">已选服务</view>
+    <view class="servicecontent f14">安装大腿假肢</view>
+  </view> -->
+  <view class="rechange-line"></view>
+  <!-- user evaluation -->
+  <view class="evaluation" wx:if="{{currentList.length > 0}}">  
+    <view class="evaluationTitle f16 fb">用户评价</view>
+    <view class="box" wx:for="{{currentList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="evaluateList" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">
+        <view class="evaluateName flj">
+          <view class="fl">
+            <image mode="aspectFit" src="{{items.member_headerpic == '' ? '../../../../../../static/head.png' : items.member_headerpic}}"></image>
+            <view>{{items.tel}}</view>
+            <view class="evaluateImage">
+              <image mode="aspectFit" wx:for="{{status}}" wx:key="index" wx:for-item="data" src="{{items.c_star_rank > 0 ? (items.c_star_rank - data >= 1  ? collectBlack : (items.c_star_rank - data > 0 && items.c_star_rank - data < 1 ? collectHalf : collect )) : collect}}"></image>
+            </view>
+          </view>
+          <view>{{items.createtime}}</view>
+        </view>
+        <view class="evaluateContent f12">{{items.c_content}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- loading -->
+  <view style="display:{{loadingFlag ? 'none' : 'block'}};">
+    <view-loading id="load"></view-loading>
+  </view>
+  <!-- 暂无数据 -->
+  <view-no dataType="2" id="noData"></view-no>
+  <view class="order-blank" wx:if="{{type != 2}}"></view>
+  <view class="navigationBat pf"  wx:if="{{type != 2}}">
+    <button class="button" bindtap="bindBat">确认</button>
+  </view>
+  <!-- 弹窗 -->
+  <view-show id="show" title="{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+</view>

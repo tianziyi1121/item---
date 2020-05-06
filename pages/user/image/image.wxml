@@ -1,0 +1,28 @@
+<view class="content">
+  <view class="rechange-line"></view>
+  <view class="layout flw">
+    <view class="subset" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindlongpress="bindDelecct" wx:for="{{dataList}}" wx:key="index" data-index="{{index}}">
+      <image mode="aspectFit" src="{{item}}" data-src="{{item}}" bindtap="imgYu"></image>
+    </view>
+    <view class="subset" bindtap="uploading" wx:if="{{imageFlag}}">
+      <image src="../../../static/20191016140156.jpg"  mode="aspectFit"></image>
+    </view>
+  </view>
+  <button class="preserve f16" bindtap="save">保存</button>
+</view>
+<!--  -->
+<view wx:if="{{showFlag}}">
+  <view catchtap="cancel" class="hintBj pf {{contentShow === null ? '' : (contentShow === 1 ? 'hintPopUp' : 'onHintPopUp')}}"></view>
+  <view class="popUpHit pf tac f14 {{contentFlag === null ? '' : ( contentFlag === 1 ? 'popUpFlag' : 'onPopUpFlag' )}}">
+    <view catchtap="photoAlbum" data-type="album">从手机相册选择</view>
+    <view catchtap="photoAlbum" data-type="camera">拍摄</view>
+    <view></view>
+    <view catchtap="cancel">取消</view>
+  </view>
+</view>
+<!-- delete -->
+<view class="deleteShow" wx:if="{{deleteFlage}}" >
+  <view catchtap="cancelImage" class="hintBj pf {{deleteShow === null ? '' : (deleteShow === 1 ? 'deletePopUp' : 'onDeletePopUp')}}">
+    <view class="delete pf f16" catchtap="deleteData">删除</view>
+  </view>
+</view>

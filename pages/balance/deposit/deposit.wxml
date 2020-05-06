@@ -1,0 +1,48 @@
+<view class="content">
+  <view wx:if="{{bankFlag}}">
+    <view class="order-line"></view>
+    <view class='deposit-list flj pad30 f14 fc'>
+      <view>银行卡号</view>
+      <view class="deposit-code">{{bank_no}}</view>
+    </view>
+    <view class="lsh_deposit-line"></view>
+    <view class='deposit-list flj pad30 f14 fc'>
+      <view>收款人</view>
+      <view class="deposit-code">{{bank_username}}</view>
+    </view>
+    <view class="lsh_deposit-line"></view>
+    <view class='deposit-list flj pad30 f14 fc'>
+      <view>提现金额</view>
+      <input placeholder="请输入提现金额" bindinput="bindDeposit" data-name="money" placeholder-style="color: #aaa;"></input>
+    </view>
+    <view class="lsh_deposit-line"></view>
+    <view class="deposit-money f12">当前余额￥{{codeMoney}}</view>
+    <view class="order-line"></view>
+    <view class='deposit-list flj pad30 f14 fc'>
+      <view>手机号</view>
+      <view class="deposit-code flj">
+        <view>{{mobile}}</view>
+        <view bindtap="bindCode">获取验证码<text wx:if="{{codeFlag}}">({{timer}})</text></view>
+      </view>
+    </view>
+    <view class="lsh_deposit-line"></view>
+    <view class='deposit-list flj pad30 f14 fc'>
+      <view>验证码</view>
+      <input placeholder="请输入验证码" value="{{form.code}}" bindinput="bindDeposit" data-name="code" placeholder-style="color: #aaa;"></input>
+    </view>
+    <view class="lsh_deposit-line"></view>
+    <button class="deposit-btn" bindtap="bindSave">提现</button>
+  </view>
+  <!-- 绑定银行卡 -->
+  <view wx:if="{{!bankFlag}}">
+      <view class="deposit-title f14 pad30">提现之前必须绑定银行卡，不然无法提现。</view>
+     <view class="bank-addition f14 fc pad30" bindtap="bindBack">
+      <image src="../../../static/加号.png"></image> 添加银行卡
+    </view>
+    <view class="lsh_deposit-line deposit-mag"></view>
+  </view>
+  <!--支付 -->
+  <!-- <view wx:if="{{payFlag}}">
+    <view-payment bind:showTab ="closeWindows" typeTotal="{{form.money}}" id="payment"></view-payment>
+  </view> -->
+</view>

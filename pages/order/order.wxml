@@ -1,0 +1,89 @@
+<view class="content">
+  <view class="order-title flj pad30 f16 pf">
+    <view class="fb">支付方式</view>
+    <view class="fl">在线支付 <view>默认</view></view>
+  </view>
+  <view class="order-margin"></view>
+  <view class="order-list" wx:for="{{currentList}}" wx:for-item="item" wx:key="index">
+    <view class="order-line"></view>
+    <view class="order-data pad30 flj">
+      <image mode="aspectFit" src="{{item.pro_pic != '' ? item.pro_pic : '../../static/placeholder_figure.png'}}"></image>
+      <view class="orde-right fljc">
+        <view class="right-title overn f14 fb">{{item.pro_name}}</view>
+        <view class="right-content f12 over3">{{item.pro_description}}</view>
+        <view class="right-money f16 fb"><text wx:if="{{is_rent == 1}}">押金：</text>￥{{ is_rent != 1 ? item.pro_price : item.pro_rent_price}}</view>
+      </view>
+    </view>
+    <view class="flj pad30 f14 specification" wx:if="{{item.attr_sku_text != ''}}">
+      <view>规格：</view>
+      <text>{{item.attr_sku_text}}</text>
+    </view>
+    <view class="flj right-num pad30 f14" >
+      <view>{{is_rent == 1 ? '租赁' : '购买'}}数量</view>
+      <view class="fl order-footer">
+        <!-- <view wx:if="{{listType == 1}}" class="order-img" bindtap="orderMin" data-index="{{index}}">
+          <image class="order-min" src="../../static/icon_subs_marketcar@2x.png"></image>
+        </view> -->
+        <view class="tac viewBj">{{typeFlag ? item.carts_num : item.pro_num}}</view>
+        <!-- <view wx:if="{{listType == 1}}" class="order-img" bindtap="orderAdd" data-index="{{index}}">
+          <image class="order-add" src="../../static/icon_add_marketcar@2x.png"></image>
+        </view>  -->
+      </view>
+    </view>
+  </view>
+  <!-- choice of lease time -->
+  <view  wx:if="{{is_rent == 1}}">
+    <view class="order-line"></view>
+    <view class="viewTimeTitle">选择租赁时间</view>
+    <view class="rechange-line"></view>
+    <view class="fl viewTime">
+      <picker mode="date" value="{{startTime}}" bindchange="bindDateChange" data-name="startTime">
+        <view class="picker">
+          开始时间：<text>{{startTime}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="rechange-line"></view>
+    <view class="fl viewTime">
+      <picker mode="date" value="{{endTime}}" start="{{startTime}}" bindchange="bindDateChange" data-name="endTime">
+        <view class="picker">
+          结束时间：<text>{{endTime != '' ? endTime : '请选择结束时间'}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="rechange-line"></view>
+    <view class="flj viewTime viewDay">
+      <view class="flj">
+        租金： <view>{{currentList[0].pro_price}}/天</view>
+      </view>
+      <view class="flj">
+        总租金： <view>￥{{rentalTotal}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- service point -->
+  <view class="order-line"></view>
+  <view class="servicePoint">
+    <view class="flj f16">
+      <view>选择服务点</view>
+      <view class="tac" bindtap="bindChoose">选择</view>
+    </view>
+    <view wx:if="{{serviceName != ''}}">服务点名称： {{serviceName}}</view>
+    <view wx:if="{{serviceAddress != ''}}">服务点地址：{{serviceAddress}}</view>
+  </view>
+  <view class="order-line"></view>
+  <view class="pad30 order-remark">
+    <view class="f16 fc">订单备注：</view>
+    <textarea bindinput='orderBind' placeholder='请备注地址和单位'></textarea>
+  </view>
+  <view class="order-blank"></view>
+  <view class="order-refer-juli"></view>
+</view>
+<cover-view class="order-refer pf fl">
+  <cover-view class="box">
+    <cover-view class="order-totle fl">合计:<cover-view class="red fb">￥ {{total}}</cover-view></cover-view>
+  </cover-view>
+  <cover-view class="box">
+    <cover-view class="order-btn tac" bindtap="bindOrder">提交订单</cover-view>
+  </cover-view>
+</cover-view>

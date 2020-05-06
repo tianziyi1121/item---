@@ -1,0 +1,9 @@
+.possword-line { height: 20rpx; width: 100%; background: #F5F5F5;}
+.possword-line4 { height: 4rpx; width: 100%; background: #F5F5F5;}
+.view-possword { background: #fff; padding: 0 30rpx 20rpx;}
+.view-possword view:nth-child(1) { height: 88rpx; line-height: 88rpx;}
+.view-possword view:nth-child(2) image { width: 32rpx; height: 32rpx; margin: 10rpx 30rpx 0 20rpx;}
+.view-possword view:nth-child(2) input { width: 100%;}
+button::after{ border:none; }
+.view-btn { width: 690rpx; background: #37CF6B; color: #fff; margin-top: 200rpx;}
+button[disabled].view-btn { color: #999; background: #ddd;}

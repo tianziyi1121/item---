@@ -1,0 +1,107 @@
+<view class="content">
+  <view class="rechange-line"></view>
+  <view class="serveTitle f14 flj">
+    <view bindtap="bindTitle" data-order="1" class="{{sort == 1 ? 'active' : ''}}">
+      附近 <image mode="aspectFit" src="../../../../../static/icon_nurselist_sxbar_sec_triangledown@2x.png"></image>
+    </view>
+    <view bindtap="bindTitle" data-order="2" class="{{sort == 2 ? 'active' : ''}}">
+      智能排序 <image mode="aspectFit" src="../../../../../static/icon_nurselist_sxbar_sec_triangledown@2x.png"></image>
+    </view>
+    <view bindtap="bindTitle" data-order="3" class="{{sort == 3 ? 'active' : ''}}">
+      地图 <image mode="aspectFit" class="mapImage" src="../../../../../static/position_03.png"></image>
+    </view>
+  </view>
+
+  <view wx:for="{{currentList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view class="box" wx:if="{{sort != 3}}" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">
+      <view class="serverList flj" bindtap="bindList" data-id="{{items.id}}">
+        <image mode="aspectFit" src="{{items.logo == '' ? '../../../../../static/placeholder_figure.png' : items.logo}}"></image>
+        <view class="listRight fljc">
+          <view class="f16 fb">{{items.name}}</view>
+          <view class="ListSite flj f12">
+            <view>{{items.address}}</view>
+            <view>{{items.distance}}</view>
+          </view>
+          <view class="fl f12">
+            <view class="listImage">
+              <image mode="aspectFit" wx:for="{{status}}" wx:key="index" src="{{items.comment_avg > 0 ? (items.comment_avg - item >= 1  ? collectBlack : (items.comment_avg - item > 0 && items.comment_avg - item < 1 ? collectHalf : collect )) : collect}}"></image>
+            </view>
+            <view>{{items.comment_avg}}分</view>
+          </view>
+          <view class="flj f12" wx:if="{{type != 2}}">
+            <!-- <view></view> -->
+            <text></text>
+            <view class="bindCheckbox" catchtap="bindCheckbox" data-indexs="{{indexs}}" data-index="{{index}}" data-id="{{items.id}}">
+              <checkbox checked="{{items.checked}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- submit order -->
+  <view class="order-blank" wx:if="{{sort != 3 && type != 2}}"></view>
+  <view class="serverOrder pf" wx:if="{{type != 2}}">
+    <button class="serverBtn" catchtap="bindSubmitOrder" data-status="{{sort}}">{{sort != 3 ? '确认' : '开始导航'}}</button>
+  </view>
+  <!-- map -->
+  <view wx:if="{{sort == 3}}" class="mapBox" style="height: {{height}}rpx;">
+    <map bindmarkertap="bindmarkertap" scale="14" show-location show-scale longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"></map>
+  </view>
+  <!-- 弹窗 -->
+  <view class="serverPopup" >
+    <view catchtap="bindShadow"  class="serverShadow pf {{shadowFlage != null ? (shadowFlage ? 'showShadow' : 'hiddenShadow') : ''}}" wx:if="{{shadowFlage!= null}}"></view>
+    <view class="serverContent pf {{contentFlage != null ? (contentFlage ? 'showContent' : 'hiddenContent') : ''}}" wx:if="{{contentFlage!= null}}">
+      <!-- 排序 -->
+      <view wx:if="{{sort == 1}}" class="f14 pleaseChoose"><text class="{{selectIndex === 1 ? 'active' : ''}}" bindtap="bindProvinceTitle">{{provinceName == '' ? '请选择' : provinceName }}</text><text class="{{selectIndex === 2 ? 'active' : ''}}" wx:if="{{province != ''}}" catchtap="bindCityTitle">{{cityName == '' ? '请选择' : cityName}}</text></view>
+      <view class="serverSort f14" wx:if="{{sort == 1}}">
+        <view class="flj">
+          <view class="fl">我的位置：<view class="overn">{{currentListPosition}}</view></view>
+          <image mode="aspectFit" src="../../../../../static/loading.png" catchtap="currentPosition"></image>
+        </view>
+        <!-- <view class="positionDistance flj tac f14">
+          <view>附近5km</view>
+          <view>附近10km</view>
+          <view>附近15km</view>
+        </view> -->
+        <view class="serverPosition">
+          <view catchtap="bindProvince" wx:for="{{provinceList}}" wx:key="index" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+        </view>
+      </view>
+      <view class="serverSort f14" wx:if="{{sort == 2}}">
+        <view class="{{screenIndex === 1 ? 'active' : ''}}" catchtap="bindScreen" data-type='1' data-name="near">距离最近</view>
+        <view class="{{screenIndex === 2 ? 'active' : ''}}" catchtap="bindScreen" data-type='2' data-name="comment">评分最高</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 暂无数据 -->
+  <view-no dataType="2" id="noData"></view-no>
+  <view wx:if="{{location}}" class="f12 rechangeLocation tac" bindtap="currentPosition">根据位置推荐服务点，请进行<text>位置授权</text></view>
+  <!-- 弹窗 -->
+  <view-show id="show" title="{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+  <!-- 上拉加载 -->
+  <view style="display: {{loadingFlag ? 'none' : 'block'}};" class="view-loading">
+    <view-loading id="load"></view-loading> 
+  </view>
+</view>
+<!-- map content -->
+<cover-view class="mapContent pf flj" wx:if="{{sort == 3 && sort3 == true}}" bindtap="bindList" data-id="{{mapDataList.id}}">
+  <cover-view class="serviceImage tac">
+    <cover-image class="mapImage" src="{{mapDataList.logo == '' ? '../../../../../static/placeholder_figure.png' : mapDataList.logo}}" mode="aspectFit"></cover-image>
+  </cover-view>
+  <cover-view class="serviceRight fljc">
+    <cover-view class="fb f16 mapRighr">{{mapDataList.name}}</cover-view>
+    <cover-view class="flj f12 mapPosition">
+      <cover-view class="servicePosition over2">{{mapDataList.address}}</cover-view>
+      <cover-view>{{mapDataList.distance}}</cover-view>
+    </cover-view>
+    <cover-view class="fl mapEvaluate">
+      <cover-view class="fl">
+        <cover-image wx:for="{{status}}" wx:key="index" src="{{mapDataList.comment_avg > 0 ? (mapDataList.comment_avg - item >= 1  ? collectBlack : (mapDataList.comment_avg - item > 0 && mapDataList.comment_avg - item < 1 ? collectHalf : collect )) : collect}}"></cover-image>
+      </cover-view>
+      <cover-view class="f12">{{mapDataList.comment_avg}}分</cover-view>
+    </cover-view>
+    <!-- <cover-view class="mapBtn fb f12 tac">需预约</cover-view> -->
+  </cover-view>
+</cover-view>

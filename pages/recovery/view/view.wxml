@@ -1,0 +1,11 @@
+<!--pages/recovery/view/view.wxml-->
+<view class="content">
+  <view class="view-title ">
+    <view class="view fb">{{dataList.news_title}}</view>
+    <view class="view-name f14"> <text wx:if="{{dataList.news_source != ''}}">来源：{{dataList.news_source}}  </text><text>{{!dataList.news_addtime ? dataList.news_time : dataList.news_addtime}}</text></view>
+  </view>
+  <view class="viewline"></view>
+  <view class="pad30 homeContent">
+    <rich-text class="f12 fc" class="richText" nodes="{{dataList.news_content}}"></rich-text>
+  </view>
+</view>

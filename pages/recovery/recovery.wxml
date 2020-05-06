@@ -1,0 +1,50 @@
+<view class="content">
+  <view class="scroll-view pf" wx:if="{{titleList.length > 0}}">
+    <view class="sm-scroll">
+      <scroll-view  
+        scroll-x="true"
+        bindscrolltolower="upper"
+        scroll-left="{{scrollLeft}}"
+        id='scrollDom'
+        scroll-with-animation="true">
+        <view id="a{{index}}" bindtap="bindTop" data-index="{{index}}" class="scroll-item tac f14 fc {{currentIdx == index ? 'active' : ''}}" wx:for="{{titleList}}" wx:for-item="item" wx:key="index" style="width:{{titleList.length > 1 ? (titleList.length > 2 ? (titleList.length > 3 ?'25%' : '33.3%' ): '50%' ) : '100%' }};">{{item.menu_name}}
+          <view style="width: 93rpx;"></view>
+        </view>
+      </scroll-view>
+    </view> 
+  </view>
+  <view class="swiperLine"></view>
+  <swiper 
+  class='swiperContent' 
+  current='{{currentIdx}}'
+  bindchange='changeCurrent'
+  style="height: {{height}}rpx;">
+    <swiper-item wx:for="{{titleList}}" wx:for-item="item" wx:key="index">
+      <view wx:for-item="items" wx:for="{{item.currentList}}" wx:key="indexs">
+        <view class="homeList" bindtap="articleDetails" data-item="{{itemData}}" wx:for="{{items}}" wx:key="index" wx:for-item="itemData">
+          <view class="homeListItem flj">
+            <image lazy-load='true' mode="aspecFit" src="{{itemData.news_img == '' ? '../../static/placeholder_figure.png' : itemData.news_img}}"></image>
+            <view class="homeItem f14 fljc pr">
+              <view class="homeItemTitle over3">{{itemData.news_title}}</view>
+              <view class="homeListTimer f12 flj">
+                <view class="homeSource overn" wx:if="{{itemData.news_source != null && itemData.news_source != ''}}">来源：{{itemData.news_source}}</view>
+                <view class="tar">{{itemData.news_time}}</view>
+              </view>
+              <view class="pa homeLine"></view> 
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 暂无数据 -->
+      <view-no dataType="2" id="noData{{index}}"></view-no>
+    </swiper-item>
+    <!-- 暂无数据 -->
+    <view-no dataType="2" id="noData{{index}}"></view-no>
+  </swiper>
+  
+  <!-- 加载 -->
+  <view style="display: {{ loadingFlag ? 'none' : 'block'}};" class="loading">
+    <view-loading id="loadd"></view-loading>
+  </view>
+  
+</view>

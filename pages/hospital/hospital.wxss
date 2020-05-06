@@ -1,0 +1,5 @@
+/* pages/hospital/hospital.wxss */
+.hospital-list > view > image { width: 40rpx; height: 40rpx; margin: 24rpx 16rpx 0 0;}
+.hospital-list { height: 88rpx;}
+.hospital-list > view > view { line-height: 88rpx; font-size: 28rpx;}
+.hospital-list > image  { width: 30rpx; height: 30rpx; margin-top: 26rpx;}

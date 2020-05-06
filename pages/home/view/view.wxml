@@ -1,0 +1,21 @@
+<view class="content">
+  <!-- <view class="order-line"></view> -->
+  <view class="position position-widht pad30 f12">当前定位城市</view>
+  <view class="position-size position-widht f14 flj">
+    <view class="position_active fl" bindtap="bindCity">
+      <image mode="aspectFit" src="../../../static/position_03.png"></image>
+      <view>{{city == '' ? "北京市" : city}}</view>
+    </view>
+    <view bindtap="getPosition">重新定位</view>
+  </view>
+  <view class="position position-widht pad30 f12 position-text">
+    <text bindtap="bindProvince" class="{{selectIndex === 1 ? 'active' : ''}}">{{province == '' ? '选择省份' : province}}</text>
+    <text bindtap="bindCityData" class="{{selectIndex === 2 ? 'active' : ''}}" wx:if="{{province != ''}}">{{ cityData == '' ? '选择城市' : cityData}}</text>
+  </view>
+  <view wx:for="{{currentList}}" wx:key="index">
+    <view class="position-size position-widht pad30 f14" bindtap="baindLocation" data-id="{{item.id}}" data-pid="{{item.pid}}" data-name="{{item.name}}" data-index="{{index}}">{{item.name}}</view>
+    <view class="user-line"></view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view-show id="show" title="您的当前位置已改变，并且已重新定位，是否更新？" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>

@@ -1,0 +1,18 @@
+.ls_view-name { height: 88rpx; line-height: 88rpx;}
+.ls_view-name  input { height: 88rpx; width: 200rpx; color: #999;}
+.right-view { width: 200rpx;}
+.right-size { color: #999;}
+.right-view view { border: 2rpx solid #CCC; width: 88rpx; height: 48rpx; line-height: 48rpx; margin-top: 20rpx; color: #CCC;}
+.right-view .active { border: 2rpx solid #FF7E7E; color: #FF7E7E; }
+.ls_view-line { height: 2rpx; background: #EEE;}
+.ls_view_content { width: 670rpx; height: 300rpx; background: #f5f5f5; padding: 26rpx 20rpx; margin: 0 auto; color: #999; border-radius: 10rpx;line-height: 50rpx;}
+/* 病情 */
+.view-patient { width: 690rpx; margin: 0 auto;display: flex; flex-wrap: wrap;}
+.view-patient view { color: #6B6B6B; background: #F8F8F8; padding: 18rpx 32rpx; border-radius: 30rpx; margin:0 16rpx 16rpx 0;}
+.view-patient .active { background: #37CF6B; color: #fff;}
+/* 按钮 */
+.ls_view_btn { width: 690rpx; margin: 0 auto; background: #37CF6B; color: #fff; margin-top: 100rpx;}
+button::after { border:none;}
+/* 弹窗 */
+.view-position { left: 0; bottom: 0; height: 608rpx; width: 100%; z-index: 1000;}
+.view-beijing { background: rgba(0,0,0,0.5); top: 0;left: 0; bottom: 0; right: 0; z-index: 999;}

@@ -1,0 +1,4 @@
+.view-title { color: #666;line-height: 88rpx;}
+.view-time { color: #999;}
+.view-mag { margin: 10rpx 0 20rpx;}
+.view-list { border-bottom: 2rpx solid #eee;}

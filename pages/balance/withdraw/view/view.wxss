@@ -1,0 +1,8 @@
+.view { margin-top: 60rpx;}
+.view > image{ width:128rpx; height:128rpx;}
+.view .view-title { color: #37CF6B; margin-top: 32rpx;}
+.view .view-predict { color: #AAAAAA; margin: 16rpx 0 80rpx;}
+.view-money { margin-top:12rpx; height: 88rpx; line-height: 88rpx;}
+.view-money > view:nth-child(1) { color: #6B6B6B;}
+.view-money > view:nth-child(2) { color: #333333; font-weight: bold;}
+.rechange-btn { height: 88rpx; line-height: 88rpx; background: #37CF6B; color: #fff; margin: 50rpx 30rpx; border-radius: 8rpx;}

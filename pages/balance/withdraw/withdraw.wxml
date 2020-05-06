@@ -1,0 +1,11 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view class="rechange-money f14 fl">
+    <view class="rechange-view">充值金额：</view>
+    <input type="number" class="rechange-input" placeholder="请输入充值金额" auto-focus bindinput='withdrawInput' name="money" />
+  </view>
+  <view class="rechange-line"></view>
+  <view class="f12 monney_text pad30">充值金额必须为整数</view>
+  <view wx:if="{{id == 2}}" class="withdraw-rechange f12 pad30">当前余额：￥{{balance}}</view>
+  <view class="rechange-btn f16 tac" bindtap="deposit">充值</view>
+</view>

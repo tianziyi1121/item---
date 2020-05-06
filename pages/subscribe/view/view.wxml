@@ -1,0 +1,43 @@
+<view class="content"> 
+  <view class="order-line"></view>
+  <view class="view-smView flj pad30">
+    <view class="view-order tac fc f16">订单金额</view>
+    <view class="view-money tac">￥{{total}}</view>
+  </view>
+  <view class="order-line"></view>
+  <view class="view-hint pad30 flj f14">
+    <view>请在倒计时完成之前支付</view>
+    <view wx:if="{{houser != ''}}">{{houser}}:{{minutes}}:{{seconds}} </view>
+  </view>
+  <view class="view-select pad30 fc f16">
+    <view class="flj">
+      <view class="select-left">
+        <image src="../../../static/icon_wechat_paypage@2x.png"></image>微信支付
+      </view>
+      <view class="select-right" bindtap="bindSelect" data-index="1">
+        <image src="{{wechat == 1 ? imageSrc1 : imageSrc2}}"></image>
+      </view>
+    </view>
+    <!-- <view class="flj" >
+      <view class="select-left">
+        <image src="../../../static/icon_tixian@2x.png"></image>余额支付
+      </view>
+      <view class="select-right" bindtap="bindSelect" data-index="2">
+        <image src="{{balance == 1 ? imageSrc1 : imageSrc2}}"></image>
+      </view>
+    </view> -->
+    <!-- <view style="visibility:{{balance == 2 ? 'visible': 'hidden'}}" class="select-money f12">余额: ￥{{lsh_money}}</view> -->
+  </view>
+  <view class="view-viewBox pad30 flj f16">
+    <view>
+      <button class="border" open-type='share'>找人代付</button>
+    </view>
+    <view>
+      <view class="border" bindtap="bindpPayment">确认支付</view>
+    </view>
+  </view>
+  <!--支付 -->
+  <view wx:if="{{paymentFlag}}">
+    <view-payment typeTotal="{{total}}" bind:modifyPassword='modify_password' bind:showTab="ls_balance" id="payment"></view-payment>
+  </view>
+</view>

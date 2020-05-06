@@ -1,0 +1,30 @@
+.time-line {
+  height: 100rpx;
+}
+.time-footer {
+  height: 100rpx;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-top: 2rpx solid #eee;
+  background: #fff;
+  z-index: 99;
+}
+.time-footer > view {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 36rpx;
+  margin: 6rpx 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.time-footer > view:nth-child(1) {
+  width: 208rpx;
+  background: #EEE;
+  color: #333333;
+}
+.time-footer > view:nth-child(2) {
+  width: 460rpx;
+  background: #37CF6B;
+  color: #FFF;
+}

@@ -1,0 +1,208 @@
+/* pages/user/view/view.wxss */
+.productTitle {
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 690rpx;
+  margin: 0 auto;
+}
+.productTitle > view {
+  width: 100%;
+}
+.productTitle > view.active{
+  color: #37CF6B;
+}
+/* 列表 */
+.productList {
+  margin-top: 10rpx;
+}
+.SMproductList{
+  padding:30rpx;
+  margin-bottom:4rpx;
+}
+.productList .SMproductList > image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.SMproductList_right {
+  margin-left: 20rpx;
+}
+.SMproductList_right .right-title{
+  width:540rpx;
+  color: #333;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.SMproductList_right .right-content {
+  width:540rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 3;
+  text-indent: 30rpx;
+  color: #939393;
+}
+.SMproductList_right .right-footer image {
+  width: 42rpx;
+  height: 42rpx;
+}
+.SMproductList_right .right-footer  view{
+  color: #939393;
+  font-size: 28rpx;
+}
+.SMproductList_right .right-footer .right-red {
+  font-size: 36rpx;
+  color: #ee2b2b;
+  font-weight: bold;
+}
+.SMproductList_right .right-footer  {
+  margin: 20rpx 0 0;
+}
+.right-footer .right-gray {
+  margin:4rpx 0 30rpx 20rpx;
+ }
+ .SMproductList_right .right-line {
+   width:100%;
+   height:2rpx;
+   background: #f0f0f0;
+   left:0;
+   bottom:-30rpx;
+ }
+ .view-delete {
+    color: #999;
+    padding: 4rpx 24rpx;
+    border: 2rpx solid #999;
+    border-radius: 27rpx;
+    margin-top: 12rpx;
+    right: 30rpx;
+    bottom: -20rpx;
+ }
+
+.care-data {
+  margin-top: 40rpx;
+}
+.care-data .care-left >view:nth-child(1) > image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.care-data .care-left >view:nth-child(1) > view {
+  width: 72rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  border-radius: 16rpx;
+  text-align: center;
+  top: 98rpx;
+  left: 20rpx;
+  background: #fff;
+}
+.care-data .care-left .busy {
+  border: 2rpx solid #EE2B2B;
+  color: #EE2B2B;
+}
+.care-data .care-left .leisure {
+  border: 2rpx solid #37CF6B;
+  color: #37CF6B;
+}
+.care-data .care-left >view:nth-child(2){
+  margin-top: 24rpx;
+}
+.care-data .care-left >view:nth-child(2) > image {
+  width: 32rpx;
+  height: 32rpx;
+}
+.care-data .care-left >view:nth-child(2) > image:nth-child(2){
+  margin:0 10rpx;
+}
+
+.care-data .right-collect > image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.care-data .care-right{
+  margin: 14rpx 0 60rpx 28rpx;
+  width: 540rpx;
+}
+.right-title .careTitle {
+  width: 126rpx;
+  height: 36rpx;
+  border: 2rpx solid #FFA600;
+  color: #FFA600;
+  font-weight: 600;
+  line-height: 36rpx;
+  margin: 0 20rpx;
+}
+.right-title .care-rank {
+  height: 36rpx;
+  line-height: 36rpx;
+  border: 2rpx solid #37CF6B;
+  color: #37CF6B;
+  font-weight: 600;
+  padding:0 10rpx;
+}
+.care-right .right-man {
+  margin:  20rpx 0;
+  color: #6B6B6B;
+
+}
+.care-data .right-man > view {
+  padding: 0 10rpx;
+  border-left: 2rpx solid #6B6B6B;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.care-data .right-man > text {
+  height: 26rpx;
+  line-height: 26rpx;
+  padding-right:10rpx;
+}
+/* 特长 */
+.care-data .right-speciality {
+  color: #999;
+}
+.care-data .right-footer {
+  margin: 24rpx 0;
+}
+.care-data .right-footer > .flj {
+  width: 570rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.right-footer .right-money > text:nth-child(1) {
+  color: #FF4200;
+  margin-right: 16rpx;
+}
+.right-footer .right-money > text:nth-child(2) {
+  color: #999;
+}
+.care-data .right-footer .green {
+  background: #37CF6B;
+}
+.care-data .right-footer .gray {
+  background: #CCC;
+}
+.care-data .right-footer .right-btn {
+  width: 200rpx;
+  color: #fff;
+}
+.carelook-right {
+  border-bottom: 2rpx solid #EEEEEE;
+  margin: 20rpx 0 0 30rpx;
+}
+.viewDelete {
+  width:96rpx;
+  height:46rpx;
+  border-radius:27rpx;
+  border:2rpx solid rgba(153,153,153,1);
+  font-size:24rpx;
+  line-height:46rpx;
+  color: #999;
+  right: 30rpx;
+  bottom: 20rpx;
+}

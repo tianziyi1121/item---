@@ -1,0 +1,7 @@
+<view>
+  <view class="order-line"></view>
+  <view class="title tac f16 fc">{{title}}</view>
+  <view class=" pad30 f14 ls-content">
+    <rich-text nodes="{{currentList}}"></rich-text>
+  </view>
+</view>

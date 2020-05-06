@@ -1,0 +1,30 @@
+/* title */
+.detailPages { width: 690rpx; margin: 0 auto; margin-top: 36rpx;}
+.detailPages > image { width:220rpx; height: 137rpx;}
+.detailRight { width: 450rpx;}
+.rightTitle { color: #030303;}
+.rightTime { color: #666; margin-top: 28rpx;}
+.evaluate > image { width: 26rpx; height: 26rpx; margin: 16rpx 26rpx 0 0;}
+.evaluate text { color: #666;}
+/* distance */
+.distance { width: 690rpx; margin: 0 auto; margin-top: 28rpx; margin-bottom: 22rpx; color: #666;}
+.distance image { width: 60rpx; height: 60rpx; margin-top: 20rpx;}
+.distance view view { margin-top: 22rpx;}
+.distance > view:nth-child(2) { padding-top: 20rpx;}
+/* service */
+.service { width: 690rpx; margin: 0 auto; margin-top: 38rpx;}
+.serviceTitle { color: #000;}
+.servicecontent { color: #666; margin: 56rpx 0 28rpx;}
+/* evaluation */
+.evaluation { width: 690rpx; margin: 0 auto; margin-top: 48rpx;}
+.evaluationTitle { color: #000;}
+.evaluateImage image { width: 30rpx; height: 30rpx; margin: 13rpx 0 0 20rpx;}
+.evaluateName { line-height: 56rpx; margin-top: 29rpx;}
+.evaluateName > view > image { width: 56rpx; height: 56rpx; border-radius: 50%; margin-right: 20rpx;}
+.evaluateName > view { color: #666; font-size: 24rpx; }
+.evaluateContent { line-height: 36rpx; color: #666; margin-top: 30rpx; text-indent: 2rem;}
+.evaluateList {margin-bottom: 54rpx;}
+/* At the bottom of the navigation */
+.navigationBat { left: 0; bottom: 0; height: 100rpx; background: #fff; width: 100%;}
+.navigationBat .button { width: 690rpx; height: 80rpx; margin-top: 10rpx; border-radius: 40rpx; background: #37cf6b; color: #fff; font-size: 36rpx;}
+.noData { margin-top: 40rpx; color: #999;}

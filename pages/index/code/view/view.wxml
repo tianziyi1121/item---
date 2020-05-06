@@ -1,0 +1,11 @@
+<view class="content">
+  <view class="passwword flj">
+    <image mode="aspectFit" src="../../../../static/mimasuo.png"></image>
+    <input bindinput="bindInput" data-name="password" password="true" placeholder="请输入新密码"></input>
+  </view>
+  <view class="passwword flj">
+    <image mode="aspectFit" src="../../../../static/lsyanzhengma.png"></image>
+    <input bindinput="bindInput" data-name="confirm_password" password="true" placeholder="确认密码"></input>
+  </view>
+  <button class="bindBtn" bindtap="bindBtn">确认</button>
+</view>

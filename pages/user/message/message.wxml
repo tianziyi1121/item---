@@ -1,0 +1,17 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view class="LSHmessage pad30 fl f14" bindtap="bindmessage" wx:for="{{currentList}}" wx:key="index" data-index="{{index}}">
+    <image lazy-load='true' src="{{item.nursing_workers_headpic}}"></image>
+    <view class="LSHmessage-view">
+      <view><text class="fb f16 fc">{{item.nursing_workers_name}}</text>|<text>{{item.nursing_workers_sex == 1 ? "男" : "女"}}</text>|<text>{{item.nursing_workers_age}}岁</text></view>
+      <view class="overn">{{item.nursing_workers_province + item.nursing_workers_city +item.nursing_workers_town}}</view>
+      <view>注册时间：{{item.nursing_workers_addtime}}</view>
+    </view>
+  </view>
+  <!-- 暂无数据 -->
+  <view-no id="noData"></view-no>
+  <!-- 上拉加载 -->
+  <view style="display: {{loadingFlag ? 'none' : 'block'}};" class="view-loading">
+    <view-loading id="load"></view-loading>
+  </view>
+</view>

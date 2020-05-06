@@ -1,0 +1,48 @@
+<wxs module="test" src="../../utils/test.wxs"></wxs>
+<!-- bindscrolltoupper="scrollList" -->
+ <view class="titleBox" style="height: {{ titleList.length > 3 ? 160 : 80 }} rpx;"> 
+    <view class="title flw" >
+    <!-- {{activeTitle == item.cat_id ? imageActive : ''}} -->
+      <view wx:for="{{titleList}}" wx:key="index" class="bindTitle f14 pr {{activeIndex == item.cat_id ? 'active' : ''}}" bindtap="bindTitle" data-id="{{item.cat_id}}" data-index="{{index}}">
+        {{item.cat_name}}<image mode="aspectFit" src="../../static/{{activeIndex == item.cat_id ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+      </view>
+      <!-- {{activeTitle == 'a2' ? 'imageActive' : 'vanish'}} -->
+      <view class="bindTitle f14 pr {{activeIndex == 'a1' ? 'active' : ''}}" bindtap="bindTitle" data-id="a1">
+        价 格<image mode="aspectFit" src="../../static/{{activeIndex == 'a1' ? 'aaaaaaa' : 'icon_nurselist_sxbar_triangledown@2x'}}.png"></image>
+      </view>
+    </view>
+  </view>
+<scroll-view bindscroll="{{test.funcA}}" style='height:{{currentlist[0].length > 3 ? (titleList.length > 3 ? height - 160 : height - 80) : ""}}rpx;' bindscrolltolower="bindBottom" bindscrolltoupper="bindscrolltoupper" scroll-y>
+
+  <view class="blankTitle"></view>
+  <view class="view-list" wx:for="{{currentlist}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view class="currentList flj" bindtap="bindList" wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs" bindtap="bindList" data-id="{{items.pro_id}}">
+      <image src="{{items.pro_pic == '' ? '../../static/placeholder_figure.png' : items.pro_pic}}" mode="aspectFit"></image>
+      <view class="list-right">
+        <view class="fljc">
+          <view class="f14 fb">{{items.pro_name}}</view>
+          <view class="f12 over4">{{items.pro_description}}</view>
+          <view class="f16 fb">￥{{items.pro_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- no data -->
+  <view-no dataType="2" id="noData"></view-no>
+  <!-- pull on loading -->
+  <view style="display:{{loadingFlag ? 'none' : 'block'}};">
+    <view-loading id="load"></view-loading>
+  </view>
+</scroll-view>
+<!-- pop-up windows -->
+<view class="popUpSearch" wx:if="{{popUpSearch}}">
+  <view class="popUpShadow pf {{popUpShadow ? 'appear' : 'vanish'}}" style="top: {{topHeight}}rpx;" catchtap="bindVanish"></view>
+  <view class="popUpContent pf {{topHeight > 120 ? (popUpContent ? 'appearContnet1' : 'vanishContent1') : (popUpContent ?  'appearContnet2' : 'vanishContent2')}}">
+    <view class="popUpSelect flw f14 tac" wx:if="{{selectIndex == 1}}">
+      <view wx:for="{{selectList}}" wx:key="index" data-id="{{item.cat_id}}" data-index="{{index}}" data-indexs="1" class="pad40 {{item.checked ? 'active' : ''}}" catchtap="bindSelect" data-name="{{item.cat_name}}">{{item.cat_name}}</view>
+    </view>
+    <view class="popUpSelect flw f14 tac" wx:if="{{selectIndex == 2}}">
+      <view wx:for="{{selectMoney}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}" data-indexs="{{id}}" class="pad40 {{item.checked ? 'active' : ''}}" catchtap="bindSelect" data-name="{{item.value}}">{{item.value}}</view>
+    </view>
+  </view>
+</view>

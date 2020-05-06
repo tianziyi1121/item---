@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "view-show": "/components/oshow/oshow",
+    "view-loading": "/components/loading/loading",
+    "view-no": "/components/noData/noData"
+  }
+}

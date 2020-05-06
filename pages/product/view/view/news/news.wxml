@@ -1,0 +1,33 @@
+<!-- <wxs module="news" src="./news.wxs"></wxs> -->
+<view class="content">
+  <scroll-view scroll-y="true" style="height: {{height - bottom}}rpx;">
+    <view class="timer tac f14">上午11:11</view>
+
+    <view class="message flj pad3 pr">
+      <view class="fl">
+        <image src="../../../../../static/logolg.png" mode="aspectFit"></image>
+        <view class="messageContent left pr contentLeft">
+          <image class="trigon pa leftImage" src="../../../../../static/ffffff.png"></image>
+          <view class="messageData f16"> 亲，很高兴为您服务，请问您要咨询什么问题呢？</view>
+        </view>
+      </view>
+      <view></view>
+    </view>
+    <view class="message flj pad3">
+      <view></view>
+      <view class="fl">
+        <view class="messageContent right pr contentRight">
+          <image class="trigon pa rightImage" src="../../../../../static/37cf6b.png"></image>
+          <view class="messageData f16"> 亲，很高兴为您服务</view>
+        </view>
+        <image src="../../../../../static/logolg.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="footer pf pad3 fl" style="bottom:{{bottom}}rpx;">
+    <image src="../../../../../static/voice.jpg"></image>
+    <input class="footerInput" bindfocus="foucus" bindblur="blur" adjust-position='{{false}}'></input>
+    <image class="expression" src="../../../../../static/expression.jpg"></image>
+    <image src="../../../../../static/addition.jpg"></image>
+  </view>
+</view>

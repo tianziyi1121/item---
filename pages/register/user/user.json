@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "护工注册",
+  "usingComponents": {
+    "view-position": "/components/position/position"
+  }
+}

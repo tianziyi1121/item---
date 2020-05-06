@@ -1,0 +1,14 @@
+<view class="content">
+  <!-- 弹窗 -->
+  <view class="view-pop" hidden="{{hideModal}}">
+    <view class="view-bag" bindtap="bindclose"></view>
+    <view class="view-content pf {{ viewFlag ? 'viewContent' : ''}}" animation="{{animationData}}">
+      <view class="view-character tac f16">提示</view>
+      <view class="view-title f14 tac">{{title}}</view>
+      <view class="view-btn fl tac f16">
+        <view bindtap="bindCancel">取消</view>
+        <view bindtap="bindAffirm">确认</view>
+      </view>
+    </view>
+  </view>
+</view>

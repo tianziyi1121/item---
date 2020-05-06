@@ -1,0 +1,3 @@
+<view class="loading tac fc f14">
+  <image mode="aspectFit" wx:if="{{flag}}" src='../../static/loading.gif'></image> {{title}}
+</view>

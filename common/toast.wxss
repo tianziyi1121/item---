@@ -1,0 +1,17 @@
+/* 弹窗 */
+.view-shade { width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5); z-index: 1000;}
+.view-content { height: 800rpx; width: 100%; left: 0; bottom: 0; background: #fff; z-index: 1001;}
+.view-content > view:nth-child(1) { width: 100%; background: #EEEEEE; height: 88rpx; line-height: 56rpx;}
+.view-content > view image { width: 56rpx; height: 56rpx; margin: 16rpx 30rpx;}
+.content-title { width: 100%;}
+.content-details { width: 100%; height: 100%; overflow-y: auto;}
+.content-hospital { margin: 44rpx 30rpx 0;}
+.content-hospital > view > view { font-size: 32rpx; color: #333;}
+.content-hospital > view > view:nth-child(1) { font-weight: 700;}
+.content-hospital > view > view:nth-child(2){ font-size: 28rpx; margin-top: 24rpx; }
+.content-hospital > view:nth-child(2) > view:nth-child(1){ color: #EE2B2B; text-align: right;}
+.content-details .content-work { margin: 60rpx 30rpx 0;}
+.content-work > view:nth-child(2) { color: #EE2B2B; font-weight: 700;}
+.contentWork { margin: 24rpx 30rpx 0;}
+.content-btn { height: 88rpx; margin: 20rpx 30rpx; background: #EE2B2B; color: #fff; line-height: 88rpx; border-radius: 16rpx;}
+.transformDome{ transform: translateY(100%); -webkit-transform: translateY(100%)}

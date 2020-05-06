@@ -1,0 +1,6 @@
+.view-phone { height: 88rpx; line-height: 88rpx; border-bottom: 2rpx solid #E5E5E5; width: 690rpx; margin: 0 auto;}
+.view-phone view:nth-child(2) {color: #37CF6B; background: #fff; border: none;}
+.view-phone input { height: 88rpx; line-height: 88rpx; color: #999;}
+button::after{ border:none; }
+.view-btn { width: 690rpx; background: #37CF6B; color: #fff; margin-top: 80rpx;}
+button[disabled] { color: #999; background: #DFE2E7;}

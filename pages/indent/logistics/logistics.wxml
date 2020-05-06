@@ -1,0 +1,28 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view class="logisticsList fl f14 pad30" wx:if="{{mailno != ''}}">
+    运单号：<view class="fb"> {{mailno}}</view>
+  </view>
+  <view class="logisticsList fl f14 pad30" wx:if="{{mailno != ''}}">
+    国内承运人：<view class="fb"> 顺丰快递</view>
+  </view>
+  <!-- <view class="logisticsList fl f14 pad30">
+    预计送达：<view class="fb">lkdsjalskdjaslk</view>
+  </view> -->
+  <view class="CirculationList">
+    <view class="logisticsContent pr" wx:for="{{currentData}}" wx:key="index"> 
+      <!-- <view class="fl logisticsOnce pa"> 
+        <image src="../../../static/icon_add@2x.png"></image> <view class="fb f16">运输中</view>
+      </view> -->
+      <view class="logisticsSite pr {{currentData.length == index + 1 ? '' : 'border'}}">
+        <view class="logisticsLine pa" wx:if="{{index + 1 == currentData.length}}"></view>
+        <view class="logisticsBlank pa" wx:if="{{index == 0}}"></view>
+        <view class="pa logisticsDot" style="top: 24rpx;"></view>
+        <view class="contentSite f16">
+          <view>{{item.remark}}</view>
+          <view>{{item.accept_time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

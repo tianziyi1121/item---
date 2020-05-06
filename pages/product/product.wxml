@@ -1,0 +1,35 @@
+<view class="product">
+  <swiper class="banner-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#37cf6b">
+    <block wx:for="{{bannerList}}" wx:key="index">
+      <swiper-item>
+          <image class="banner-img" mode="widthFix" src="{{item.plug_ad_pic != '' ? item.plug_ad_pic : '../../static/placeholder_figure.png'}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 菜单栏 -->
+  <view class="product-menu flw">
+    <view style="width:{{navigationBar.length > 4 ? '20%' : '25%'}};"  wx:for="{{navigationBar}}" wx:key="index">
+      <view bindtap="bindList" data-type="{{index+1}}" data-name="{{item.cat_name}}">
+        <image src="{{item.cat_iconfont != '' ? item.cat_iconfont : '../../static/placeholder_figure.png'}}" mode="aspectFit"></image>
+        <view>{{item.cat_name}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 资讯 -->
+  <view class="product-new f16 fl">
+    <view></view>新闻资讯
+  </view>
+  <view class="product-list">
+    <view class="flj" wx:for="{{newConsulting}}" wx:key="index" bindtap="bindListData" data-index="{{index}}">
+      <image src="{{item.news_img != '' ? item.news_img : '../../static/placeholder_figure.png'}}" mode="aspectFit"></image>
+      <view class="list-right fljc">
+        <view class="f14">{{item.news_title}}</view>
+        <view class="over3 f12">{{item.news_scontent}}</view>
+        <view class="right-time flj">
+          <view class="overn">来源：{{item.news_source}}</view>
+          <view>{{item.news_addtime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

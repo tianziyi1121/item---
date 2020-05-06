@@ -1,0 +1,16 @@
+<view class="content">
+  <view wx:for="{{currentList}}" wx:key="index" wx:for-item="item">
+    <view class="register-title f16 fb tac">{{item.menu_name}}</view>
+    <view class="register-content pad30 f14">
+      <rich-text nodes="{{item.menu_content}}"></rich-text>
+    </view>
+  </view>
+  <view class="order-blank"></view>
+  <view class="register-footer pf flj">
+    <view class="footer-left f12 fl">
+     <view bindtap="consent"><checkbox checked="{{checked}}" /></view>
+     <view>我已阅读并同意协议</view>
+    </view>
+    <view bindtap='register' class="{{checked == true ? 'footerRight' : 'footer-right'}}">开始注册</view>
+  </view>
+</view>

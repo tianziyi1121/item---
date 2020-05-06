@@ -1,0 +1,19 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view wx:for="{{currentList}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+    <view class="view-list pad30" wx:for="{{item}}" wx:key="indexs" wx:for-number="index" wx:for-item="items">
+      <view class="view-title flj f16">
+        <view>{{items.orderSrc}}</view>
+        <view>￥{{items.moneyType == 0 ? '-' : '+'}}{{items.money}}</view>
+      </view>
+      <view class="view-time f14">{{items.create_time}}</view>
+      <view class="view-time f14 view-mag">{{items.remark}}</view>
+    </view>
+  </view>
+  <!-- 暂无数据 -->
+  <view-no id="noData"></view-no>
+  <!-- 刷新 -->
+  <view style="display: {{loadingFlag ? 'none' : 'block'}};" class="view-loading productLoading">
+    <view-loading id="load"></view-loading>
+  </view>
+</view>

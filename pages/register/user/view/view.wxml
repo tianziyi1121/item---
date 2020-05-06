@@ -1,0 +1,35 @@
+<!--pages/register/user/view/view.wxml-->
+
+<view class="content">
+  <view class="view-img tac">
+    <image src="../../../../static/icon_success_shenhe@2x.png"></image>
+    <view class="view-title">{{state == 1 ? (status == 1 ? '审核完成' : '正在审核，请稍等...') : "提交成功，等待审核"}}</view>
+  </view>
+  <view class="view-middle f14 pad30 fc">
+   <text>注意：</text>请把以下资料邮寄到北京市海淀区福美苑小区底商104
+  </view>
+  <view class="view-footer fc pad30">
+    <view class ="fl f14">
+      <view></view>身份证复印件
+    </view>
+    <view class ="fl f14">
+      <view></view>健康证复印件
+    </view>
+    <view class ="fl f14">
+      <view></view>居住证复印件
+    </view>
+    <view class ="fl f14">
+      <view></view>医师资格增复印件
+    </view>
+    <view class ="fl f14">
+      <view></view>无违纪证明原件
+    </view>
+    <view class ="fl f14">
+      <view></view>2张一寸照片
+    </view>
+  </view>
+  <view class="view-btn f14 fl tac">
+    <view bindtap="home" data-index="1">{{state == 1 ? " 返回首页" : "注册列表"}}</view>
+    <view bindtap='home' data-index="2">个人中心</view>
+  </view>
+</view>

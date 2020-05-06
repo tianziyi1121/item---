@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "收藏",
+  "component": true,
+  "usingComponents": {
+    "view-oshow": "/components/oshow/oshow",
+    "view-loading": "/components/loading/loading",
+    "view-no": "/components/noData/noData"
+  }
+}

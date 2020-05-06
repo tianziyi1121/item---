@@ -1,0 +1,106 @@
+<view class="content">
+  <view class="register-line"></view>
+  <view class="register-view flj">
+    <image mode="aspectFit" class="image" src="../../../static/shenfenshenhe.png"></image>
+    <view class="register-select">
+      <radio-group class="radio-group f14" bindchange="radioChange">
+        <label class="radio radioWidth">
+          辅具中心 <radio value="3" checked="true"/>
+        </label>
+         <label class="radio margin">
+          医院 <radio value="2" />
+        </label>
+         <label class="radio margin">
+          厂家 <radio value="4"/>
+        </label>
+         <label class="radio margin">
+          客户 <radio value="1"/>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="register-content">
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/yonghumin.png"></image>
+      <input bindinput="bindInput" data-name="member_list_username" data-type="1" placeholder='请输入手机号/邮箱'></input>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/mimasuo.png"></image>
+        <view class="flj">
+          <input wx:if="{{inputFlag}}" bindinput="bindInput" data-name="password" data-type="2" value="{{password}}" password="true" placeholder='请输入密码'></input>
+          <input wx:if="{{!inputFlag}}" bindinput="bindInput" data-name="password" data-type="2" value="{{password}}" placeholder='请输入密码'></input>
+          <image mode="aspectFit" src="{{url}}" bindtap="bindImage"></image>
+        </view>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/lsyanzhengma.png"></image>
+      <input wx:if="{{inputFlag}}" bindinput="bindInput" data-name="newPassword" data-type="2" value="{{newPassword}}" password="true" placeholder='确认密码'></input>
+      <input wx:if="{{!inputFlag}}" bindinput="bindInput" data-name="newPassword" data-type="2" value="{{newPassword}}" placeholder='确认密码'></input>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/yonghumin.png"></image>
+      <input bindinput="bindInput" data-name="member_list_tel" data-type="1" placeholder='请输入手机号'></input>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/lsyanzhengma(1).png"></image>
+        <view class="flj code">
+          <input placeholder='请输入验证码' bindinput="bindInput" data-name="code" data-type="2"></input>
+          <view bindtap="bindCode" >获取验证码 <text wx:if="{{time}}">({{timeData}})</text></view>
+        </view>
+    </view>
+  </view>
+  <view class="register-content" wx:if="{{contentFlag}}">
+   <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/yonghumin.png"></image>
+      <input bindinput="bindInput" data-type="1" data-name="name" placeholder='请输入单位名称'></input>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/lsyingyezhizhao.png"></image>
+      <view class="uploading flj">
+        <text>
+          <text>{{title}}</text>营业执照
+        </text>
+        <view class="fl" bindtap="bindInput"  data-name="certificate" data-type="3">
+          <image src="../../../static/lsfujian.png"></image>
+          ：营业执照
+        </view>
+      </view>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/lsmayishangchengiconshangchuan.png"></image>
+      <view class="uploading flj">
+        依法缴纳税收和社会保障金的良好记录
+        <view class="fl" bindtap="bindInput"  data-name="insurance" data-type="3">
+          <image src="../../../static/lsfujian.png"></image>
+          ：社保证明
+        </view>
+      </view>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/dianhua(1).png"></image>
+      <view class="flj">
+        单位电话
+        <input bindinput="bindInput" data-name="work_tel" data-type="1" class="input" placeholder='请输入单位电话'></input>
+      </view>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/lslingdao.png"></image>
+      <view class="flj">
+        领导姓名
+        <input bindinput="bindInput" data-name="contacts_name" data-type="1" class="input" placeholder='请输入领导姓名'></input>
+      </view>
+    </view>
+    <view class="flj f14">
+      <image mode="aspectFit" src="../../../static/lslianxifangshi.png"></image>
+      <view class="flj">
+        领导联系方式
+        <input bindinput="bindInput" data-name="contacts_tel" data-type="1" class="means" placeholder='请输入领导联系方式'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 注册 -->
+  <view class="register-login">
+    <view class="login fl tac">已有账号？<view class="loginBtn" bindtap="bindBtn">点击登录</view></view>
+  </view>
+  <button class="registerBtn" bindtap="registerBtn">注册</button>
+</view>

@@ -1,0 +1,20 @@
+.view-smView{ height: 88rpx; line-height: 88rpx;}
+.view-money { font-size: 52rpx; color: #EE2B2B; font-weight: 700; }
+.view-yard { width: 400rpx; height: 400rpx; margin: 0 auto; }
+.view-bay { margin:0 auto; margin-top: 20rpx;}
+.view-bay > view { height: 52rpx; width: 140rpx; border: 2rpx solid #37CF6B; color: #37CF6B; border-radius: 28rpx; line-height: 52rpx;}
+.view-hint { margin-top: 20rpx;}
+.view-hint > view { color: #AAA;}
+.view-hint > view:nth-child(2){ color: #EE2B2B; font-size: 32rpx; font-weight: 700;}
+/* 选择支付方式 */
+.view-select > view { line-height: 88rpx;}
+.view-select image { width: 48rpx; height: 48rpx; vertical-align: middle;}
+.select-left image { margin-right: 16rpx;}
+.view-viewBox { padding-top: 200rpx;}
+.view-viewBox > view { width: 50%; text-align: center;}
+.view-viewBox button { width: 90%; padding: 0; background: #EE2B2B; color: #fff;height: 88rpx; line-height: 88rpx; font-size: 32rpx; margin: 0 auto;}
+button::after { border: none;}
+.view-viewBox view view { width: 90%; text-align: center; color: #fff; background: #37CF6B; line-height: 88rpx; border-radius: 10rpx; margin: 0 auto;}
+.border { border: 2rpx solid#eee;}
+/* 余额 */
+.view-select .select-money { color: #AAA; height: 60rpx; line-height: 60rpx; margin-left: 48rpx;}

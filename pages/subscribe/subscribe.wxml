@@ -1,0 +1,117 @@
+<!--pages/subscribe/subscribe.wxml-->
+
+<view class="content">
+  <view class="subscribe-name pad30 fl f16 fb">
+    <image mode="aspectFit" src="../../static/icon_phone@2x.png"></image>
+    <view class="fl"> <view class="overn">{{title.member_list_nickname}}</view>/{{title.tel}}</view>
+  </view>
+  <view class="order-line"></view>
+  <view class="pad30 subscribe-timer flj" bindtap="bindTime">
+    <view>
+      <text class="f12">开始</text>
+      <view class="f16">{{start}}</view>
+    </view>
+    <view>
+      <text class="f12">结束</text>
+      <view class="f16">{{end}}</view>
+    </view>
+    <view>
+      共{{sky}}天
+      <image src="../../static/youjiantou.png"></image>
+    </view>
+  </view>
+  <view class="timer-line"></view>
+  <view class= "subscribe-title pad30 flj">
+    <view class="home">
+      <image mode="aspectFit" src="{{list.nursing_workers_headpic}}"></image>
+    </view>
+    <view class="subscribe-evaluate ">
+      <view class="fl">
+        <view>{{list.nursing_workers_name}}</view>
+        <view>{{list.department_name}}</view>
+      </view> 
+      <view class="subscribe-five">
+        <image wx:for="{{state}}" wx:key="index" mode="aspectFit" src="{{list.nursing_workers_avg > 0 ? (list.nursing_workers_avg - item > 0 ? (list.nursing_workers_avg - item < 1 ? halfUrl : starUrl) : greyUrl) : greyUrl}}"></image>
+        <text>{{list.nursing_star_percent}}</text>
+      </view>
+    </view>
+    <view class="subscribe-number">
+      <view>￥{{sky == 0? '0.00' : totalData_ls}}</view>
+      <view>￥{{list.nursing_workers_money}}x{{sky}}</view>
+    </view>
+  </view>
+  <view class="order-line"></view>
+
+  <view class="subscribe-list f16 fb">
+    <view>护理用品</view>
+  </view>
+  <view class="subscribe-shopping flj">
+    <!-- 左边菜单栏 -->
+    <scroll-view class="menu-left" scroll-top="{{leftScrollTop}}" scroll-y="true" style="height:{{height}}rpx;">
+      <view class="left-list tac {{index == activeIndex ? 'active' :''}}" wx:for="{{listData}}" wx:key="index" data-index="{{index}}" bindtap='selectMenu'>{{item.cat_name}}</view>
+    </scroll-view>
+    <!-- 右侧菜单 -->
+    <view class="menu-right">
+      <scroll-view bindscroll="scroll" scroll-y="true" style='height:{{height}}rpx;' bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view id ="a{{index}}" wx:for="{{listData}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+          <view class="menu-name" wx:if="{{item.product.length != 0}}">{{item.cat_name}}</view>
+          <view class="right-list fl" wx:for="{{item.product}}" wx:key="index" wx:for-item="items" wx:for-index="indexs">
+            <image src="{{items.pro_pic}}"></image>
+            <view class="right-name">
+              <view>{{items.pro_name}}</view>
+              <view class="right-money">
+                <view>￥{{items.pro_price}}</view>
+                <view class="right-num fl">
+                  <image catchtap="catchMin" data-index="{{index}}" data-number="{{indexs}}" wx:if="{{ items.num > 0 }}" src="../../static/icon_subtraction@2x.png"></image>
+                  <view wx:if="{{ items.num > 0 }}" >{{items.num}}</view>
+                  <image catchtap="catchAdd" data-index="{{index}}" data-number="{{indexs}}" src="../../static/icon_add@2x.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="shopping-footer pf flj">
+    <view class="pf shopping-cat">
+      <view bindtap="bindShopping">
+        <image mode="aspectFit" src="../../static/ic_shopping_cart_white_24dp.png"></image>
+        <view wx:if="{{num > 0}}" class="numb f12 tac pf">{{num}}</view>
+      </view>
+    </view>
+    <view class="shopping-total f12 fc">合计: <text>￥{{total == 0 ? '0.00' : total}}</text> </view>
+    <view class="shopping-buy tac" bindtap="bindPayment" data-id="2" data-total="index">去支付</view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="view-popup" hidden="{{domeMode}}">
+    <view class="view-shade pa"></view>
+    <view class="view-content pa fljc transformDome" animation="{{animationData}}">
+      <view class="flj">
+        <view class="content-title f16 fc tac">明细</view>
+        <image bindtap="hideModal" src="../../static/icon_close@2x.png"></image>
+      </view>
+      <view class="content-details">
+          <view class="content-hospital flj">
+            <view>
+              <view>护工</view>
+              <view>{{startTime}}~{{endTime}}</view>
+            </view>
+            <view>
+              <view>￥{{list.nursing_workers_money * sky}}</view>
+              <view>￥{{list.nursing_workers_money}} x {{sky}}</view>
+            </view>
+          </view>
+          <view class="content-work flj f16 fc">
+            <view>护工用品</view>
+            <view>￥{{totalGoods}}</view>
+          </view>
+          <view class="contentWork flj f14 fc" wx:for="{{selectedList}}" wx:key="index" wx:for-item="item">
+            <view>{{item.pro_name}}</view>
+            <view>￥{{item.pro_price}}<text wx:if="{{item.num > 1}}"> x {{item.num}}</text></view>
+          </view>
+      </view>
+      <view bindtap="bindPayment" data-id="1" class="content-btn f16 tac">在线支付 ￥{{total}}</view>
+    </view>
+  </view>
+</view>

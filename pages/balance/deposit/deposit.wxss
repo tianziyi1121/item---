@@ -1,0 +1,16 @@
+.deposit-list { height: 100rpx; line-height: 100rpx;}
+.deposit-list > view:nth-child(1) { width: 26%;}
+.deposit-list > input { width: 85%; height: 100rpx; color: #aaa;}
+.deposit-code { color: #aaa; }
+.lsh_deposit-line { height: 2rpx; background: #F5F5F5;margin-left: 30rpx;}
+.lsh_deposit-line.deposit-mag { margin-left: 0; }
+.deposit-money { color: #AAA; padding: 10rpx 0 10rpx 30rpx;}
+.deposit-btn { width: 690rpx; margin: 0 auto; background: #37CF6B; color: #fff; margin-top: 160rpx;}
+button::after { border: none;}
+.deposit-list > view:nth-child(2) { height: 100rpx; line-height: 100rpx;width: 85%;} 
+.deposit-list > view:nth-child(2) view:nth-child(1) { height: 100rpx; color: #aaa;}
+.deposit-list > view:nth-child(2) view:nth-child(2) { color: #37CF6B;}
+/* 绑卡 */
+.bank-addition  image { width: 32rpx; height: 32rpx; vertical-align: middle}
+.bank-addition { height: 88rpx; line-height: 88rpx;}
+.deposit-title { height: 100rpx; line-height: 100rpx; background: #F5F5F5; color: #999;}

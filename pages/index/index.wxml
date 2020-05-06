@@ -1,0 +1,25 @@
+<view class="content">
+  <view class="register">
+    <view class="register-view flj f14">
+      <image src="../../static/yonghumin.png"></image>
+      <input bindinput="bindKeyInput" data-name="member_list_username" placeholder="请输入手机号"/>
+    </view>
+    <view class="register-view flj f14">
+      <image src="../../static/mimasuo.png"></image>
+      <input  bindinput="bindKeyInput" data-name="member_list_pwd" password="true" placeholder="请输入密码"/>
+    </view>
+    <!-- <view class="register-view flj f14">
+      <image src="../../static/lsyanzhengma(1).png"></image>
+      <view class="flj verification">
+        <input  bindinput="bindKeyInput" data-name="code" placeholder="请输入验证码"/>
+        <view bindtap="bindCode">获取验证码 <text wx:if="{{time}}">({{timeData}})</text>  </view>
+      </view>
+    </view> -->
+    <view class="register-code flj f14">
+      <view bindtap="bindRegister" data-url="view/view">用户注册</view>
+      <view bindtap="bindRegister" data-url="code/code">忘记密码</view>
+    </view>
+    <view class="login tac" bindtap="bindLogin">登录</view>
+  </view>
+
+</view>

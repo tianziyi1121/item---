@@ -1,0 +1,14 @@
+<view class="content">
+  <view class="order-line"></view>
+  <view class="tac">
+    <image class="about_image" src="../../../static/ic_app_logo.jpg"></image>
+  </view>
+  <view class="abot-title f16 fc tac">关于我们</view>
+  <view class="about-contetn pad30">
+    <rich-text class="f14" nodes="{{currentData}}"></rich-text>
+  </view>
+  <view class="about_footer tac f14 fc pf">
+    <view class="f12">版本号： 1.0.0</view>
+    <view>北京瑞祺祥康复科技有限公司</view>
+  </view>
+</view>

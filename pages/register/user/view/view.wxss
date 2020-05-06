@@ -1,0 +1,11 @@
+.view-img { background: #37CF6B;}
+.view-img image { width: 128rpx; height: 128rpx; margin-top: 60rpx;}
+.view-img .view-title { color: #fff; margin: 32rpx 0 0; padding-bottom: 60rpx; font-size: 36rpx;}
+.view-middle { margin-top: 40rpx; line-height: 40rpx;}
+.view-middle > text{ color: #EE2B2B;}
+.view-footer { margin-top: 40rpx;}
+.view-footer view { margin-bottom: 32rpx;}
+.view-footer > view > view { width: 16rpx; height: 16rpx; background: #37CF6B; border-radius: 50%; margin:11rpx 20rpx 0 0;}
+.view-btn { width: 400rpx; margin: 60rpx auto;}
+.view-btn > view { width: 180rpx; height: 68rpx; border: 2rpx solid #37CF6B; border-radius: 34rpx; line-height: 68rpx; color: #37CF6B;}
+.view-btn > view:nth-child(1) { margin-right: 40rpx;}

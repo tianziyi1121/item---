@@ -1,0 +1,9 @@
+.register { width: 650rpx; margin: 142rpx auto;}
+.register-view { height: 100rpx;line-height: 100rpx;border-bottom: 2rpx solid #cccccc;}
+.register-view image { width: 40rpx; height: 40rpx;margin-left: 46rpx; margin-top: 30rpx;}
+.register-view > input,.register-view > view { width: 524rpx; height: 100%; color: #666;}
+.verification { height: 100%;}
+.verification input { height: 100%; color: #666;}
+.verification view { height: 40rpx; line-height: 40rpx; border-radius: 9rpx; border: 2rpx solid #666; font-size: 22rpx;padding: 0 10rpx; margin-top: 30rpx; color: #666;}
+.register-code { line-height: 100rpx; color: #666;}
+.login { background: #37cf6b; height: 88rpx; line-height: 88rpx; border-radius: 8rpx; color: #fff; font-size: 36rpx; margin-top: 80rpx;}

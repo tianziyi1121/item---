@@ -1,0 +1,94 @@
+ <!--indent.wxml-->
+<view class="content">
+  <view wx:for="{{currentList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view wx:for="{{item}}" wx:for-index="indexs" wx:for-item="items" wx:key="index">
+      <view class="order-line"></view>
+      <view class="flj">
+        <view>
+          <view class="indent-time f14">下单时间：{{items.create_time}}</view>
+          <view class="indent-time f14">订单编号：{{items.orderNo}}</view>
+        </view>
+        <image bindtap="bindDelete" data-index="{{index}}" data-number="{{indexs}}" data-id="{{items.orderId}}" class="indentImage" src="../../static/icon_orderlist_delete@2x.png" data-state="1" mode="aspectFit"></image>
+      </view>
+      <view wx:for="{{items.product}}" wx:for-item="data" wx:key="index" bindtap="bindList" data-id="{{data.pro_id}}" data-isrent="{{items.is_rent}}">
+        <view class="indent-content flj">
+          <image src="{{data.pro_pic == '' ? '../../static/placeholder_figure.png' : data.pro_pic}}" mode="aspectFit"></image>
+          <view class="content-right fljc">
+            <view class="right-title f14 fb overn">{{data.pro_name}}</view>
+            <view class="right-content f12 over2" wx:if="{{data.pro_description != ''}}">{{data.pro_description}}</view>
+            <view class="right-content f12" wx:if="{{data.attr_sku_text != ''}}">规格：{{data.attr_sku_text}}</view>
+            <view class="right-price fb f16">￥{{data.op_product_totalprice}}</view>
+          </view>
+        </view>
+        <view class="flj f12 right-btn tac" wx:if="{{items.product.length > 1 && items.dataFlag == 1 && items.orderStatus == 3 && items.isClosed == 0}}">
+          <view></view>
+          <view wx:if="{{ items.product.length > 1 && items.dataFlag == 1 && items.orderStatus == 3 && items.isClosed == 0}}" catchtap="bindEvaluate" data-id="{{items.orderId}}" data-pro_id="{{data.pro_id}}" data-type="2">产品评价</view>
+        </view>
+      </view>
+
+      <view class="rechange-line" wx:if="{{items.product.length > 1}}"></view>
+      <view class="flj indent-state">
+        <view class="f14" wx:if="{{items.product.length > 1}}">订单状态</view>
+        <text wx:if="{{items.product.length == 1}}" ></text>
+        <view class="fl bindBtnBox">
+        <view wx:if="{{items.product.length == 1 && items.orderStatus != 0 && items.dataFlag == 1}}" class="bindBtn f12 tac" bindtap="bindReceipt" data-id="{{items.orderId}}" data-type="2">物流查询</view>
+          <view wx:if="{{items.product.length == 1 && (items.orderStatus == 3 ||  items.orderStatus == 4) && items.is_receipt == 0}}" class="bindBtn f12 tac" bindtap="bindReceipt" data-id="{{items.orderId}}" data-type="1">查看回执</view>
+          <view class="bindBtn f12 tac" wx:if="{{items.dataFlag == 1 && items.orderStatus == 0 && items.isClosed == 0}}" catchtap="bindmoney" data-timer="{{items.createTime}}" data-money="{{items.realTotalMoney}}" data-id="{{items.orderId}}">待付款</view>
+          <view class="f12 tac" wx:if="{{items.is_rent == 1 && items.dataFlag == 1 && items.orderStatus == 1 && items.isClosed == 0}}">待租赁</view>
+          <view class="f12 tac" wx:if="{{items.is_rent == 1 && items.dataFlag == 1 && items.orderStatus == 2 && items.isClosed == 0}}">租赁中</view>
+          <view class="f12 tac" wx:if="{{items.is_rent == 0 && items.dataFlag == 1 && items.orderStatus == 1 && items.isClosed == 0}}">待发货</view>
+          <view class="f12 tac" wx:if="{{items.is_rent == 0 && items.dataFlag == 1 && items.orderStatus == 2 && items.isClosed == 0}}">待收货</view>
+          <view class="bindBtn f12 tac" wx:if="{{ items.is_rent == 1 && items.dataFlag == 1 && items.orderStatus == 2 && items.isClosed == 0}}"  catchtap="bindDelete" data-id="{{items.orderId}}" data-state="3" data-number="{{indexs}}" data-index="{{index}}">确认租赁</view>
+          <!-- <view class="bindBtn f12 tac" wx:if="{{ items.is_rent == 0 && items.dataFlag == 1 && items.orderStatus == 2 && items.isClosed == 0}}"  catchtap="bindDelete" data-id="{{items.orderId}}" data-state="2" data-number="{{indexs}}" data-index="{{index}}">确认收货</view> -->
+          <view class="bindBtn f12 tac" wx:if="{{ items.dataFlag == 1 && (items.orderStatus == 1 || items.orderStatus == 2) && items.isClosed == 0}}" catchtap="bindApply" data-id="{{items.orderId}}">申请退款</view>
+          <view class="f12 tac" wx:if="{{items.dataFlag == 1 && items.orderStatus == 3 && items.isClosed == 0}}">待评价</view>
+          <!-- role_id == itmes.userId && -->
+          <view class="bindBtn f12 tac" wx:if="{{ items.product.length == 1 && items.dataFlag == 1 && items.orderStatus == 3 && items.isClosed == 0}}" catchtap="bindEvaluate" data-id="{{items.orderId}}" data-index="{{index}}" data-indexs="{{indexs}}" data-serviceId="{{items.service_id}}" data-type="1">立即评价</view>
+          <view class="f12 tac" wx:if="{{items.dataFlag == 1 && items.orderStatus == 4 && items.isClosed == 1}}">已完成</view>
+          <view class="f12 tac" wx:if="{{items.dataFlag == 1 && items.orderStatus == 5 && items.isClosed == 0}}">退款中</view>
+          <view class="f12 tac"  wx:if="{{items.dataFlag == 1 && items.orderStatus == 6 && items.isClosed == 1 && items.isRefund == 1}}">已退款</view>
+          <view class="f12 tac" wx:if="{{items.dataFlag == 1 && items.orderStatus == 7}}">拒绝退款</view>
+          <view class="f12 tac"  wx:if="{{items.dataFlag == 1 && items.orderStatus == 8}}">已作废</view>
+          <view class="f12 tac" wx:if="{{items.dataFlag != 1 }}">已失效</view>
+        </view>
+      </view>
+
+      <view class="rechange-line" wx:if="{{items.product.length > 1 && items.orderStatus != 0}}"></view>
+      <view class="flj indent-state indent-type" wx:if="{{items.product.length > 1  && items.orderStatus != 0}}">
+        <view class="f14">服务点评价</view>
+        <view class="f12 tac viewWidth" wx:if="{{items.dataFlag == 1 && (items.isClosed == 1 || items.isClosed == 0) && (items.orderStatus == 5 || items.orderStatus == 6 || items.orderStatus == 7 || items.orderStatus == 8)}}">未评价</view>
+        <view class="f12 tac viewWidth" wx:if="{{items.dataFlag == 1 && (items.isClosed == 1 || items.isClosed == 0) && (items.orderStatus == 1 || items.orderStatus == 2)}}">待评价</view>
+        <view class="f12 tac viewWidth" wx:if="{{items.dataFlag == 1 && items.orderStatus == 4 && items.isClosed == 1 || items.is_comment_service == 1}}">已评价</view>
+
+        <view class="f12 tac viewWidth bindBtn" wx:if="{{items.product.length > 1 && items.dataFlag == 1 && items.orderStatus == 3 && items.isClosed == 0 &&items.is_comment_service == 0}}" bindtap="bindEvaluate" data-id="{{items.orderId}}" data-serviceId="{{items.service_id}}" data-type="3">评价</view>
+      </view>
+      <view class="rechange-line" wx:if="{{items.product.length > 1 && (items.orderStatus == 3 ||  items.orderStatus == 4) && items.is_receipt != 1}}}"></view>
+
+      <view class="flj indent-state indent-type" wx:if="{{items.product.length > 1 && (items.orderStatus == 3 ||  items.orderStatus == 4) && items.is_receipt == 0}}">
+        <view class="f14">查看回单</view>
+        <view class="f12 tac viewWidth bindBtn" bindtap="bindReceipt" data-type="1" data-id="{{items.orderId}}">查看</view>
+      </view>
+
+      <view class="rechange-line" wx:if="{{items.product.length > 1 && items.orderStatus != 0 && items.dataFlag == 1}}"></view>
+      <view class="flj indent-state indent-type" wx:if="{{items.product.length > 1 && items.orderStatus != 0 && items.dataFlag == 1}}">
+        <view class="f14">查看物流</view>
+        <view class="f12 tac viewWidth bindBtn" bindtap="bindReceipt" data-type="2" data-id="{{items.orderId}}">查看</view>
+      </view>
+    </view>
+  </view>
+  <!-- 暂无数据 -->
+  <view-no id="noData"></view-no>
+  <!-- 弹窗 -->
+  <view-show id="show" title="是否{{title}}" bind:closeTost="bindCancel" bind:showTost="bindAffirm" catchtouchmove="preventTouchMove"></view-show>
+  <!-- 上拉加载 -->
+  <view style="display: {{loadingFlag ? 'none' : 'block'}};" class="view-loading">
+    <view-loading id="load"></view-loading>
+  </view>
+  <!-- tip -->
+  <view class="receiptPopUp pf {{receiptPopUpFlag == 1 ? 'tipPopUp' : (receiptPopUpFlag == 2 ? 'notipPopUp' : 'opacity')}}" wx:if="{{receiptPopUp}}">
+    <view class="contentPopUp f16">
+      <view>亲~您目前还没有确认收货，暂时不能使用此功能呦！</view>
+      <view class="tac" catchtap="bindAffirmData">确认</view>
+    </view>
+  </view>
+</view>

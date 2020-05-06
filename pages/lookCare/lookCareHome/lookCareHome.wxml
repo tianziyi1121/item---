@@ -1,0 +1,24 @@
+<view class="content">
+<!-- 筛选 -->
+  <view class="lookCareNav f14 borno">
+    <view class="lookCare fl tac" >
+      <view bindtap="screen" data-index="{{index}}" class="{{screenIndex == index ? 'borderActive' : 'borderTriangle'}}" wx:for="{{lookCareNav}}" wx:for-item="item" wx:for-index="index" wx:key="index">{{item.nav}}<view ></view></view>
+    </view>
+    <view class="lookCareDialog" wx:if="{{dialogShow}}">
+      <!-- <view  class="NoData f16">暂无数据</view> -->
+      <view class="dialogContent fl tac f14">
+        <view class="{{ageIndex == index ? 'active' : ''}}" wx:if="{{screenIndex == 0}}" bindtap="choiceEag" data-index="{{index}}" wx:for="{{age}}" wx:key="index">{{item}}</view>
+        <view class="{{sexIndex == index ? 'active sex' : 'sex'}}" wx:if="{{screenIndex == 1}}" bindtap="choiceSex" data-index="{{index}}"   wx:for="{{sex}}" wx:key="index">{{item}}</view>
+        <view class="{{workExperienceIndex == index ? 'active' : ''}}" wx:if="{{screenIndex == 2}}" bindtap="choiceExperience" data-index="{{index}}" wx:for="{{workExperience}}" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 列表
+  <block wx:for="{{lookCareList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      //template
+      <view catchtap="onLookCareList" data-postId="{{item.lookCareId}}">
+            <template is="lookCareList" data="{{...item}}"/>
+      </view>
+  </block> -->
+</view>
+

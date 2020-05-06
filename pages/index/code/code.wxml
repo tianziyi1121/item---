@@ -1,0 +1,33 @@
+<view class="content">
+  <!-- <view class="order-line"></view> -->
+  <view class="margin"></view>
+  <view wx:if="{{typeFlag}}">
+    <view class="register-view flj f14">
+      <image src="../../../static/yonghumin.png"></image>
+      <view class="flj verification">{{member_list_tel}}</view>
+    </view>
+    <view class="register-view flj f14">
+      <image src="../../../static/lsyanzhengma(1).png"></image>
+      <view class="flj verification">
+        <input  bindinput="bindKeyInput" data-name="code" placeholder="请输入验证码"/>
+        <view bindtap="bindCode">获取验证码 <text wx:if="{{time}}">({{timeData}})</text>  </view>
+      </view>
+    </view>
+  </view>
+  
+  <view wx:if="{{!typeFlag}}">
+    <view class="register-view flj f14">
+      <image src="../../../static/yonghumin.png"></image>
+      <input  bindinput="bindKeyInput" data-name="member_list_tel" placeholder="请输入手机号"/>
+    </view>
+    <view class="register-view flj f14">
+      <image src="../../../static/lsyanzhengma(1).png"></image>
+      <view class="flj verification">
+        <input  bindinput="bindKeyInput" data-name="code" placeholder="请输入验证码"/>
+        <view bindtap="bindCode">获取验证码 <text wx:if="{{time}}">({{timeData}})</text>  </view>
+      </view>
+    </view>
+  </view>
+  
+  <button class="nextStep" bindtap="bindNext">下一步</button>
+</view>

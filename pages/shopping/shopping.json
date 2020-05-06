@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "view-loading": "/components/loading/loading",
+    "view-no": "/components/noData/noData",
+    "view-show": "/components/oshow/oshow"
+  }
+}

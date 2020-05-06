@@ -1,0 +1,7 @@
+.position-widht { height: 80rpx; line-height: 80rpx; }
+.position {  background: #F5F5F5; color: #999;}
+.position-size { background: #fff; color: #333;  width: 690rpx; margin: 0 auto;}
+.position_active image { width: 40rpx; height: 40rpx; margin: 20rpx 6rpx 20rpx 0;}
+.position-size > view:nth-child(2) { color: #37cf6b; font-size: 24rpx;} 
+.position-widht text { margin-right: 30rpx; }
+.position-widht .active { color: #37cf6b;}

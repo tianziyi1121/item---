@@ -1,0 +1,42 @@
+.indent-borno { margin-bottom: 20rpx;}
+.indent-time { color: #999; margin-left: 30rpx; height: 68rpx; line-height: 68rpx;}
+/* content */
+.indent-content { width: 690rpx; margin: 0 auto; margin-top: 48rpx; margin-bottom: 20rpx;}
+.indent-content image { width: 220rpx; height: 220rpx; margin-right: 20rpx;}
+/* content right */
+.content-right { width: 440rpx;}
+.right-title { color: #030303; width: 100%;}
+.right-content { color: #666; margin-top: 18rpx; line-height: 30rpx;}
+.right-price { color: #ff0101;}
+.right-btn { width: 690rpx; margin: 0 auto; color: #666; margin-bottom: 30rpx;}
+.right-btn > view:nth-child(2) { margin-right: 20rpx;border: 2rpx solid #37cf6b; width: 119rpx; border-radius: 20rpx; line-height: 40rpx;}
+.right-btn > view > view { float: right; }
+.right-btn > view > text { display: line-block; line-height: 40rpx; float: right;}
+.indent-state { width: 690rpx; margin: 0 auto; height: 88rpx; line-height: 88rpx;}
+.indent-type .viewWidth { width: 119rpx; margin-right: 20rpx; color: #666;}
+.indent-type  .bindButton { color: #666; width: 119rpx; border: 2rpx solid #37cf6b; border-radius: 30rpx; height: 40rpx; line-height: 40rpx; margin: 24rpx 20rpx 0 0;}
+.indentImage { width: 48rpx; height: 48rpx; margin: 40rpx 30rpx 0 0;}
+.indent-state .bindBtn {border: 2rpx solid #37cf6b; border-radius: 20rpx; line-height: 40rpx; height: 40rpx; margin: 24rpx 20rpx 0 0;}
+.bindBtnBox > view { width: 119rpx; margin-right: 20rpx; color: #666;}
+/*清除浮动*/
+.clearfix{ zoom:1; } 
+.clearfix:after,.clearfix:before{  content:""; display:block; clear:both; }
+/* tip */
+.receiptPopUp { top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,0.5); z-index: 1000;}
+.receiptPopUp.opacity { opacity: 0}
+.receiptPopUp .contentPopUp { width: 690rpx; margin: 50% 30rpx 0; background: #fff; padding-bottom: 40rpx; border-radius: 10rpx;}
+.receiptPopUp .contentPopUp > view:nth-child(1) { padding: 42rpx 0 0; width: 374rpx; margin: 0 auto; color: #000; line-height: 65rpx; letter-spacing: 2rpx;}
+.receiptPopUp .contentPopUp > view:nth-child(2) { margin: 0 auto; margin-top: 40rpx; width: 158rpx; height: 64rpx; line-height: 64rpx; border: 2rpx solid #37cf6b; border-radius: 32rpx;}
+
+.receiptPopUp.tipPopUp { animation: tipPopUp 0.2s linear forwards;}
+@keyframes tipPopUp {
+  0%{ opacity: 0;}
+  0%{ opacity: 0.5;}
+  0%{ opacity: 1;}
+}
+.receiptPopUp.notipPopUp { animation: notipPopUp 0.2s linear forwards;}
+@keyframes notipPopUp {
+  0%{ opacity: 1;}
+  0%{ opacity: 0.5;}
+  0%{ opacity: 0;}
+}

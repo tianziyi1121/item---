@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "用户注册",
+  "usingComponents": {
+    "view-shadow": "/components/shadow/shadow"
+  }
+}

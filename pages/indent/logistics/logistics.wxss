@@ -1,0 +1,16 @@
+.logisticsList { height: 58rpx; line-height: 58rpx;}
+.CirculationList { width: 658rpx; margin: 0 auto; margin-top: 20rpx;}
+.logisticsContent .logisticsOnce  { left: -30rpx; top: -30rpx; line-height: 60rpx; z-index: 100;}
+.logisticsContent .logisticsOnce image { width: 60rpx; height: 60rpx; margin-right: 24rpx;}
+.logisticsContent .logisticsSite { width: 100%; padding-bottom: 44rpx;}
+.logisticsSite.border { border-left: 4rpx solid #dbdbdb;}
+.logisticsSite .contentSite {  margin-left: 48rpx;}
+.logisticsSite .contentSite > view { line-height: 56rpx; word-wrap: break-word; color: #a3a3a3;}
+.logisticsSite .contentSite > view:nth-child(2) { margin-top: 16rpx;}
+.logisticsSite .logisticsDot {left: -10rpx;}
+.logisticsSite.border .logisticsDot {left: -12rpx;}
+.logisticsSite .logisticsDot { width: 20rpx; height: 20rpx; border-radius: 50%; background: #dbdbdb; top: 0;}
+.logisticsSite .logisticsLine { width: 4rpx; height: 44rpx; background: #dbdbdb; top:0; left: 0;}
+.logisticsContent.manifestation .logisticsOnce { top: 30rpx;}
+.logisticsContent.manifestation .logisticsSite { padding-top: 106rpx;}
+.logisticsBlank { width: 32rpx; height: 24rpx; top: 0; left: -16rpx; background: #fff;}

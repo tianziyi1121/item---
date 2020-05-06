@@ -1,0 +1,26 @@
+<view class="position-title fl f14 fc pad30">
+  <view catchtap="_bindTileProvince" data-index="0" class="overn {{ currentIdx == 0 ? 'active' : '' }}">{{ provinceName != '' ? provinceName : "请选择" }}<view></view></view>
+  <view wx:if="{{showProvince}}" catchtap="_bindTileProvince" data-index="1"  class="overn {{ currentIdx == 1 ? 'active' : '' }}">{{ cityListName != '' ? cityListName : "请选择" }}<view></view></view>
+  <view wx:if="{{showArea}}" catchtap="bindTileProvince" data-index="2"  class="overn {{ currentIdx == 2 ? 'active' : '' }}">{{ areaListName != '' ? areaListName : "请选择" }}<view></view></view>
+</view>
+<swiper 
+  class='position-swiper' 
+  current='{{currentIdx}}'
+  bindchange='_changeCurrent'>
+  <swiper-item>
+    <scroll-view class='position-item' scroll-y="true" style="width: 100%;height: 528rpx;">
+      <view class="item f14 fc {{index == provinceIndex ? 'active' : ''}}" wx:for="{{provinceList}}" wx:for-item="item" wx:key="index" catchtap="_bindProvince" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}">{{item.name}}</view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item wx:if="{{cityList.length > 0}}">
+    <scroll-view class='position-item' scroll-y="true" style="width: 100%;height: 528rpx;">
+      <view class="item f14 fc {{index == cityListIndex ? 'active' : ''}}" wx:for="{{cityList}}" wx:for-item="item" wx:key="index" catchtap="_bindcity" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}">{{item.name}}</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item wx:if="{{areaList.length > 0}}">
+    <scroll-view class='position-item' scroll-y="true" style="width: 100%;height: 528rpx;">
+      <view class="item f14 fc {{index == areaListIndex ? 'active' : ''}}" wx:for="{{areaList}}" wx:for-item="item" wx:key="index" catchtap="_bindArea" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}">{{item.name}}</view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
